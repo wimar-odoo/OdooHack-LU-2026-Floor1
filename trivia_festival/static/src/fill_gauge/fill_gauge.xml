@@ -2,9 +2,14 @@
 <templates xml:space="preserve">
 
     <t t-name="trivia_festival.FillGauge">
-        <!-- TODO 1: a Bootstrap progress bar (div.progress, then div.progress-bar with the color and the width),
-             and the text "taken / max (percentage %)" -->
-        <span t-out="this.value"/>
+        <div class="d-flex align-items-center gap-2 w-100">
+            <div class="progress flex-grow-1" role="progressbar" aria-valuemin="0"
+                 t-att-aria-valuemax="this.max" t-att-aria-valuenow="this.value">
+                <div t-attf-class="progress-bar {{ this.colorClass }}"
+                     t-att-style="'width: ' + this.barWidth + '%'"/>
+            </div>
+            <span class="text-nowrap"><t t-out="this.value"/> / <t t-out="this.max"/> (<t t-out="this.percentage"/> %)</span>
+        </div>
     </t>
 
 </templates>

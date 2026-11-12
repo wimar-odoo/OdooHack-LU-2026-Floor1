@@ -26,8 +26,11 @@
  * ---------------------------------------------------------------------------------------------
  */
 import { Component, useProps } from "@odoo/owl";
-import { registry } from "@web/core/registry";  // eslint-disable-line no-unused-vars
+import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
+
+const WARNING_RATE = 70;
+const DANGER_RATE = 90;
 
 export class FillGauge extends Component {
     static template = "trivia_festival.FillGauge";
@@ -37,7 +40,34 @@ export class FillGauge extends Component {
         return this.props.record.data[this.props.name] || 0;
     }
 
-    // TODO 1: the maximum, the percentage and the color (a Bootstrap class: bg-success, bg-warning or bg-danger)
+    get max() {
+        return this.props.record.data.seats_max || 0;
+    }
+
+    get percentage() {
+        return this.max ? Math.round((100 * this.value) / this.max) : 0;
+    }
+
+    get barWidth() {
+        return Math.min(this.percentage, 100);
+    }
+
+    get colorClass() {
+        if (this.percentage >= DANGER_RATE) {
+            return "bg-danger";
+        }
+        if (this.percentage >= WARNING_RATE) {
+            return "bg-warning";
+        }
+        return "bg-success";
+    }
 }
 
-// TODO 1: add the widget to the registry of the fields
+export const fillGauge = {
+    component: FillGauge,
+    displayName: "Fill Gauge",
+    supportedTypes: ["integer"],
+    fieldDependencies: [{ name: "seats_max", type: "integer" }],
+};
+
+registry.category("fields").add("festival_fill_gauge", fillGauge);

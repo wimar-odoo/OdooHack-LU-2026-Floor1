@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//label[@for='seats_limited']" position="before">
                 <!-- TODO 1: display this field with your widget festival_fill_gauge -->
-                <field name="seats_taken" string="Fill Rate"/>
+                <field name="seats_taken" string="Fill Rate" widget="festival_fill_gauge"/>
             </xpath>
         </field>
     </record>
