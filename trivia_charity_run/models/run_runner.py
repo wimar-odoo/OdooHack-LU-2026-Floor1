@@ -39,9 +39,20 @@ class RunRunner(models.Model):
 
     @api.depends("pledge_ids.amount_per_km", "distance_km")
     def _compute_amount_raised(self):
+        grouped_pledges = self.env["run.pledge"]._read_group(
+            [("runner_id", "in", self.ids)],
+            ["runner_id"],
+            ["amount_per_km:sum"],
+        )
+        rates_by_runner = {
+            runner.id: rate or 0.0 for runner, rate in grouped_pledges
+        }
         for runner in self:
-            pledges = self.env["run.pledge"].search([("runner_id", "=", runner.id)])
-            runner.amount_raised = sum(pledges.mapped("amount_per_km")) * runner.distance_km
+            if runner.id:
+                rate = rates_by_runner.get(runner.id, 0.0)
+            else:
+                rate = sum(runner.pledge_ids.mapped("amount_per_km"))
+            runner.amount_raised = rate * runner.distance_km
 
     def action_disqualify(self):
         self.disqualified = True
