@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.tools import SQL
 
 CATEGORIES = [
     ("junior", "Junior (under 20)"),
@@ -72,11 +73,16 @@ class RunRunner(models.Model):
         anything... This query is vulnerable to SQL injection: try ' OR 1=1 --
         """
         self.flush_model(["bib", "name"])  # raw SQL reads the database, not the cache of the ORM
-        self.env.cr.execute(f"""
+        # the values are passed as parameters, never pasted into the SQL: no injection, and quotes are handled
+        self.env.cr.execute(SQL(
+            """
             SELECT id
               FROM run_runner
-             WHERE bib::text = '{term}'
-                OR name ILIKE '%{term}%'
+             WHERE bib::text = %s
+                OR name ILIKE %s
           ORDER BY edition_id DESC, bib
-        """)
+            """,
+            term,
+            f"%{term}%",
+        ))
         return self.browse([row[0] for row in self.env.cr.fetchall()])
