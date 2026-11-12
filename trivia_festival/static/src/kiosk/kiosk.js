@@ -28,13 +28,17 @@ export class FestivalKiosk extends Component {
     }
 
     async loadData() {
-        // TODO 2: get the data of the welcome desk from the server, and put it in this.state
+        const data = await this.orm.call("event.registration", "get_kiosk_data", []);
+        this.state.event = data.event;
+        this.state.registrations = data.registrations;
     }
 
     async checkIn(registration) {
-        // TODO 2: check the registration in on the server, welcome the attendee
-        // (this.notification.add(message, { type: "success" })), then load the data again
+        await this.orm.call("event.registration", "action_kiosk_checkin", [[registration.id]]);
+        this.notification.add(`${registration.name} checked in!`, { type: "success" });
+        await this.loadData();
     }
+
 }
 
-// TODO 2: add the component to the registry of the actions
+registry.category("actions").add("festival_kiosk", FestivalKiosk);
