@@ -19,7 +19,7 @@ import { useService } from "@web/core/utils/hooks";
 
 export class FestivalKiosk extends Component {
     static template = "trivia_festival.Kiosk";
-
+    // test
     setup() {
         this.search = signal("");
         this.orm = useService("orm");
@@ -30,7 +30,7 @@ export class FestivalKiosk extends Component {
 
     get filteredRegistrations() {
         const search = this.search().toLowerCase();
-        
+
         return this.state.registrations.filter((registration) =>
             registration.name.toLowerCase().includes(search)
         );
