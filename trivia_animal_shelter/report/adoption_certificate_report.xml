@@ -8,4 +8,32 @@
     the applicant, the animal (name, species, breed) and the date of the day.
     Tip: use the layout of the company documents, web.external_layout.
     -->
+    <record id="action_report_adoption_certificate" model="ir.actions.report">
+        <field name="name">Adoption Certificate</field>
+        <field name="model">shelter.adoption.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">trivia_animal_shelter.report_adoption_certificate</field>
+        <field name="print_report_name">'Adoption Certificate - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_shelter_adoption_request"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_adoption_certificate">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page text-center">
+                        <h1 class="mt-5">Adoption Certificate</h1>
+                        <h3 class="text-muted">Refuge Les 4 Pattes</h3>
+                        <p class="lead mt-5">This certifies that</p>
+                        <h2 t-out="o.name"/>
+                        <p class="lead">has asked to adopt</p>
+                        <h2><t t-out="o.animal_id.species_emoji"/> <t t-out="o.animal_id.name"/></h2>
+                        <p><span t-field="o.animal_id.species"/><t t-if="o.animal_id.breed"> - <span t-out="o.animal_id.breed"/></t></p>
+                        <p class="mt-5">Date: <span t-out="datetime.date.today().strftime('%d/%m/%Y')"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
 </odoo>

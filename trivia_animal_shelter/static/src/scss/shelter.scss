@@ -5,3 +5,24 @@
 // then give a style to the cards of the animals (.o_shelter_card): for example a shadow
 // and a small zoom when the mouse goes over a card.
 // ----------------------------------------------------------------------------
+.o_shelter_card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+    }
+
+    .o_shelter_emoji {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+}
+
+.o_shelter_detail_emoji {
+    font-size: 6rem;
+    line-height: 1;
+}
