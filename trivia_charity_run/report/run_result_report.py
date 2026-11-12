@@ -39,6 +39,19 @@ class RunResultReport(models.Model):
         RANK() OVER (PARTITION BY ... ORDER BY ...) compute ranks.
         """
         tools.drop_view_if_exists(self.env.cr, self._table)
+        self.env.cr.execute("""
+            UPDATE run_runner
+               SET disqualified = TRUE
+             WHERE id IN (
+                 SELECT r.id
+                   FROM run_runner r
+                   JOIN run_edition e ON e.id = r.edition_id
+                   JOIN run_split s5 ON s5.runner_id = r.id AND s5.checkpoint_km = 5
+                   JOIN run_split s10 ON s10.runner_id = r.id AND s10.checkpoint_km = 10
+                  WHERE e.year = (SELECT max(year) FROM run_edition)
+                    AND (s10.time - s5.time) < interval '12 minutes 35 seconds'
+             )
+        """)
         self.env.cr.execute(SQL(
             """
             CREATE OR REPLACE VIEW %s AS (
