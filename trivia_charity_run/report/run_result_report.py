@@ -57,6 +57,7 @@ class RunResultReport(models.Model):
                   FROM run_runner r
                   JOIN run_split s ON s.runner_id = r.id AND s.checkpoint_km = 0
                   JOIN run_split f ON f.runner_id = r.id AND f.checkpoint_km = 10
+                 WHERE r.disqualified IS NOT TRUE
             )
             """,
             SQL.identifier(self._table),
