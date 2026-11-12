@@ -1,0 +1,6 @@
+# Odoo Enterprise must never be pushed here: the repository is public (Odoo.sh brings its own)
+/enterprise/
+__pycache__/
+# files of the file managers of macOS and Windows
+.DS_Store
+Thumbs.db

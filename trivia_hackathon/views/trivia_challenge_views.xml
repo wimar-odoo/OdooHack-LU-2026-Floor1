@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="trivia_challenge_view_kanban" model="ir.ui.view">
+        <field name="name">trivia.challenge.kanban</field>
+        <field name="model">trivia.challenge</field>
+        <field name="arch" type="xml">
+            <kanban create="false" delete="false" group_create="false">
+                <templates>
+                    <!-- secondary actions, in the ⋮ menu of the card: the flags are not the way to play, Check is -->
+                    <t t-name="menu">
+                        <a role="menuitem" type="object" name="action_open_flag_wizard" class="dropdown-item">Submit a flag</a>
+                    </t>
+                    <t t-name="card">
+                        <widget name="web_ribbon" title="Solved" bg_color="text-bg-info" invisible="state != 'solved' or is_perfect"/>
+                        <widget name="web_ribbon" title="Perfect" bg_color="text-bg-success" invisible="not is_perfect"/>
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <field name="wedge" class="display-5"/>
+                            <div class="d-flex flex-column">
+                                <field name="name" class="fw-bold fs-5"/>
+                                <field name="organization" class="text-muted fst-italic"/>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <field name="category" widget="badge"
+                                   decoration-info="category == 'functional'"
+                                   decoration-primary="category == 'dev'"/>
+                            <field name="topic" class="fw-semibold"/>
+                        </div>
+                        <field name="summary" class="mt-1 mb-2"/>
+                        <footer class="align-items-center">
+                            <field name="difficulty" widget="badge"
+                                   decoration-success="difficulty == 'easy'"
+                                   decoration-warning="difficulty == 'medium'"
+                                   decoration-danger="difficulty == 'hard'"/>
+                            <!-- the requirements and bonus objectives met at the last check: "3/5 ⌛ 1/3 ⭐" -->
+                            <field name="progress" class="ms-2"/>
+                            <div class="ms-auto d-flex gap-1">
+                                <button name="action_run_checker" type="object" string="Check"
+                                        class="btn btn-primary btn-sm" context="{'trivia_open_challenge': True}"/>
+                            </div>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="trivia_challenge_view_form" model="ir.ui.view">
+        <field name="name">trivia.challenge.form</field>
+        <field name="model">trivia.challenge</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <header>
+                    <button name="action_run_checker" type="object" string="Check" class="btn-primary" data-hotkey="v"/>
+                    <!-- Submit a flag: in the actions menu of the form (trivia_challenge_action_submit_flag) -->
+                    <button name="action_send_to_master" type="object" string="Send to the master database"
+                            invisible="not sync_uid or sync_state == 'sent'"/>
+                    <field name="sync_uid" invisible="1"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Solved" bg_color="text-bg-info" invisible="state != 'solved' or is_perfect"/>
+                    <widget name="web_ribbon" title="Perfect" bg_color="text-bg-success" invisible="not is_perfect"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="wedge" class="me-2"/>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <h3><field name="organization" readonly="1"/></h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category" readonly="1" widget="badge"/>
+                            <field name="topic" readonly="1"/>
+                            <field name="difficulty" readonly="1" widget="badge"/>
+                        </group>
+                        <group>
+                            <field name="board"/>
+                            <field name="progress" invisible="not progress"/>
+                            <field name="attempt_count"/>
+                            <field name="solved_date" invisible="state != 'solved'"/>
+                            <field name="solved_by_id" invisible="state != 'solved'"/>
+                            <field name="flag" invisible="not flag" widget="CopyClipboardChar"/>
+                            <field name="sync_state" widget="badge" invisible="not sync_uid"
+                                   decoration-success="sync_state == 'sent'"
+                                   decoration-danger="sync_state == 'error'"/>
+                            <field name="sync_message" invisible="not sync_message"/>
+                        </group>
+                    </group>
+                    <!-- the statement always comes first, the report of the last check is in the second tab -->
+                    <notebook>
+                        <page string="Statement" name="statement">
+                            <field name="description" readonly="1"/>
+                        </page>
+                        <page string="Checker Report" name="checker_report" invisible="not checker_report">
+                            <field name="checker_report"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="trivia_challenge_action" model="ir.actions.act_window">
+        <field name="name">Game Board</field>
+        <field name="res_model">trivia.challenge</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No challenge on the board yet</p>
+            <p>Install the modules of the non-profit organisations (trivia_*) to bring their challenges.</p>
+        </field>
+    </record>
+
+    <!-- Submit a flag, in the actions menu (⋮) of the form of a challenge, like in the menu of its card.
+         group_ids: the internal users may run it, like the former button, without write access to the challenges -->
+    <record id="trivia_challenge_action_submit_flag" model="ir.actions.server">
+        <field name="name">Submit a flag</field>
+        <field name="model_id" ref="model_trivia_challenge"/>
+        <field name="binding_model_id" ref="model_trivia_challenge"/>
+        <field name="binding_view_types">form</field>
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        <field name="state">code</field>
+        <field name="code">action = record.action_open_flag_wizard()</field>
+    </record>
+</odoo>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="animal_minou" model="shelter.animal">
+        <field name="name">Minou</field>
+        <field name="species">cat</field>
+        <field name="breed">European shorthair</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=30)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">A gentle cat who loves naps in the sun and long cuddles on the sofa.</field>
+    </record>
+    <record id="animal_pixel" model="shelter.animal">
+        <field name="name">Pixel</field>
+        <field name="species">cat</field>
+        <field name="breed">Bengal</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=8)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Young, curious and very playful: Pixel needs a family with time to play.</field>
+    </record>
+    <record id="animal_caramel" model="shelter.animal">
+        <field name="name">Caramel</field>
+        <field name="species">cat</field>
+        <field name="breed">Maine Coon</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=60)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">A big soft giant, calm and patient, who gets along with children.</field>
+    </record>
+    <record id="animal_luna" model="shelter.animal">
+        <field name="name">Luna</field>
+        <field name="species">cat</field>
+        <field name="breed">Siamese</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=24)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="True"/>
+        <field name="description">Talkative and affectionate, Luna found her family last week.</field>
+    </record>
+    <record id="animal_ombre" model="shelter.animal">
+        <field name="name">Ombre</field>
+        <field name="species">cat</field>
+        <field name="breed">Black cat</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=14)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="False"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Just arrived at the shelter: still in quarantine.</field>
+    </record>
+    <record id="animal_rex" model="shelter.animal">
+        <field name="name">Rex</field>
+        <field name="species">dog</field>
+        <field name="breed">German shepherd</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=48)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">A loyal and protective companion, who loves long walks in the forest.</field>
+    </record>
+    <record id="animal_bella" model="shelter.animal">
+        <field name="name">Bella</field>
+        <field name="species">dog</field>
+        <field name="breed">Labrador</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=20)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Full of energy and always happy: Bella is looking for a sporty family.</field>
+    </record>
+    <record id="animal_filou" model="shelter.animal">
+        <field name="name">Filou</field>
+        <field name="species">dog</field>
+        <field name="breed">Jack Russell</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=72)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Small but brave, Filou would be perfect in a flat with a nearby park.</field>
+    </record>
+    <record id="animal_max" model="shelter.animal">
+        <field name="name">Max</field>
+        <field name="species">dog</field>
+        <field name="breed">Beagle</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=36)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="False"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Currently at the vet: back on the website very soon.</field>
+    </record>
+    <record id="animal_nala" model="shelter.animal">
+        <field name="name">Nala</field>
+        <field name="species">dog</field>
+        <field name="breed">Golden retriever</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=18)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="True"/>
+        <field name="description">Sweet and calm, Nala has been adopted by a family in Esch.</field>
+    </record>
+    <record id="animal_pompon" model="shelter.animal">
+        <field name="name">Pompon</field>
+        <field name="species">rabbit</field>
+        <field name="breed">Dwarf lop</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=10)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">A ball of fur who loves carrots and quiet homes.</field>
+    </record>
+    <record id="animal_noisette" model="shelter.animal">
+        <field name="name">Noisette</field>
+        <field name="species">rabbit</field>
+        <field name="breed">Lionhead</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=16)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Shy at first, very sweet once she trusts you.</field>
+    </record>
+    <record id="animal_kiwi" model="shelter.animal">
+        <field name="name">Kiwi</field>
+        <field name="species">bird</field>
+        <field name="breed">Budgerigar</field>
+        <field name="sex">male</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=12)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">A cheerful little bird who sings all day long.</field>
+    </record>
+    <record id="animal_coco" model="shelter.animal">
+        <field name="name">Coco</field>
+        <field name="species">bird</field>
+        <field name="breed">Cockatiel</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=40)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="True"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Coco whistles a few tunes and loves company.</field>
+    </record>
+    <record id="animal_plume" model="shelter.animal">
+        <field name="name">Plume</field>
+        <field name="species">bird</field>
+        <field name="breed">Canary</field>
+        <field name="sex">female</field>
+        <field name="birth_date" eval="(DateTime.today() - relativedelta(months=6)).strftime('%Y-%m-%d')"/>
+        <field name="is_published" eval="False"/>
+        <field name="adopted" eval="False"/>
+        <field name="description">Too young to leave the shelter for now.</field>
+    </record>
+
+    <record id="adoption_request_1" model="shelter.adoption.request">
+        <field name="animal_id" ref="animal_luna"/>
+        <field name="name">Alice Martin</field>
+        <field name="email">alice.martin@example.com</field>
+        <field name="state">accepted</field>
+        <field name="message">I fell in love with Luna's blue eyes!</field>
+    </record>
+    <record id="adoption_request_2" model="shelter.adoption.request">
+        <field name="animal_id" ref="animal_rex"/>
+        <field name="name">Thomas Weis</field>
+        <field name="email">thomas.weis@example.com</field>
+        <field name="state">new</field>
+        <field name="message">We have a big garden and we go hiking every weekend.</field>
+    </record>
+</odoo>

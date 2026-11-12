@@ -1,0 +1,2 @@
+# LF line endings, also in a clone made on Windows: the shell scripts and the Makefile break with CRLF
+* text=auto eol=lf

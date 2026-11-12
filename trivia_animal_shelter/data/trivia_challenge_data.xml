@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_shelter" model="trivia.challenge">
+        <field name="sequence">40</field>
+        <field name="code">shelter</field>
+        <field name="name">Adopt Me!</field>
+        <field name="organization">Refuge Les 4 Pattes</field>
+        <field name="topic">Website: controllers, QWeb, Bootstrap, SCSS, PDF</field>
+        <field name="difficulty">medium</field>
+        <field name="wedge_color">purple</field>
+        <field name="summary">Build the adoption pages of the website: the animals waiting for a family, their page and the adoption form.</field>
+        <field name="description" type="html">
+            <p class="lead">The animal shelter Les 4 Pattes takes care of 15 cats, dogs, rabbits and birds. Ten of them are waiting for a family, but nobody knows it: the shelter has no adoption page on its website yet.</p>
+            <div class="alert alert-info">
+                <p class="mb-1"><b>Development challenge: website.</b> Complete the module <code>trivia_animal_shelter</code>: the models, the backend and the data are ready, the website is up to you. The TODOs of the code are numbered like the missions below, and give the details.</p>
+                <p class="mb-0">After a change of Python code, or a new file or record, update the modules (<code>make update</code>), then click <i>Check</i>: the tab <i>Checker Report</i> lists what is still missing.</p>
+            </div>
+            <h5 class="mt-4 mb-3">Your missions</h5>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">1 · The adoptable animals <span class="badge text-bg-light fw-normal font-monospace ms-1">models/shelter_animal.py</span></h6>
+                <p class="mb-1">The method <code>_get_adoptable_animals()</code>: the business logic of the pages.</p>
+                <p class="mb-0 small text-muted">💡 Keep the controllers thin: the checker tests the methods of the models directly.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">2 · The page /adopt <span class="badge text-bg-light fw-normal font-monospace ms-1">controllers/main.py</span> <span class="badge text-bg-light fw-normal font-monospace">views/website_templates.xml</span></h6>
+                <p class="mb-0">A public page with a responsive grid of cards, one card per adoptable animal.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">3 · The page of an animal <span class="badge text-bg-light fw-normal font-monospace ms-1">controllers/main.py</span> <span class="badge text-bg-light fw-normal font-monospace">views/website_templates.xml</span></h6>
+                <p class="mb-0">Each adoptable animal has its own page, at the URL <code>animal.website_url</code>, e.g. <code>/adopt/rex-6</code>.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">4 · The adoption request <span class="badge text-bg-light fw-normal font-monospace ms-1">models/shelter_adoption_request.py</span> <span class="badge text-bg-light fw-normal font-monospace">controllers/main.py</span> <span class="badge text-bg-light fw-normal font-monospace">views/website_templates.xml</span></h6>
+                <p class="mb-1">A form on the page of the animal, posted to the website, which creates the request safely with <code>_create_from_website()</code>. Then adopt an animal yourself, as a visitor!</p>
+                <p class="mb-0 small text-muted">💡 Logged in, you are not a visitor: open the website in a private window.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">5 · The style and the menu <span class="badge text-bg-light fw-normal font-monospace ms-1">static/src/scss/shelter.scss</span> <span class="badge text-bg-light fw-normal font-monospace">__manifest__.py</span> <span class="badge text-bg-light fw-normal font-monospace">views/website_templates.xml</span></h6>
+                <p class="mb-0">Cards styled by the SCSS file, declared in the assets of the website, and an <i>Adopt</i> menu on the website.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">6 · The adoption certificate <span class="badge text-bg-light fw-normal font-monospace ms-1">report/adoption_certificate_report.xml</span></h6>
+                <p class="mb-1">A PDF report, printable from an adoption request.</p>
+                <p class="mb-0 small text-muted">💡 In Odoo 20, the field <code>report_file</code> no longer exists: with it, the installation fails.</p>
+            </div>
+            <h5 class="mt-4 mb-3">⭐ Bonus <small class="text-muted fw-normal">optional, one star each</small></h5>
+            <ul>
+                <li>Buttons to filter the animals by species.</li>
+                <li>An <i>Animal of the week</i> building block for the website editor.</li>
+            </ul>
+        </field>
+    </record>
+</odoo>

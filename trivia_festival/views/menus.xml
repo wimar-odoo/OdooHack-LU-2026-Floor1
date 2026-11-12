@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="festival_event_action" model="ir.actions.act_window">
+        <field name="name">Festival</field>
+        <field name="res_model">event.event</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="event_festival"/>
+    </record>
+
+    <record id="festival_registration_action" model="ir.actions.act_window">
+        <field name="name">Registrations</field>
+        <field name="res_model">event.registration</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain" eval="[('event_id', '=', ref('event_festival'))]"/>
+    </record>
+
+    <menuitem id="menu_festival_root" name="Festival Solidaire" sequence="5"
+              web_icon="trivia_festival,static/description/icon.png"/>
+
+    <menuitem id="menu_festival_event" name="Festival" parent="menu_festival_root" sequence="10"
+              action="festival_event_action"/>
+    <menuitem id="menu_festival_registration" name="Registrations" parent="menu_festival_root" sequence="20"
+              action="festival_registration_action"/>
+
+    <!--
+    TODO 2: a client action (model ir.actions.client) opening your component festival_kiosk (its tag),
+    and a menu "Welcome Desk" opening this action.
+    -->
+</odoo>

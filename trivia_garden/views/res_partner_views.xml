@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    TODO 5 - The members on the contacts
+
+    * the contact form (base.view_partner_form) gets a "Membership" page, with the fields
+      membership_type, member_since, last_paid_year and the list of the fees (fee_ids);
+    * the contacts get a filter "Not up to date": the members whose last paid year is before
+      the current year.
+
+    ⭐ BONUS: a "Fees" smart button on the contact form, showing the number of fees of the member.
+    -->
+</odoo>

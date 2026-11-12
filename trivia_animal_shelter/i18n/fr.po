@@ -1,0 +1,1069 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_animal_shelter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 08:35+0000\n"
+"PO-Revision-Date: 2026-10-31 08:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_animal_shelter
+#: model:ir.module.module,description:base.module_trivia_animal_shelter
+msgid ""
+"\n"
+"Refuge Les 4 Pattes\n"
+"===================\n"
+"Challenge of the Trivi'Hackathon (website: controllers, QWeb templates, Bootstrap, SCSS, forms, PDF report).\n"
+"\n"
+"The animal shelter Les 4 Pattes wants its animals to find a family thanks to its website. Complete this module so\n"
+"that visitors can see the animals waiting for a family and send an adoption request.\n"
+msgstr ""
+"\n"
+"Refuge Les 4 Pattes\n"
+"===================\n"
+"Challenge du Trivi'Hackathon (site web : contrôleurs, templates QWeb, Bootstrap, SCSS, formulaires, rapport PDF).\n"
+"\n"
+"Le refuge Les 4 Pattes veut que ses animaux trouvent une famille grâce à son site web. Complétez ce module pour que\n"
+"les visiteurs voient les animaux qui attendent une famille et puissent envoyer une demande d’adoption.\n"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/shelter_animal.py:0
+msgid "%(count)s month(s)"
+msgstr "%(count)s mois"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/shelter_animal.py:0
+msgid "%(count)s year(s)"
+msgstr "%(count)s an(s)"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"1 · The adoptable animals <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">models/shelter_animal.py</span>"
+msgstr "1 · Les animaux adoptables <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/shelter_animal.py</span>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "1. Adoptable animals"
+msgstr "1. Animaux adoptables"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"2 · The page /adopt <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">controllers/main.py</span> <span class=\"badge text-bg-"
+"light fw-normal font-monospace\">views/website_templates.xml</span>"
+msgstr "2 · La page /adopt <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">controllers/main.py</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/website_templates.xml</span>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "2. Card of an animal"
+msgstr "2. Carte d’un animal"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "2. Grid of the animals"
+msgstr "2. Grille des animaux"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "2. Route of the page /adopt"
+msgstr "2. Route de la page /adopt"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"3 · The page of an animal <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">controllers/main.py</span> <span class=\"badge text-bg-"
+"light fw-normal font-monospace\">views/website_templates.xml</span>"
+msgstr "3 · La page d’un animal <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">controllers/main.py</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/website_templates.xml</span>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "3. Page of an animal"
+msgstr "3. Page d’un animal"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"4 · The adoption request <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">models/shelter_adoption_request.py</span> <span "
+"class=\"badge text-bg-light fw-normal font-"
+"monospace\">controllers/main.py</span> <span class=\"badge text-bg-light fw-"
+"normal font-monospace\">views/website_templates.xml</span>"
+msgstr "4 · La demande d’adoption <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/shelter_adoption_request.py</span> <span class=\"badge text-bg-light fw-normal font-monospace\">controllers/main.py</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/website_templates.xml</span>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "4. A visitor asked to adopt an animal"
+msgstr "4. Un visiteur a demandé à adopter un animal"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "4. Adoption form"
+msgstr "4. Formulaire d’adoption"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "4. Safe adoption requests"
+msgstr "4. Demandes d’adoption sécurisées"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"5 · The style and the menu <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">static/src/scss/shelter.scss</span> <span class=\"badge "
+"text-bg-light fw-normal font-monospace\">__manifest__.py</span> <span "
+"class=\"badge text-bg-light fw-normal font-"
+"monospace\">views/website_templates.xml</span>"
+msgstr "5 · Le style et le menu <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">static/src/scss/shelter.scss</span> <span class=\"badge text-bg-light fw-normal font-monospace\">__manifest__.py</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/website_templates.xml</span>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "5. Style and menu of the website"
+msgstr "5. Style et menu du site web"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"6 · The adoption certificate <span class=\"badge text-bg-light fw-normal "
+"font-monospace ms-1\">report/adoption_certificate_report.xml</span>"
+msgstr "6 · Le certificat d’adoption <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">report/adoption_certificate_report.xml</span>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "6. Adoption certificate"
+msgstr "6. Certificat d’adoption"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"<b>Development challenge: website.</b> Complete the module "
+"<code>trivia_animal_shelter</code>: the models, the backend and the data are"
+" ready, the website is up to you. The TODOs of the code are numbered like "
+"the missions below, and give the details."
+msgstr "<b>Challenge de développement : site web.</b> Complétez le module <code>trivia_animal_shelter</code> : les modèles, le backend et les données sont prêts, le site web est pour vous. Les TODO du code sont numérotés comme les missions ci-dessous, et en donnent le détail."
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_kanban
+msgid "<span class=\"badge text-bg-success\" invisible=\"not adopted\">Adopted</span>"
+msgstr "<span class=\"badge text-bg-success\" invisible=\"not adopted\">Adopté</span>"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid "A PDF report, printable from an adoption request."
+msgstr "Un rapport PDF, imprimable depuis une demande d’adoption."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_pompon
+msgid "A ball of fur who loves carrots and quiet homes."
+msgstr "Une boule de poils qui adore les carottes et les maisons calmes."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_caramel
+msgid "A big soft giant, calm and patient, who gets along with children."
+msgstr "Un grand gentil géant, calme et patient, qui s’entend bien avec les enfants."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_kiwi
+msgid "A cheerful little bird who sings all day long."
+msgstr "Un petit oiseau joyeux qui chante toute la journée."
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"A form on the page of the animal, posted to the website, which creates the "
+"request safely with <code>_create_from_website()</code>. Then adopt an "
+"animal yourself, as a visitor!"
+msgstr "Un formulaire sur la page de l’animal, envoyé au site web, qui crée la demande en toute sécurité avec <code>_create_from_website()</code>. Puis adoptez vous-même un animal, en tant que visiteur !"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_minou
+msgid "A gentle cat who loves naps in the sun and long cuddles on the sofa."
+msgstr "Une chatte douce qui adore les siestes au soleil et les longs câlins sur le canapé."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_rex
+msgid "A loyal and protective companion, who loves long walks in the forest."
+msgstr "Un compagnon fidèle et protecteur, qui adore les longues balades en forêt."
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"A public page with a responsive grid of cards, one card per adoptable "
+"animal."
+msgstr "Une page publique avec une grille de cartes responsive, une carte par animal adoptable."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "A visitor can ask to adopt an animal which is %(reason)s."
+msgstr "Un visiteur peut demander à adopter un animal %(reason)s."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"A visitor must not be able to choose the animal of the request: it is the "
+"animal of the page."
+msgstr "Un visiteur ne doit pas pouvoir choisir l’animal de la demande : c’est l’animal de la page."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "A visitor must not be able to choose the status of the request."
+msgstr "Un visiteur ne doit pas pouvoir choisir le statut de la demande."
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_adoption_request_view_form
+msgid "Accept"
+msgstr "Accepter"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_adoption_request__state__accepted
+msgid "Accepted"
+msgstr "Acceptée"
+
+#. module: trivia_animal_shelter
+#: model:trivia.challenge,name:trivia_animal_shelter.challenge_shelter
+msgid "Adopt Me!"
+msgstr "Adoptez-moi !"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.animal_list
+msgid "Adopt a friend"
+msgstr "Adoptez un ami"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__adopted
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_form
+msgid "Adopted"
+msgstr "Adopté"
+
+#. module: trivia_animal_shelter
+#: model:ir.model,name:trivia_animal_shelter.model_shelter_adoption_request
+msgid "Adoption Request"
+msgstr "Demande d’adoption"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/shelter_animal.py:0
+#: model:ir.actions.act_window,name:trivia_animal_shelter.shelter_adoption_request_action
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__request_ids
+#: model:ir.ui.menu,name:trivia_animal_shelter.menu_shelter_adoption_request
+msgid "Adoption Requests"
+msgstr "Demandes d’adoption"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"After a change of Python code, or a new file or record, update the modules "
+"(<code>make update</code>), then click <i>Check</i>: the tab <i>Checker "
+"Report</i> lists what is still missing."
+msgstr "Après une modification du code Python, ou un nouveau fichier ou enregistrement, mettez à jour les modules (<code>make update</code>), puis cliquez sur <i>Vérifier</i> : l’onglet <i>Rapport du checker</i> liste ce qui manque encore."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__age
+msgid "Age"
+msgstr "Âge"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid "An <i>Animal of the week</i> building block for the website editor."
+msgstr "Un bloc <i>Animal of the week</i> pour l’éditeur du site web."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__animal_id
+msgid "Animal"
+msgstr "Animal"
+
+#. module: trivia_animal_shelter
+#: model:ir.actions.act_window,name:trivia_animal_shelter.shelter_animal_action
+#: model:ir.ui.menu,name:trivia_animal_shelter.menu_shelter_animal
+msgid "Animals"
+msgstr "Animaux"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__name
+msgid "Applicant"
+msgstr "Demandeur"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__publish_on
+msgid "Auto publish on"
+msgstr "Publication automatique le"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,help:trivia_animal_shelter.field_shelter_animal__publish_on
+msgid "Automatically publish the page on the chosen date and time."
+msgstr "Publier automatiquement la page à la date et à l’heure choisies."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_max
+msgid "Beagle"
+msgstr "Beagle"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_pixel
+msgid "Bengal"
+msgstr "Bengal"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_animal__species__bird
+msgid "Bird"
+msgstr "Oiseau"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__birth_date
+msgid "Birth Date"
+msgstr "Date de naissance"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_ombre
+msgid "Black cat"
+msgstr "Chat noir"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__breed
+msgid "Breed"
+msgstr "Race"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_kiwi
+msgid "Budgerigar"
+msgstr "Perruche ondulée"
+
+#. module: trivia_animal_shelter
+#: model:trivia.challenge,summary:trivia_animal_shelter.challenge_shelter
+msgid ""
+"Build the adoption pages of the website: the animals waiting for a family, "
+"their page and the adoption form."
+msgstr "Créez les pages d’adoption du site web : les animaux qui attendent une famille, leur page et le formulaire d’adoption."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "Building block Animal of the week"
+msgstr "Bloc « Animal de la semaine »"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid "Buttons to filter the animals by species."
+msgstr "Des boutons pour filtrer les animaux par espèce."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__can_publish
+msgid "Can Publish"
+msgstr "Peut publier"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_plume
+msgid "Canary"
+msgstr "Canari"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"Cards styled by the SCSS file, declared in the assets of the website, and an"
+" <i>Adopt</i> menu on the website."
+msgstr "Des cartes stylées par le fichier SCSS, déclaré dans les assets du site web, et un menu <i>Adopt</i> sur le site."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_animal__species__cat
+msgid "Cat"
+msgstr "Chat"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_coco
+msgid "Cockatiel"
+msgstr "Calopsitte"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_coco
+msgid "Coco whistles a few tunes and loves company."
+msgstr "Coco siffle quelques airs et adore la compagnie."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__create_uid
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__create_date
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_max
+msgid "Currently at the vet: back on the website very soon."
+msgstr "Actuellement chez le vétérinaire : bientôt de retour sur le site."
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_adoption_request_view_list
+msgid "Date"
+msgstr "Date"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__description
+msgid "Description"
+msgstr "Description"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__display_name
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__display_name
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr "Nom d’affichage"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_animal__species__dog
+msgid "Dog"
+msgstr "Chien"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_pompon
+msgid "Dwarf lop"
+msgstr "Bélier nain"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"Each adoptable animal has its own page, at the URL "
+"<code>animal.website_url</code>, e.g. <code>/adopt/rex-6</code>."
+msgstr "Chaque animal adoptable a sa propre page, à l’URL <code>animal.website_url</code>, par exemple <code>/adopt/rex-6</code>."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_minou
+msgid "European shorthair"
+msgstr "Européen à poil court"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_animal__sex__female
+msgid "Female"
+msgstr "Femelle"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "Filter by species"
+msgstr "Filtre par espèce"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_bella
+msgid "Full of energy and always happy: Bella is looking for a sporty family."
+msgstr "Pleine d’énergie et toujours joyeuse : Bella cherche une famille sportive."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_rex
+msgid "German shepherd"
+msgstr "Berger allemand"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_nala
+msgid "Golden retriever"
+msgstr "Golden retriever"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__id
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__id
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_trivia_challenge__id
+msgid "ID"
+msgstr "ID"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__is_published
+msgid "Is Published"
+msgstr "Est publié"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_filou
+msgid "Jack Russell"
+msgstr "Jack Russell"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_ombre
+msgid "Just arrived at the shelter: still in quarantine."
+msgstr "Tout juste arrivé au refuge : encore en quarantaine."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_bella
+msgid "Labrador"
+msgstr "Labrador"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__write_uid
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__write_date
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_noisette
+msgid "Lionhead"
+msgstr "Tête de lion"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_caramel
+msgid "Maine Coon"
+msgstr "Maine Coon"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_animal__sex__male
+msgid "Male"
+msgstr "Mâle"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__message
+msgid "Message"
+msgstr "Message"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_adoption_request_view_form
+msgid "Message of the applicant"
+msgstr "Message du demandeur"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_adoption_request__state__new
+msgid "New"
+msgstr "Nouvelle"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"No visitor has asked to adopt an animal yet: open /adopt in a private window"
+" and send a request."
+msgstr "Aucun visiteur n’a encore demandé à adopter un animal : ouvrez /adopt dans une fenêtre de navigation privée et envoyez une demande."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_search
+msgid "Published"
+msgstr "Publié"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__published_date
+msgid "Published date"
+msgstr "Date de publication"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_animal__species__rabbit
+msgid "Rabbit"
+msgstr "Lapin"
+
+#. module: trivia_animal_shelter
+#: model:ir.module.module,shortdesc:base.module_trivia_animal_shelter
+#: model:ir.ui.menu,name:trivia_animal_shelter.menu_shelter_root
+msgid "Refuge Les 4 Pattes"
+msgstr "Refuge Les 4 Pattes"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_adoption_request_view_form
+msgid "Refuse"
+msgstr "Refuser"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields.selection,name:trivia_animal_shelter.selection__shelter_adoption_request__state__refused
+msgid "Refused"
+msgstr "Refusée"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__request_count
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_form
+msgid "Requests"
+msgstr "Demandes"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.adoption_thanks
+msgid "See the other animals"
+msgstr "Voir les autres animaux"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__sex
+msgid "Sex"
+msgstr "Sexe"
+
+#. module: trivia_animal_shelter
+#: model:ir.model,name:trivia_animal_shelter.model_shelter_animal
+msgid "Shelter Animal"
+msgstr "Animal du refuge"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_noisette
+msgid "Shy at first, very sweet once she trusts you."
+msgstr "Timide au début, très douce une fois en confiance."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,breed:trivia_animal_shelter.animal_luna
+msgid "Siamese"
+msgstr "Siamois"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_filou
+msgid "Small but brave, Filou would be perfect in a flat with a nearby park."
+msgstr "Petit mais courageux, Filou serait parfait dans un appartement près d’un parc."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__species
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_search
+msgid "Species"
+msgstr "Espèce"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__species_emoji
+msgid "Species Emoji"
+msgstr "Emoji de l’espèce"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_adoption_request__state
+msgid "Status"
+msgstr "Statut"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_nala
+msgid "Sweet and calm, Nala has been adopted by a family in Esch."
+msgstr "Douce et calme, Nala a été adoptée par une famille d’Esch."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_luna
+msgid "Talkative and affectionate, Luna found her family last week."
+msgstr "Bavarde et affectueuse, Luna a trouvé sa famille la semaine dernière."
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_form
+msgid "Tell the visitors about this animal..."
+msgstr "Présentez cet animal aux visiteurs..."
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.adoption_thanks
+msgid "Thank you"
+msgstr "Merci"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"The animal shelter Les 4 Pattes takes care of 15 cats, dogs, rabbits and "
+"birds. Ten of them are waiting for a family, but nobody knows it: the "
+"shelter has no adoption page on its website yet."
+msgstr "Le refuge Les 4 Pattes s’occupe de 15 chats, chiens, lapins et oiseaux. Dix d’entre eux attendent une famille, mais personne ne le sait : le refuge n’a pas encore de page d’adoption sur son site web."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The card does not show the %(info)s of the animal."
+msgstr "La carte n’affiche pas l’information « %(info)s » de l’animal."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The card must link to the page of the animal (animal.website_url)."
+msgstr "La carte doit avoir un lien vers la page de l’animal (animal.website_url)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The card of an animal cannot be displayed: %(error)s"
+msgstr "La carte d’un animal ne peut pas être affichée : %(error)s"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The certificate cannot be printed from a request: add it to the Print menu "
+"(binding_model_id)."
+msgstr "Le certificat ne peut pas être imprimé depuis une demande : ajoutez-le au menu Imprimer (binding_model_id)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The certificate must show the name of the applicant and the name of the "
+"animal."
+msgstr "Le certificat doit afficher le nom du demandeur et le nom de l’animal."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The form has no CSRF token: <input type=\"hidden\" name=\"csrf_token\" "
+"t-att-value=\"request.csrf_token()\"/>"
+msgstr "Le formulaire n’a pas de jeton CSRF : <input type=\"hidden\" name=\"csrf_token\" t-att-value=\"request.csrf_token()\"/>"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The form has no field %(field)s."
+msgstr "Le formulaire n’a pas de champ %(field)s."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The form must be posted to the URL of the animal followed by /request."
+msgstr "Le formulaire doit être envoyé à l’URL de l’animal suivie de /request."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,help:trivia_animal_shelter.field_shelter_animal__website_absolute_url
+msgid "The full absolute URL to access the document through the website."
+msgstr "L’URL absolue complète pour accéder au document via le site web."
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,help:trivia_animal_shelter.field_shelter_animal__website_url
+msgid "The full relative URL to access the document through the website."
+msgstr "L’URL relative complète pour accéder au document via le site web."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The grid must be responsive: use columns with breakpoints, e.g. col-12 col-"
+"md-6 col-lg-4."
+msgstr "La grille doit être responsive : utilisez des colonnes avec des points de rupture, par exemple col-12 col-md-6 col-lg-4."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The grid of the animals must be a Bootstrap row."
+msgstr "La grille des animaux doit être une row Bootstrap."
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"The method <code>_get_adoptable_animals()</code>: the business logic of the "
+"pages."
+msgstr "La méthode <code>_get_adoptable_animals()</code> : la logique métier des pages."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The page /adopt has no button to filter the species (?species=...)."
+msgstr "La page /adopt n’a pas de bouton pour filtrer les espèces (?species=...)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The page /adopt must call the template %(template)s for each animal "
+"(t-foreach and t-call)."
+msgstr "La page /adopt doit appeler le template %(template)s pour chaque animal (t-foreach et t-call)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The page of an animal does not show its %(field)s (animal.%(field)s)."
+msgstr "La page d’un animal n’affiche pas son champ %(field)s (animal.%(field)s)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The page of an animal has no form posted with method=\"post\" (mission 4)."
+msgstr "La page d’un animal n’a pas de formulaire envoyé avec method=\"post\" (mission 4)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The request must keep the name, email, phone and message of the form."
+msgstr "La demande doit garder le nom, l’e-mail, le téléphone et le message du formulaire."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The root element of the card must have the attribute data-animal-id (t-att-"
+"data-animal-id=\"animal.id\")."
+msgstr "L’élément racine de la carte doit avoir l’attribut data-animal-id (t-att-data-animal-id=\"animal.id\")."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The root element of the card must have the classes card and o_shelter_card."
+msgstr "L’élément racine de la carte doit avoir les classes card et o_shelter_card."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The route %(route)s must be a page of the website (website=True)."
+msgstr "La route %(route)s doit être une page du site web (website=True)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The route %(route)s must be public (auth='public')."
+msgstr "La route %(route)s doit être publique (auth='public')."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The route %(route)s must only accept the POST method (methods=['POST'])."
+msgstr "La route %(route)s doit accepter uniquement la méthode POST (methods=['POST'])."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The style of the module does not style the cards of the animals "
+"(.o_shelter_card)."
+msgstr "Le style du module ne stylise pas les cartes des animaux (.o_shelter_card)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"The style of the module is not in the assets of the website, "
+"web.assets_frontend (mission 5)."
+msgstr "Le style du module n’est pas dans les assets du site web, web.assets_frontend (mission 5)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The template %(template)s is missing (mission %(mission)s)."
+msgstr "Le template %(template)s n’existe pas (mission %(mission)s)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The website editor has no building block of the module (t-snippet)."
+msgstr "L’éditeur du site web n’a aucun bloc du module (t-snippet)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "The website has no menu opening /adopt (mission 5)."
+msgstr "Le site web n’a pas de menu qui ouvre /adopt (mission 5)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "There is no PDF report on the adoption requests (mission 6)."
+msgstr "Il n’y a pas de rapport PDF sur les demandes d’adoption (mission 6)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "There is no route %(route)s (mission %(mission)s)."
+msgstr "Il n’y a pas de route %(route)s (mission %(mission)s)."
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.animal_list
+msgid "These animals of the Refuge Les 4 Pattes are waiting for a family."
+msgstr "Ces animaux du Refuge Les 4 Pattes attendent une famille."
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_plume
+msgid "Too young to leave the shelter for now."
+msgstr "Trop jeune pour quitter le refuge pour l’instant."
+
+#. module: trivia_animal_shelter
+#: model:ir.module.module,summary:base.module_trivia_animal_shelter
+msgid "Trivi'Hackathon challenge: the adoption website of an animal shelter"
+msgstr "Challenge du Trivi'Hackathon : le site d’adoption d’un refuge pour animaux"
+
+#. module: trivia_animal_shelter
+#: model:ir.model,name:trivia_animal_shelter.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr "Challenge Trivia"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__website_published
+msgid "Visible on current website"
+msgstr "Visible sur le site web actuel"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_search
+msgid "Waiting for a family"
+msgstr "En attente d’une famille"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__website_absolute_url
+msgid "Website Absolute URL"
+msgstr "URL absolue du site web"
+
+#. module: trivia_animal_shelter
+#: model:ir.model.fields,field_description:trivia_animal_shelter.field_shelter_animal__website_url
+msgid "Website URL"
+msgstr "URL du site web"
+
+#. module: trivia_animal_shelter
+#: model:trivia.challenge,topic:trivia_animal_shelter.challenge_shelter
+msgid "Website: controllers, QWeb, Bootstrap, SCSS, PDF"
+msgstr "Site web : contrôleurs, QWeb, Bootstrap, SCSS, PDF"
+
+#. module: trivia_animal_shelter
+#: model:shelter.animal,description:trivia_animal_shelter.animal_pixel
+msgid ""
+"Young, curious and very playful: Pixel needs a family with time to play."
+msgstr "Jeune, curieux et très joueur : Pixel a besoin d’une famille qui a du temps pour jouer."
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid "Your missions"
+msgstr "Vos missions"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.adoption_thanks
+msgid "Your request to adopt"
+msgstr "Votre demande d’adoption de"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "_create_from_website() is not implemented yet (mission 4)."
+msgstr "_create_from_website() n’est pas encore implémentée (mission 4)."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "_create_from_website() must return the new request."
+msgstr "_create_from_website() doit renvoyer la nouvelle demande."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "_get_adoptable_animals() must return the animals ordered by name."
+msgstr "_get_adoptable_animals() doit renvoyer les animaux triés par nom."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"_get_adoptable_animals() must return the published animals which are not "
+"adopted yet."
+msgstr "_get_adoptable_animals() doit renvoyer les animaux publiés qui ne sont pas encore adoptés."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid ""
+"_get_adoptable_animals(species='cat') must only return the adoptable cats."
+msgstr "_get_adoptable_animals(species='cat') doit renvoyer uniquement les chats adoptables."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "age"
+msgstr "âge"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "already adopted"
+msgstr "déjà adopté"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/shelter_animal.py:0
+msgid "animal_id"
+msgstr "animal_id"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "breed"
+msgstr "race"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.shelter_animal_view_form
+msgid "e.g. Rex"
+msgstr "ex. Rex"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "emoji"
+msgstr "emoji"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.adoption_thanks
+msgid ""
+"has been sent to the shelter.\n"
+"                        We will contact you very soon."
+msgstr ""
+"a été envoyée au refuge.\n"
+"                        Nous vous contacterons très bientôt."
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "name"
+msgstr "nom"
+
+#. module: trivia_animal_shelter
+#. odoo-python
+#: code:addons/trivia_animal_shelter/models/trivia_challenge.py:0
+msgid "not published"
+msgstr "non publié"
+
+#. module: trivia_animal_shelter
+#: model_terms:ir.ui.view,arch_db:trivia_animal_shelter.animal_detail
+msgid "← All the animals"
+msgstr "← Tous les animaux"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"⭐ Bonus <small class=\"text-muted fw-normal\">optional, one star "
+"each</small>"
+msgstr "⭐ Bonus <small class=\"text-muted fw-normal\">facultatif, une étoile chacun</small>"
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"💡 In Odoo 20, the field <code>report_file</code> no longer exists: with it, "
+"the installation fails."
+msgstr "💡 En Odoo 20, le champ <code>report_file</code> n’existe plus : avec lui, l’installation échoue."
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"💡 Keep the controllers thin: the checker tests the methods of the models "
+"directly."
+msgstr "💡 Gardez les contrôleurs minces : le checker teste directement les méthodes des modèles."
+
+#. module: trivia_animal_shelter
+#: model_terms:trivia.challenge,description:trivia_animal_shelter.challenge_shelter
+msgid ""
+"💡 Logged in, you are not a visitor: open the website in a private window."
+msgstr "💡 Connecté, vous n’êtes pas un visiteur : ouvrez le site dans une fenêtre de navigation privée."

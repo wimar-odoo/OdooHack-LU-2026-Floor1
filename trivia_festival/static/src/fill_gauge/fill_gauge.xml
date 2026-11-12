@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="trivia_festival.FillGauge">
+        <!-- TODO 1: a Bootstrap progress bar (div.progress, then div.progress-bar with the color and the width),
+             and the text "taken / max (percentage %)" -->
+        <span t-out="this.value"/>
+    </t>
+
+</templates>

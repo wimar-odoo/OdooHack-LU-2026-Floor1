@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="shelter_adoption_request_view_list" model="ir.ui.view">
+        <field name="name">shelter.adoption.request.list</field>
+        <field name="model">shelter.adoption.request</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="create_date" string="Date"/>
+                <field name="animal_id"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'new'"
+                       decoration-success="state == 'accepted'"
+                       decoration-danger="state == 'refused'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="shelter_adoption_request_view_form" model="ir.ui.view">
+        <field name="name">shelter.adoption.request.form</field>
+        <field name="model">shelter.adoption.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_accept" type="object" string="Accept" class="btn-primary" invisible="state != 'new'"/>
+                    <button name="action_refuse" type="object" string="Refuse" invisible="state != 'new'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="animal_id"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="email" widget="email"/>
+                            <field name="phone" widget="phone"/>
+                        </group>
+                    </group>
+                    <field name="message" placeholder="Message of the applicant"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="shelter_adoption_request_action" model="ir.actions.act_window">
+        <field name="name">Adoption Requests</field>
+        <field name="res_model">shelter.adoption.request</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="trivia_festival.Kiosk">
+        <div class="o_festival_kiosk h-100 overflow-auto bg-view">
+            <div class="container py-4">
+                <h1>🎪 <t t-out="this.state.event.name"/></h1>
+                <p class="lead"><t t-out="this.state.event.attendees"/> attendees have already arrived.</p>
+                <!-- ⭐ BONUS: a search box to filter the registrations by name -->
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Ticket</th>
+                            <th/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="this.state.registrations" t-as="registration" t-key="registration.id">
+                            <td t-out="registration.name"/>
+                            <td t-out="registration.ticket"/>
+                            <td class="text-end">
+                                <!-- TODO 2: a badge "Present" for the people who already arrived (registration.attended),
+                                     else a "Check in" button which calls this.checkIn(registration) -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </t>
+
+</templates>

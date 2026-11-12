@@ -1,0 +1,353 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_festival
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 14:46+0000\n"
+"PO-Revision-Date: 2026-10-30 14:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_festival
+#: model:ir.module.module,description:base.module_trivia_festival
+msgid ""
+"\n"
+"Festival Solidaire\n"
+"==================\n"
+"Challenge of the Trivi'Hackathon (JavaScript: OWL components, field widget, client action, services).\n"
+"\n"
+"The Festival Solidaire opens its doors today. Complete this module to show how full the festival is, and to give\n"
+"the volunteers of the welcome desk a simple screen to check the attendees in.\n"
+msgstr ""
+"\n"
+"Festival Solidaire\n"
+"==================\n"
+"Challenge du Trivi'Hackathon (JavaScript : composants OWL, widget de champ, action client, services).\n"
+"\n"
+"Le Festival Solidaire ouvre ses portes aujourd’hui. Complétez ce module pour montrer le remplissage du festival, et pour\n"
+"donner aux bénévoles de l’accueil un écran simple pour enregistrer l’arrivée des participants.\n"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid ""
+"%(count)s attendee(s) checked in from the welcome desk: check %(expected)s "
+"attendees in from your screen."
+msgstr "%(count)s participant(s) enregistré(s) à l’accueil : enregistrez l’arrivée de %(expected)s participants depuis votre écran."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"1 · The fill gauge <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">static/src/fill_gauge/</span> <span class=\"badge text-bg-"
+"light fw-normal font-monospace\">views/event_event_views.xml</span>"
+msgstr "1 · La jauge de remplissage <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">static/src/fill_gauge/</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/event_event_views.xml</span>"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "1. Fill gauge on the form of the event"
+msgstr "1. Jauge de remplissage sur la fiche de l’événement"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "1. Widget festival_fill_gauge"
+msgstr "1. Widget festival_fill_gauge"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"2 · The welcome desk <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">static/src/kiosk/</span> <span class=\"badge text-bg-light "
+"fw-normal font-monospace\">views/menus.xml</span>"
+msgstr "2 · L’accueil <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">static/src/kiosk/</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/menus.xml</span>"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "2. Client action of the welcome desk"
+msgstr "2. Action client de l’accueil"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"3 · Open the doors! <span class=\"badge text-bg-light fw-normal "
+"ms-1\">Welcome Desk</span>"
+msgstr "3 · Ouvrez les portes ! <span class=\"badge text-bg-light fw-normal ms-1\">Welcome Desk</span>"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "3. Attendees checked in from the welcome desk"
+msgstr "3. Participants enregistrés à l’accueil"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"<b>Development challenge: JavaScript.</b> The server side is ready: write "
+"the OWL components of the module <code>trivia_festival</code>. The TODOs of "
+"the code are numbered like the missions below, and give the details."
+msgstr "<b>Challenge de développement : JavaScript.</b> Le côté serveur est prêt : écrivez les composants OWL du module <code>trivia_festival</code>. Les TODO du code sont numérotés comme les missions ci-dessous, et en donnent le détail."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"A client action <code>festival_kiosk</code> which lists the registrations, "
+"with a <i>Check in</i> button that calls the server, and a <i>Welcome "
+"Desk</i> menu."
+msgstr "Une action client <code>festival_kiosk</code> qui liste les inscriptions, avec un bouton <i>Check in</i> qui appelle le serveur, et un menu <i>Welcome Desk</i>."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid "A counter of the attendees in the systray, the icons at the top right."
+msgstr "Un compteur des participants présents dans le systray, les icônes en haut à droite."
+
+#. module: trivia_festival
+#: model_terms:event.event,description:trivia_festival.event_festival
+msgid ""
+"A day of music, food and solidarity: all the proceeds go to the projects of "
+"the association."
+msgstr "Une journée de musique, de cuisine et de solidarité : tous les bénéfices vont aux projets de l’association."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"A field widget <code>festival_fill_gauge</code> which shows the seats taken "
+"as a progress bar, green, orange then red, used on the form of the event."
+msgstr "Un widget de champ <code>festival_fill_gauge</code> qui affiche les places prises en barre de progression, verte, orange puis rouge, utilisé sur le formulaire de l’événement."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"A reload of the page is enough after a change of JavaScript or of an OWL "
+"template; a new record (client action, menu) needs an update of the modules "
+"(<code>make update</code>). Then click <i>Check</i>: the tab <i>Checker "
+"Report</i> lists what is still missing."
+msgstr "Recharger la page suffit après une modification du JavaScript ou d’un gabarit OWL ; un nouvel enregistrement (action client, menu) demande une mise à jour des modules (<code>make update</code>). Cliquez ensuite sur <i>Vérifier</i> : l’onglet <i>Rapport du checker</i> liste ce qui manque encore."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid "A search box in the welcome desk."
+msgstr "Un champ de recherche dans l’accueil."
+
+#. module: trivia_festival
+#: model:ir.model.fields.selection,name:trivia_festival.selection__event_registration__checkin_source__backend
+msgid "Backend"
+msgstr "Back-office"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid "Check 3 attendees in from your welcome desk."
+msgstr "Enregistrez l’arrivée de 3 participants depuis votre écran d’accueil."
+
+#. module: trivia_festival
+#: model:ir.model.fields,field_description:trivia_festival.field_event_registration__checkin_source
+msgid "Checked In From"
+msgstr "Arrivée enregistrée depuis"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "Counter of the attendees in the systray"
+msgstr "Compteur des participants dans le systray"
+
+#. module: trivia_festival
+#: model:ir.model.fields,field_description:trivia_festival.field_event_registration__display_name
+#: model:ir.model.fields,field_description:trivia_festival.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr "Nom d’affichage"
+
+#. module: trivia_festival
+#: model:ir.model,name:trivia_festival.model_event_registration
+msgid "Event Registration"
+msgstr "Inscription à l’événement"
+
+#. module: trivia_festival
+#: model:ir.actions.act_window,name:trivia_festival.festival_event_action
+#: model:ir.ui.menu,name:trivia_festival.menu_festival_event
+msgid "Festival"
+msgstr "Festival"
+
+#. module: trivia_festival
+#: model:event.event,name:trivia_festival.event_festival
+#: model:ir.module.module,shortdesc:base.module_trivia_festival
+#: model:ir.ui.menu,name:trivia_festival.menu_festival_root
+msgid "Festival Solidaire"
+msgstr "Festival Solidaire"
+
+#. module: trivia_festival
+#: model_terms:ir.ui.view,arch_db:trivia_festival.view_event_form_inherit_festival
+msgid "Fill Rate"
+msgstr "Remplissage"
+
+#. module: trivia_festival
+#: model:ir.model.fields,field_description:trivia_festival.field_event_registration__id
+#: model:ir.model.fields,field_description:trivia_festival.field_trivia_challenge__id
+msgid "ID"
+msgstr "ID"
+
+#. module: trivia_festival
+#: model:trivia.challenge,topic:trivia_festival.challenge_festival
+msgid "JavaScript: OWL components, field widget, client action"
+msgstr "JavaScript : composants OWL, widget de champ, action client"
+
+#. module: trivia_festival
+#. odoo-javascript
+#: code:addons/trivia_festival/static/src/kiosk/kiosk.xml:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "No JavaScript file of the module adds a component to the systray."
+msgstr "Aucun fichier JavaScript du module n’ajoute de composant au systray."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid ""
+"No JavaScript file of the module adds festival_fill_gauge to the registry of"
+" the fields (mission 1)."
+msgstr "Aucun fichier JavaScript du module n’ajoute festival_fill_gauge au registre des champs (mission 1)."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid ""
+"No JavaScript file of the module adds festival_kiosk to the registry of the "
+"actions (mission 2)."
+msgstr "Aucun fichier JavaScript du module n’ajoute festival_kiosk au registre des actions (mission 2)."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "No menu opens the welcome desk (mission 2)."
+msgstr "Aucun menu n’ouvre l’accueil (mission 2)."
+
+#. module: trivia_festival
+#: model:ir.actions.act_window,name:trivia_festival.festival_registration_action
+#: model:ir.ui.menu,name:trivia_festival.menu_festival_registration
+msgid "Registrations"
+msgstr "Inscriptions"
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "Search box in the welcome desk"
+msgstr "Champ de recherche dans l’accueil"
+
+#. module: trivia_festival
+#: model:event.event.ticket,name:trivia_festival.ticket_solidaire
+msgid "Solidarity"
+msgstr "Solidaire"
+
+#. module: trivia_festival
+#: model:event.event.ticket,name:trivia_festival.ticket_soutien
+msgid "Supporter"
+msgstr "Soutien"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"The Festival Solidaire opens its doors today: 120 people registered for 150 "
+"seats. The organisers want to see at a glance how full the festival is, and "
+"the volunteers of the entrance need a simple screen to welcome the "
+"attendees."
+msgstr "Le Festival Solidaire ouvre ses portes aujourd’hui : 120 personnes inscrites pour 150 places. Les organisateurs veulent voir d’un coup d’œil le remplissage du festival, et les bénévoles de l’entrée ont besoin d’un écran simple pour accueillir les participants."
+
+#. module: trivia_festival
+#: model:trivia.challenge,name:trivia_festival.challenge_festival
+msgid "The Welcome Desk"
+msgstr "L’accueil"
+
+#. module: trivia_festival
+#: model:trivia.challenge,summary:trivia_festival.challenge_festival
+msgid ""
+"The festival opens today: show how full it is, and give the volunteers a "
+"welcome desk to check the attendees in."
+msgstr "Le festival ouvre aujourd’hui : montrez son remplissage, et donnez aux bénévoles un écran d’accueil pour enregistrer les arrivées."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid ""
+"The form of the events does not display seats_taken with the widget "
+"festival_fill_gauge."
+msgstr "La fiche des événements n’affiche pas seats_taken avec le widget festival_fill_gauge."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid ""
+"The template %(template)s of the component does not exist in the XML files "
+"of the module."
+msgstr "Le template %(template)s du composant n’existe pas dans les fichiers XML du module."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "The welcome desk has no search box (an input with t-model)."
+msgstr "L’accueil n’a pas de champ de recherche (un input avec t-model)."
+
+#. module: trivia_festival
+#. odoo-python
+#: code:addons/trivia_festival/models/trivia_challenge.py:0
+msgid "There is no client action with the tag festival_kiosk (mission 2)."
+msgstr "Il n’y a pas d’action client avec le tag festival_kiosk (mission 2)."
+
+#. module: trivia_festival
+#. odoo-javascript
+#: code:addons/trivia_festival/static/src/kiosk/kiosk.xml:0
+msgid "Ticket"
+msgstr "Billet"
+
+#. module: trivia_festival
+#: model:ir.module.module,summary:base.module_trivia_festival
+msgid ""
+"Trivi'Hackathon challenge: the welcome desk of a solidarity festival, in "
+"JavaScript"
+msgstr "Challenge du Trivi'Hackathon : l’accueil d’un festival solidaire, en JavaScript"
+
+#. module: trivia_festival
+#: model:ir.model,name:trivia_festival.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr "Challenge Trivia"
+
+#. module: trivia_festival
+#: model:ir.model.fields.selection,name:trivia_festival.selection__event_registration__checkin_source__kiosk
+msgid "Welcome Desk"
+msgstr "Accueil"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid "Your missions"
+msgstr "Vos missions"
+
+#. module: trivia_festival
+#. odoo-javascript
+#: code:addons/trivia_festival/static/src/kiosk/kiosk.xml:0
+msgid "attendees have already arrived."
+msgstr "participants sont déjà arrivés."
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"⭐ Bonus <small class=\"text-muted fw-normal\">optional, one star "
+"each</small>"
+msgstr "⭐ Bonus <small class=\"text-muted fw-normal\">facultatif, une étoile chacun</small>"
+
+#. module: trivia_festival
+#: model_terms:trivia.challenge,description:trivia_festival.challenge_festival
+msgid ""
+"💡 Odoo 20 uses OWL 3, while the documentation and the AI often show OWL 2: "
+"read the cheat sheet at the top of <code>fill_gauge.js</code>."
+msgstr "💡 Odoo 20 utilise OWL 3, alors que la documentation et l’IA montrent souvent OWL 2 : lisez l’antisèche en haut de <code>fill_gauge.js</code>."

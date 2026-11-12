@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_reuse_center" model="trivia.challenge">
+        <field name="sequence">20</field>
+        <field name="code">reuse_center</field>
+        <field name="name">Second Life</field>
+        <field name="organization">La Ressourcerie</field>
+        <field name="category">functional</field>
+        <field name="topic">Inventory, traceability, pricelists, Point of Sale</field>
+        <field name="difficulty">easy</field>
+        <field name="wedge_color">green</field>
+        <field name="summary">Put the donated objects for sale, open the till with a social pricelist… and find a chest of drawers that vanished.</field>
+        <field name="description" type="html">
+            <p class="lead">La Ressourcerie collects donated objects, repairs them and sells them at low prices in its charity shop. Help its volunteers run their stock and their till with Odoo… and track down a chest of drawers that has gone missing.</p>
+            <div class="alert alert-info">
+                <p class="mb-1"><b>Functional challenge: not a single line of code.</b> Everything happens in the interface of Odoo, in the <i>Inventory</i> and <i>Point of Sale</i> apps.</p>
+                <p class="mb-0">The names to create are in <b>bold</b>: accents and capital letters do not matter. Click <i>Check</i> whenever you like: the tab <i>Checker Report</i> lists what is still missing.</p>
+            </div>
+            <h5 class="mt-4 mb-3">Your missions</h5>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">1 · The articles <span class="badge text-bg-light fw-normal ms-1">Inventory</span></h6>
+                <p class="mb-0">Create 8 articles for sale in three product categories: <b>Clothing</b>, <b>Furniture</b> and <b>Appliances</b>, with at least one article in each. Each article has a sales price, its stock is tracked, and it can be sold at the till.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">2 · The social pricelist <span class="badge text-bg-light fw-normal ms-1">Point of Sale</span></h6>
+                <p class="mb-1">People on a tight budget pay half price. Create a pricelist <b>Social Rate</b> which gives 50 % off, and make it available in the shop.</p>
+                <p class="mb-0 small text-muted">💡 The pricelists are an option to activate in the settings of the Point of Sale. These settings apply to a shop: create it first.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">3 · A donation <span class="badge text-bg-light fw-normal ms-1">Inventory</span></h6>
+                <p class="mb-0">A donor who wishes to remain anonymous drops off a few objects. Record their receipt from a new contact <b>Anonymous Donor</b>, and validate it to bring the objects into stock.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">4 · The till <span class="badge text-bg-light fw-normal ms-1">Point of Sale</span></h6>
+                <p class="mb-1">Open a session of the till in your shop, and make three paid sales, at least one of them at the <b>Social Rate</b>.</p>
+                <p class="mb-0 small text-muted">💡 The Social Rate does not show up at the till? Reload the page of the till.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">5 · Closing time <span class="badge text-bg-light fw-normal ms-1">Point of Sale</span></h6>
+                <p class="mb-0">The shop closes: close the session of the till.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">6 · The lost chest of drawers <span class="badge text-bg-light fw-normal ms-1">Inventory</span></h6>
+                <p class="mb-1">Josiane Feller brought back the Art Deco chest of drawers she had bought, because a drawer was broken… and nobody has seen it since. Find it, create an internal location <b>Repair Workshop</b>, and move <em>this very</em> chest of drawers there.</p>
+                <p class="mb-0 small text-muted">💡 The shop has several identical chests of drawers: only their serial number tells them apart.</p>
+            </div>
+            <h5 class="mt-4 mb-3">⭐ Bonus <small class="text-muted fw-normal">optional, one star each</small></h5>
+            <ul>
+                <li>An appealing sales description on the 8 articles.</li>
+                <li>The <b>Social Rate</b> limited to a single product category.</li>
+                <li>A customer on at least one ticket of the till.</li>
+                <li>The analysis of the sales by product category, saved in your favorites.</li>
+            </ul>
+        </field>
+    </record>
+</odoo>

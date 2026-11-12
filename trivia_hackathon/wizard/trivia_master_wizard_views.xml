@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="trivia_master_wizard_view_form" model="ir.ui.view">
+        <field name="name">trivia.master.wizard.form</field>
+        <field name="model">trivia.master.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="from_check" invisible="1"/>
+                <div class="alert alert-info" role="status" invisible="not from_check">
+                    Your result is saved in this database. To send it to the master database of the organisers, enter
+                    the name of your team and its PIN: they are on your team sheet.
+                </div>
+                <p class="text-muted">
+                    Each check of a challenge sends its result to the master database of the organisers, which keeps the
+                    score of every team. Enter the name of your team and its PIN, given by the organisers.
+                </p>
+                <p class="text-muted">
+                    The PIN is not saved in the database, only in your session: enter it again after you log in again.
+                    Keep it secret!
+                </p>
+                <group>
+                    <field name="url" placeholder="https://..." widget="url" required="not from_check"/>
+                    <field name="team" placeholder="e.g. Team03" required="not from_check"/>
+                    <field name="pin" password="True" required="not from_check"/>
+                </group>
+                <footer>
+                    <button name="action_save" type="object" string="Connect" class="btn-primary" data-hotkey="q"/>
+                    <button name="action_skip" type="object" string="Later" invisible="not from_check" data-hotkey="x"/>
+                    <button special="cancel" string="Cancel" invisible="from_check" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="trivia_master_wizard_action" model="ir.actions.act_window">
+        <field name="name">Master Connection</field>
+        <field name="res_model">trivia.master.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

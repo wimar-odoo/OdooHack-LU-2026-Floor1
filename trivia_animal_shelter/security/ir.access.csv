@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+access_shelter_animal_user,shelter.animal user,shelter.animal,base.group_user,crud,
+access_shelter_animal_public,shelter.animal public,shelter.animal,base.group_public,r,"[('is_published', '=', True)]"
+access_shelter_animal_portal,shelter.animal portal,shelter.animal,base.group_portal,r,"[('is_published', '=', True)]"
+access_shelter_adoption_request_user,shelter.adoption.request user,shelter.adoption.request,base.group_user,crud,

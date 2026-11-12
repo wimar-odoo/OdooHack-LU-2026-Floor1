@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="run_edition_view_list" model="ir.ui.view">
+        <field name="name">run.edition.list</field>
+        <field name="model">run.edition</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="runner_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="run_edition_view_form" model="ir.ui.view">
+        <field name="name">run.edition.form</field>
+        <field name="model">run.edition</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <field name="year" options="{'enable_formatting': false}"/>
+                        <field name="date"/>
+                        <field name="runner_count"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="run_edition_action" model="ir.actions.act_window">
+        <field name="name">Editions</field>
+        <field name="res_model">run.edition</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

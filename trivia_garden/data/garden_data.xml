@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="site_bonnevoie" model="garden.site">
+        <field name="name">Bonnevoie</field>
+        <field name="city">Luxembourg</field>
+    </record>
+    <record id="plot_b01" model="garden.plot">
+        <field name="name">B-01</field>
+        <field name="site_id" ref="site_bonnevoie"/>
+        <field name="area">24</field>
+    </record>
+    <record id="plot_b02" model="garden.plot">
+        <field name="name">B-02</field>
+        <field name="site_id" ref="site_bonnevoie"/>
+        <field name="area">30</field>
+    </record>
+    <record id="plot_b03" model="garden.plot">
+        <field name="name">B-03</field>
+        <field name="site_id" ref="site_bonnevoie"/>
+        <field name="area">30</field>
+    </record>
+    <record id="plot_b04" model="garden.plot">
+        <field name="name">B-04</field>
+        <field name="site_id" ref="site_bonnevoie"/>
+        <field name="area">36</field>
+    </record>
+    <record id="plot_b05" model="garden.plot">
+        <field name="name">B-05</field>
+        <field name="site_id" ref="site_bonnevoie"/>
+        <field name="area">20</field>
+    </record>
+    <record id="plot_b06" model="garden.plot">
+        <field name="name">B-06</field>
+        <field name="site_id" ref="site_bonnevoie"/>
+        <field name="area">40</field>
+    </record>
+    <record id="site_brill" model="garden.site">
+        <field name="name">Brill</field>
+        <field name="city">Esch-sur-Alzette</field>
+    </record>
+    <record id="plot_e01" model="garden.plot">
+        <field name="name">E-01</field>
+        <field name="site_id" ref="site_brill"/>
+        <field name="area">28</field>
+    </record>
+    <record id="plot_e02" model="garden.plot">
+        <field name="name">E-02</field>
+        <field name="site_id" ref="site_brill"/>
+        <field name="area">28</field>
+    </record>
+    <record id="plot_e03" model="garden.plot">
+        <field name="name">E-03</field>
+        <field name="site_id" ref="site_brill"/>
+        <field name="area">32</field>
+    </record>
+    <record id="plot_e04" model="garden.plot">
+        <field name="name">E-04</field>
+        <field name="site_id" ref="site_brill"/>
+        <field name="area">24</field>
+    </record>
+    <record id="plot_e05" model="garden.plot">
+        <field name="name">E-05</field>
+        <field name="site_id" ref="site_brill"/>
+        <field name="area">36</field>
+    </record>
+    <record id="plot_e06" model="garden.plot">
+        <field name="name">E-06</field>
+        <field name="site_id" ref="site_brill"/>
+        <field name="area">20</field>
+    </record>
+
+    <record id="category_member" model="res.partner.category">
+        <field name="name">Gaart fir Jiddereen</field>
+    </record>
+    <record id="member_marie_weber" model="res.partner">
+        <field name="name">Marie Weber</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">marie.weber@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_jean_schmit" model="res.partner">
+        <field name="name">Jean Schmit</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">jean.schmit@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_ana_ferreira" model="res.partner">
+        <field name="name">Ana Ferreira</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">ana.ferreira@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_luca_rossi" model="res.partner">
+        <field name="name">Luca Rossi</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">luca.rossi@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_sophie_muller" model="res.partner">
+        <field name="name">Sophie Muller</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">sophie.muller@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_tom_hoffmann" model="res.partner">
+        <field name="name">Tom Hoffmann</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">tom.hoffmann@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_claire_wagner" model="res.partner">
+        <field name="name">Claire Wagner</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">claire.wagner@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_paulo_santos" model="res.partner">
+        <field name="name">Paulo Santos</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">paulo.santos@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_lea_kremer" model="res.partner">
+        <field name="name">Léa Kremer</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">lea.kremer@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_max_thill" model="res.partner">
+        <field name="name">Max Thill</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">max.thill@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_nadia_haddad" model="res.partner">
+        <field name="name">Nadia Haddad</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">nadia.haddad@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_jeff_reuter" model="res.partner">
+        <field name="name">Jeff Reuter</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">jeff.reuter@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_ines_costa" model="res.partner">
+        <field name="name">Inês Costa</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">ines.costa@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_pierre_klein" model="res.partner">
+        <field name="name">Pierre Klein</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">pierre.klein@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_sarah_becker" model="res.partner">
+        <field name="name">Sarah Becker</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">sarah.becker@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_yves_schroeder" model="res.partner">
+        <field name="name">Yves Schroeder</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">yves.schroeder@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_emma_lux" model="res.partner">
+        <field name="name">Emma Lux</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">emma.lux@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_carlos_pereira" model="res.partner">
+        <field name="name">Carlos Pereira</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">carlos.pereira@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_julie_faber" model="res.partner">
+        <field name="name">Julie Faber</field>
+        <field name="city">Luxembourg</field>
+        <field name="email">julie.faber@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+    <record id="member_ben_meyer" model="res.partner">
+        <field name="name">Ben Meyer</field>
+        <field name="city">Esch-sur-Alzette</field>
+        <field name="email">ben.meyer@example.com</field>
+        <field name="category_id" eval="[Command.link(ref('category_member'))]"/>
+    </record>
+</odoo>

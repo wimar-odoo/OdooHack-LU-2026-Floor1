@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+access_trivia_challenge_user,trivia.challenge user,trivia.challenge,base.group_user,r,
+access_trivia_challenge_system,trivia.challenge system,trivia.challenge,base.group_system,crud,
+access_trivia_flag_wizard_user,trivia.flag.wizard user,trivia.flag.wizard,base.group_user,cru,
+access_trivia_master_wizard_user,trivia.master.wizard user,trivia.master.wizard,base.group_user,cru,

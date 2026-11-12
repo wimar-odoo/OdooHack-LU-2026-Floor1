@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    TODO 6 - The adoption certificate
+
+    A PDF report "Adoption Certificate" on the adoption requests (model shelter.adoption.request),
+    printable from the form of a request (Print menu). It shows the name of the shelter, the name of
+    the applicant, the animal (name, species, breed) and the date of the day.
+    Tip: use the layout of the company documents, web.external_layout.
+    -->
+</odoo>

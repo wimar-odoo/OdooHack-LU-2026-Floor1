@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_run_root" name="La Course du Cœur" sequence="4"
+              web_icon="trivia_charity_run,static/description/icon.png"/>
+
+    <menuitem id="menu_run_result" name="Results" parent="menu_run_root" sequence="10"
+              action="run_result_report_action"/>
+    <menuitem id="menu_run_runner" name="Runners" parent="menu_run_root" sequence="20"
+              action="run_runner_action"/>
+    <menuitem id="menu_run_edition" name="Editions" parent="menu_run_root" sequence="30"
+              action="run_edition_action"/>
+</odoo>

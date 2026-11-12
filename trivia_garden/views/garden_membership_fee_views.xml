@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    TODO 3 - The views of the fees
+
+    * a list view and a form view of the fees;
+    * in the header of the form: the state as a statusbar, and a "Mark as paid" button
+      (method action_mark_paid) only visible on draft fees;
+    * an action opening the fees, and a menu "Membership Fees" (in views/menus.xml).
+    -->
+</odoo>

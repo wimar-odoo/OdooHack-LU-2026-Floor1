@@ -1,0 +1,11 @@
+Name,Email,Phone,City,Tax ID,Related Company
+Boulangerie Kremer,contact@boulangerie-kremer.example.lu,+352 26 10 20 30,Luxembourg,LU10123441,
+Paul Kremer,paul@boulangerie-kremer.example.lu,+352 621 100 001,Luxembourg,,Boulangerie Kremer
+Anne Kremer,anne@boulangerie-kremer.example.lu,+352 621 100 002,Luxembourg,,Boulangerie Kremer
+Élise Bernard,elise.bernard@example.lu,+352 621 100 003,Esch-sur-Alzette,,
+Marc Kieffer,marc.kieffer@example.lu,+352 621 100 004,Differdange,,
+Sofia Martins,sofia.martins@example.lu,+352 621 100 005,Luxembourg,,
+Patrick Steffen,patrick.steffen@example.lu,+352 621 100 006,Dudelange,,
+Nora Wirtz,nora.wirtz@example.lu,+352 621 100 007,Ettelbruck,,
+Hugo Reding,hugo.reding@example.lu,+352 621 100 008,Luxembourg,,
+Chloé Lentz,chloe.lentz@example.lu,+352 621 100 009,Esch-sur-Alzette,,

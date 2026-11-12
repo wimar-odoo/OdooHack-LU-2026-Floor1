@@ -1,0 +1,53 @@
+# Trivi'Hackathon 2026: Odoo 20 and PostgreSQL to develop the challenges locally.
+# Odoo Community, for everyone (Odoo.sh runs Odoo Enterprise: same apps, some menus look different).
+# Usage: see PRE-REQUISITES.md.
+name: trivia-hackathon
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  odoo:
+    # pinned, so that every participant runs exactly the same build of Odoo
+    image: odoo:20.0-20261015
+    # installs the debuggers (make debug: `;`, not `&&`, so that Odoo starts even without network), then
+    # installs the trivia_* modules on the first start, updates them when they changed, then runs Odoo
+    command: ["sh", "-c", "pip install ipdb pudb --break-system-packages; sh /mnt/extra-addons/docker/start.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      # Odoo listens once the trivia_* modules are installed or updated (docker/start.sh): `make up` waits for it.
+      # A connection only, no request: the logs of Odoo don't get a line every 5 seconds.
+      test: ["CMD", "python3", "-c", "import socket; socket.create_connection(('127.0.0.1', 8069), 5)"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+      # the time to install all the modules, even on a slow computer
+      start_period: 15m
+    ports:
+      # port already used on your computer? Put ODOO_PORT=8070 in a .env file next to this one
+      - "${ODOO_PORT:-8069}:8069"
+    volumes:
+      # the repository itself is the addons path, like on Odoo.sh
+      # (z: needed by Linux hosts with SELinux, e.g. Fedora, ignored everywhere else)
+      - ./:/mnt/extra-addons:z
+      - ./docker/odoo.conf:/etc/odoo/odoo.conf:ro,z
+      - odoo-data:/var/lib/odoo
+    stdin_open: true
+    tty: true
+
+volumes:
+  db-data:
+  odoo-data:

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_garden" model="trivia.challenge">
+        <field name="sequence">30</field>
+        <field name="code">garden</field>
+        <field name="name">The Garden Fees</field>
+        <field name="organization">Gaart fir Jiddereen</field>
+        <field name="topic">Python: models, computed fields, constraints, views</field>
+        <field name="difficulty">medium</field>
+        <field name="wedge_color">yellow</field>
+        <field name="summary">Follow the membership fees of the shared gardens, and only rent the plots to the members who paid this year.</field>
+        <field name="description" type="html">
+            <p class="lead">Gaart fir Jiddereen (“a garden for everyone”) runs shared gardens in Bonnevoie (Luxembourg) and in the Brill district (Esch-sur-Alzette): 20 members, 12 plots to rent. The treasurer follows the membership fees in a spreadsheet, and some plots are rented by members who did not pay this year.</p>
+            <div class="alert alert-info">
+                <p class="mb-1"><b>Development challenge: Python and XML.</b> Complete the module <code>trivia_garden</code> so that Odoo does the job: the TODOs of the code are numbered like the missions below, and give the details.</p>
+                <p class="mb-0">After a change of Python code, or a new file, field or record, update the modules (<code>make update</code>), then click <i>Check</i>: the tab <i>Checker Report</i> lists what is still missing.</p>
+            </div>
+            <h5 class="mt-4 mb-3">Your missions</h5>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">1 · The fees <span class="badge text-bg-light fw-normal font-monospace ms-1">models/garden_membership_fee.py</span></h6>
+                <p class="mb-1">The model <code>garden.membership.fee</code> and its fields: a member pays at most one fee per year, and the method <code>action_mark_paid()</code> marks fees as paid.</p>
+                <p class="mb-0 small text-muted">💡 In Odoo 20, an SQL constraint is declared with <code>models.Constraint</code>: <code>_sql_constraints</code> no longer exists.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">2 · The access rights <span class="badge text-bg-light fw-normal font-monospace ms-1">security/ir.access.csv</span></h6>
+                <p class="mb-1">The internal users can read, create, modify and delete the fees.</p>
+                <p class="mb-0 small text-muted">💡 Odoo 20 replaces <code>ir.model.access.csv</code> by <code>ir.access.csv</code>, with other columns: look at the lines already there.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">3 · The views of the fees <span class="badge text-bg-light fw-normal font-monospace ms-1">views/garden_membership_fee_views.xml</span> <span class="badge text-bg-light fw-normal font-monospace">views/menus.xml</span></h6>
+                <p class="mb-1">A list view, a form view with the status in its header and a <i>Mark as paid</i> button only visible on the draft fees, an action and a menu.</p>
+                <p class="mb-0 small text-muted">💡 In Odoo 20, a list view is a <code>&lt;list&gt;</code> (no longer a <code>&lt;tree&gt;</code>), and <code>attrs</code> is replaced by <code>invisible="…"</code>.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">4 · The members <span class="badge text-bg-light fw-normal font-monospace ms-1">models/res_partner.py</span></h6>
+                <p class="mb-0">The fields of the members on the contacts, among which <code>last_paid_year</code>, the last year paid: stored, and always up to date.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">5 · The contact form <span class="badge text-bg-light fw-normal font-monospace ms-1">views/res_partner_views.xml</span></h6>
+                <p class="mb-0">A <i>Membership</i> page on the contact form, and a <i>Not up to date</i> filter for the members who did not pay the current year, without writing the year in the code.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">6 · The plots <span class="badge text-bg-light fw-normal font-monospace ms-1">models/garden_plot.py</span></h6>
+                <p class="mb-0">Only a member who paid the fee of the current year can rent a plot, and a member rents one plot at most.</p>
+            </div>
+            <div class="border-start border-3 ps-3 mb-3">
+                <h6 class="mb-1">7 · The data <span class="badge text-bg-light fw-normal font-monospace ms-1">__manifest__.py</span></h6>
+                <p class="mb-0">Load the fees of the members: <code>data/garden_membership_fee_data.xml</code>.</p>
+            </div>
+            <h5 class="mt-4 mb-3">⭐ Bonus <small class="text-muted fw-normal">optional, one star each</small></h5>
+            <ul>
+                <li>A <i>Fees</i> smart button on the contact form, with the number of fees of the member.</li>
+                <li>A kanban view of the plots, grouped by site.</li>
+            </ul>
+        </field>
+    </record>
+</odoo>

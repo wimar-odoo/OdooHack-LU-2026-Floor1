@@ -1,0 +1,438 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_reuse_center
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 15:21+0000\n"
+"PO-Revision-Date: 2026-10-30 15:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_reuse_center
+#: model:ir.module.module,description:base.module_trivia_reuse_center
+msgid ""
+"\n"
+"La Ressourcerie\n"
+"===============\n"
+"Functional challenge of the Trivi'Hackathon (Inventory, traceability, pricelists, Point of Sale): no code,\n"
+"everything is done in the interface of Odoo.\n"
+"\n"
+"La Ressourcerie collects donated objects, repairs them and sells them at solidarity prices.\n"
+msgstr ""
+"\n"
+"La Ressourcerie\n"
+"===============\n"
+"Challenge fonctionnel du Trivi'Hackathon (Inventaire, traçabilité, listes de prix, Point de Vente) : pas de code,\n"
+"tout se fait dans l’interface d’Odoo.\n"
+"\n"
+"La Ressourcerie collecte des objets donnés, les répare et les revend à prix solidaire.\n"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"%(count)s article(s) whose stock is tracked in the categories Clothing, "
+"Furniture and Appliances: create 8 of them (mission 1)."
+msgstr "%(count)s article(s) avec suivi du stock dans les catégories Vêtements, Meubles et Électro : créez-en 8 (mission 1)."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "%(count)s paid sale(s) at the till: make 3 sales (mission 4)."
+msgstr "%(count)s vente(s) payée(s) à la caisse : faites 3 ventes (mission 4)."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"1 · The articles <span class=\"badge text-bg-light fw-normal "
+"ms-1\">Inventory</span>"
+msgstr "1 · Les articles <span class=\"badge text-bg-light fw-normal ms-1\">Inventaire</span>"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "1. The articles"
+msgstr "1. Les articles"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"2 · The social pricelist <span class=\"badge text-bg-light fw-normal "
+"ms-1\">Point of Sale</span>"
+msgstr "2 · Le tarif social <span class=\"badge text-bg-light fw-normal ms-1\">Point de Vente</span>"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "2. The social pricelist"
+msgstr "2. Le tarif social"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"3 · A donation <span class=\"badge text-bg-light fw-normal "
+"ms-1\">Inventory</span>"
+msgstr "3 · Un don <span class=\"badge text-bg-light fw-normal ms-1\">Inventaire</span>"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "3. A donation is received"
+msgstr "3. Un don est reçu"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"4 · The till <span class=\"badge text-bg-light fw-normal ms-1\">Point of "
+"Sale</span>"
+msgstr "4 · La caisse <span class=\"badge text-bg-light fw-normal ms-1\">Point de Vente</span>"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "4. Sales at the till"
+msgstr "4. Des ventes à la caisse"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"5 · Closing time <span class=\"badge text-bg-light fw-normal ms-1\">Point of"
+" Sale</span>"
+msgstr "5 · La fin de la journée <span class=\"badge text-bg-light fw-normal ms-1\">Point de Vente</span>"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "5. The session is closed"
+msgstr "5. La session est clôturée"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"6 · The lost chest of drawers <span class=\"badge text-bg-light fw-normal "
+"ms-1\">Inventory</span>"
+msgstr "6 · La commode perdue <span class=\"badge text-bg-light fw-normal ms-1\">Inventaire</span>"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "6. The lost chest of drawers is in the workshop"
+msgstr "6. La commode perdue est à l’atelier"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>Functional challenge: not a single line of code.</b> Everything happens "
+"in the interface of Odoo, in the <i>Inventory</i> and <i>Point of Sale</i> "
+"apps."
+msgstr "<b>Challenge fonctionnel : pas une seule ligne de code.</b> Tout se fait dans l’interface d’Odoo, avec les applications <i>Inventaire</i> et <i>Point de Vente</i>."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "A customer on a ticket"
+msgstr "Un client sur un ticket"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid "A customer on at least one ticket of the till."
+msgstr "Un client sur au moins un ticket de caisse."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"A donor who wishes to remain anonymous drops off a few objects. Record their"
+" receipt from a new contact <b>Anonymous Donor</b>, and validate it to bring"
+" the objects into stock."
+msgstr "Un donateur qui souhaite rester anonyme dépose quelques objets. Enregistrez leur réception depuis un nouveau contact <b>Donateur anonyme</b>, et validez-la pour faire entrer les objets en stock."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid "An appealing sales description on the 8 articles."
+msgstr "Une description de vente attrayante sur les 8 articles."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Analysis of the sales by category"
+msgstr "Analyse des ventes par catégorie"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Appliances"
+msgstr "Électro"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Clothing"
+msgstr "Vêtements"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"Create 8 articles for sale in three product categories: <b>Clothing</b>, "
+"<b>Furniture</b> and <b>Appliances</b>, with at least one article in each. "
+"Each article has a sales price, its stock is tracked, and it can be sold at "
+"the till."
+msgstr "Créez 8 articles à vendre dans trois catégories de produits : <b>Vêtements</b>, <b>Meubles</b> et <b>Électro</b>, avec au moins un article dans chacune. Chaque article a un prix de vente, son stock est suivi, et il peut être vendu en caisse."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Create the articles first (mission 1)."
+msgstr "Créez d’abord les articles (mission 1)."
+
+#. module: trivia_reuse_center
+#: model:ir.model.fields,field_description:trivia_reuse_center.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr "Nom d’affichage"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Each article must have a sales price."
+msgstr "Chaque article doit avoir un prix de vente."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Furniture"
+msgstr "Meubles"
+
+#. module: trivia_reuse_center
+#: model:ir.model.fields,field_description:trivia_reuse_center.field_trivia_challenge__id
+msgid "ID"
+msgstr "ID"
+
+#. module: trivia_reuse_center
+#: model:trivia.challenge,topic:trivia_reuse_center.challenge_reuse_center
+msgid "Inventory, traceability, pricelists, Point of Sale"
+msgstr "Inventaire, traçabilité, listes de prix, Point de Vente"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"Josiane Feller brought back the Art Deco chest of drawers she had bought, "
+"because a drawer was broken… and nobody has seen it since. Find it, create "
+"an internal location <b>Repair Workshop</b>, and move <em>this very</em> "
+"chest of drawers there."
+msgstr "Josiane Feller a rapporté la commode Art déco qu’elle avait achetée, parce qu’un tiroir était cassé… et personne ne l’a revue depuis. Retrouvez-la, créez un emplacement interne <b>Atelier réparation</b>, et déplacez-y <em>cette commode-là</em>."
+
+#. module: trivia_reuse_center
+#: model:ir.module.module,shortdesc:base.module_trivia_reuse_center
+msgid "La Ressourcerie"
+msgstr "La Ressourcerie"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"La Ressourcerie collects donated objects, repairs them and sells them at low"
+" prices in its charity shop. Help its volunteers run their stock and their "
+"till with Odoo… and track down a chest of drawers that has gone missing."
+msgstr "La Ressourcerie récupère des objets donnés, les répare et les revend à petit prix dans sa boutique solidaire. Aidez ses bénévoles à gérer leur stock et leur caisse avec Odoo… et à retrouver une commode qui a disparu."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"No closed session of the till with your sales yet: close the session "
+"(mission 5)."
+msgstr "Aucune session de la caisse avec vos ventes n’est encore clôturée : clôturez la session (mission 5)."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No favorite of the sales is grouped by product category."
+msgstr "Aucun favori des ventes n’est regroupé par catégorie de produits."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No sale at the Social Rate yet (mission 4)."
+msgstr "Aucune vente au Tarif social pour l’instant (mission 4)."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No sale at the till has a customer."
+msgstr "Aucune vente à la caisse n’a de client."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No validated receipt from the contact Anonymous Donor yet (mission 3)."
+msgstr "Aucune réception validée du contact Donateur anonyme pour l’instant (mission 3)."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"Open a session of the till in your shop, and make three paid sales, at least"
+" one of them at the <b>Social Rate</b>."
+msgstr "Ouvrez une session de caisse dans votre boutique, et réalisez trois ventes payées, dont au moins une au <b>Tarif social</b>."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"People on a tight budget pay half price. Create a pricelist <b>Social "
+"Rate</b> which gives 50 % off, and make it available in the shop."
+msgstr "Les personnes à petit budget paient moitié prix. Créez une liste de prix <b>Tarif social</b> qui accorde 50 % de remise, et rendez-la disponible dans la boutique."
+
+#. module: trivia_reuse_center
+#: model:trivia.challenge,summary:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"Put the donated objects for sale, open the till with a social pricelist… and"
+" find a chest of drawers that vanished."
+msgstr "Mettez en vente les objets donnés, ouvrez la caisse avec un tarif social… et retrouvez une commode disparue."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Sales descriptions of the articles"
+msgstr "Descriptions de vente des articles"
+
+#. module: trivia_reuse_center
+#: model:trivia.challenge,name:trivia_reuse_center.challenge_reuse_center
+msgid "Second Life"
+msgstr "Seconde vie"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Social pricelist limited to a category"
+msgstr "Tarif social limité à une catégorie"
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Some articles have no sales description."
+msgstr "Certains articles n’ont pas de description de vente."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid "The <b>Social Rate</b> limited to a single product category."
+msgstr "Le <b>Tarif social</b> limité à une seule catégorie de produits."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The Repair Workshop must be an internal location."
+msgstr "L’Atelier réparation doit être un emplacement interne."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The Social Rate does not give 50 % off any article."
+msgstr "Le Tarif social ne donne 50 % de remise sur aucun article."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"The analysis of the sales by product category, saved in your favorites."
+msgstr "L’analyse des ventes par catégorie de produits, enregistrée dans vos favoris."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"The articles must use the 3 categories Clothing, Furniture and Appliances."
+msgstr "Les articles doivent utiliser les 3 catégories Vêtements, Meubles et Électro."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"The chest of drawers of Josiane Feller is not in a location Repair Workshop "
+"yet (mission 6)."
+msgstr "La commode de Josiane Feller n’est pas encore dans un emplacement Atelier réparation (mission 6)."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"The names to create are in <b>bold</b>: accents and capital letters do not "
+"matter. Click <i>Check</i> whenever you like: the tab <i>Checker Report</i> "
+"lists what is still missing."
+msgstr "Les noms à créer sont en <b>gras</b> : les accents et les majuscules ne comptent pas. Cliquez sur <i>Vérifier</i> quand vous le souhaitez : l’onglet <i>Rapport du checker</i> liste ce qui manque encore."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The rules of the Social Rate are not limited to a product category."
+msgstr "Les règles du Tarif social ne sont pas limitées à une catégorie de produits."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid "The shop closes: close the session of the till."
+msgstr "La boutique ferme : clôturez la session de caisse."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"There is a chest of drawers in the Repair Workshop, but not the one Josiane "
+"Feller brought back: check its serial number (mission 6)."
+msgstr "Il y a une commode dans l’Atelier réparation, mais pas celle que Josiane Feller a rapportée : vérifiez son numéro de série (mission 6)."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "There is no pricelist Social Rate (mission 2)."
+msgstr "Il n’y a pas de liste de prix Tarif social (mission 2)."
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "There is no product category %(name)s (mission 1)."
+msgstr "Il n’y a pas de catégorie de produits %(name)s (mission 1)."
+
+#. module: trivia_reuse_center
+#: model:ir.module.module,summary:base.module_trivia_reuse_center
+msgid ""
+"Trivi'Hackathon challenge: the articles, donations and till of a reuse "
+"centre"
+msgstr "Challenge du Trivi'Hackathon : les articles, les dons et la caisse d’une ressourcerie"
+
+#. module: trivia_reuse_center
+#: model:ir.model,name:trivia_reuse_center.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr "Challenge Trivia"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid "Your missions"
+msgstr "Vos missions"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"⭐ Bonus <small class=\"text-muted fw-normal\">optional, one star "
+"each</small>"
+msgstr "⭐ Bonus <small class=\"text-muted fw-normal\">facultatif, une étoile chacun</small>"
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"💡 The Social Rate does not show up at the till? Reload the page of the till."
+msgstr "💡 Le Tarif social n’apparaît pas en caisse ? Rechargez la page de la caisse."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"💡 The pricelists are an option to activate in the settings of the Point of "
+"Sale. These settings apply to a shop: create it first."
+msgstr "💡 Les listes de prix sont une option à activer dans les paramètres du Point de Vente. Ces paramètres portent sur une boutique : créez-la d’abord."
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"💡 The shop has several identical chests of drawers: only their serial number"
+" tells them apart."
+msgstr "💡 La boutique possède plusieurs commodes identiques : seul leur numéro de série permet de les distinguer."

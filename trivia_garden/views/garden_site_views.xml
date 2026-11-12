@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="garden_site_view_list" model="ir.ui.view">
+        <field name="name">garden.site.list</field>
+        <field name="model">garden.site</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="city"/>
+                <field name="plot_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="garden_site_view_form" model="ir.ui.view">
+        <field name="name">garden.site.form</field>
+        <field name="model">garden.site</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="e.g. Bonnevoie"/></h1>
+                    </div>
+                    <group>
+                        <field name="city"/>
+                    </group>
+                    <notebook>
+                        <page string="Plots" name="plots">
+                            <field name="plot_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="area"/>
+                                    <field name="tenant_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="garden_site_action" model="ir.actions.act_window">
+        <field name="name">Sites</field>
+        <field name="res_model">garden.site</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

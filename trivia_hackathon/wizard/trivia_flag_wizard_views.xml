@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="trivia_flag_wizard_view_form" model="ir.ui.view">
+        <field name="name">trivia.flag.wizard.form</field>
+        <field name="model">trivia.flag.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="challenge_id" invisible="1"/>
+                <group>
+                    <field name="flag" placeholder="TRIVIA{...}"/>
+                </group>
+                <footer>
+                    <button name="action_submit" type="object" string="Submit" class="btn-primary" data-hotkey="q"/>
+                    <button special="cancel" string="Cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="shelter_animal_view_kanban" model="ir.ui.view">
+        <field name="name">shelter.animal.kanban</field>
+        <field name="model">shelter.animal</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card" class="flex-row align-items-center gap-3">
+                        <field name="species_emoji" class="display-6"/>
+                        <div class="d-flex flex-column">
+                            <field name="name" class="fw-bold fs-5"/>
+                            <span><field name="breed"/> · <field name="age"/></span>
+                        </div>
+                        <div class="ms-auto d-flex flex-column align-items-end gap-1">
+                            <field name="is_published" widget="boolean_toggle"/>
+                            <span class="badge text-bg-success" invisible="not adopted">Adopted</span>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="shelter_animal_view_list" model="ir.ui.view">
+        <field name="name">shelter.animal.list</field>
+        <field name="model">shelter.animal</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="species"/>
+                <field name="breed"/>
+                <field name="age"/>
+                <field name="is_published"/>
+                <field name="adopted"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="shelter_animal_view_form" model="ir.ui.view">
+        <field name="name">shelter.animal.form</field>
+        <field name="model">shelter.animal</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="is_published" widget="website_redirect_button"/>
+                        <button name="action_view_requests" type="object" class="oe_stat_button" icon="pets">
+                            <field name="request_count" widget="statinfo" string="Requests"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Adopted" bg_color="text-bg-success" invisible="not adopted"/>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="e.g. Rex"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="species"/>
+                            <field name="breed"/>
+                            <field name="sex"/>
+                            <field name="birth_date"/>
+                        </group>
+                        <group>
+                            <field name="adopted"/>
+                        </group>
+                    </group>
+                    <field name="description" placeholder="Tell the visitors about this animal..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="shelter_animal_view_search" model="ir.ui.view">
+        <field name="name">shelter.animal.search</field>
+        <field name="model">shelter.animal</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="breed"/>
+                <filter name="published" string="Published" domain="[('is_published', '=', True)]"/>
+                <filter name="not_adopted" string="Waiting for a family" domain="[('adopted', '=', False)]"/>
+                <filter name="group_by_species" string="Species" context="{'group_by': 'species'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="shelter_animal_action" model="ir.actions.act_window">
+        <field name="name">Animals</field>
+        <field name="res_model">shelter.animal</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+</odoo>

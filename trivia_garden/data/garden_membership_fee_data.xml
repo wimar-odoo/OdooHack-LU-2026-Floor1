@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- TODO 7: this file can only be loaded once the model garden.membership.fee and the fields of the
+         members exist (TODO 1 and TODO 4): declare it in the manifest, after the views. -->
+
+    <!-- the fees are only created once: your changes are kept when the module is updated -->
+    <data noupdate="1">
+        <record id="fee_marie_weber_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_marie_weber"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_marie_weber_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_marie_weber"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_marie_weber_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_marie_weber"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_jean_schmit_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_jean_schmit"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_jean_schmit_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_jean_schmit"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_jean_schmit_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_jean_schmit"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_ana_ferreira_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_ana_ferreira"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_ana_ferreira_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_ana_ferreira"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_luca_rossi_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_luca_rossi"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_luca_rossi_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_luca_rossi"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="fee_sophie_muller_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_sophie_muller"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_sophie_muller_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_sophie_muller"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_sophie_muller_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_sophie_muller"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_tom_hoffmann_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_tom_hoffmann"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_claire_wagner_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_claire_wagner"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_claire_wagner_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_claire_wagner"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_paulo_santos_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_paulo_santos"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_paulo_santos_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_paulo_santos"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_lea_kremer_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_lea_kremer"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_lea_kremer_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_lea_kremer"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="fee_max_thill_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_max_thill"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_max_thill_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_max_thill"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_max_thill_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_max_thill"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_nadia_haddad_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_nadia_haddad"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">40</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="fee_jeff_reuter_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_jeff_reuter"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_jeff_reuter_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_jeff_reuter"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_jeff_reuter_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_jeff_reuter"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_ines_costa_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_ines_costa"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_pierre_klein_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_pierre_klein"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_pierre_klein_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_pierre_klein"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_pierre_klein_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_pierre_klein"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_sarah_becker_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_sarah_becker"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_sarah_becker_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_sarah_becker"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">40</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="fee_yves_schroeder_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_yves_schroeder"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_emma_lux_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_emma_lux"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_carlos_pereira_0" model="garden.membership.fee">
+            <field name="partner_id" ref="member_carlos_pereira"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 2"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_carlos_pereira_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_carlos_pereira"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">40</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_carlos_pereira_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_carlos_pereira"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">40</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="fee_julie_faber_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_julie_faber"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_julie_faber_2" model="garden.membership.fee">
+            <field name="partner_id" ref="member_julie_faber"/>
+            <field name="year" eval="int(time.strftime('%Y'))"/>
+            <field name="amount">25</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=0)).strftime('%Y-01-15')"/>
+        </record>
+        <record id="fee_ben_meyer_1" model="garden.membership.fee">
+            <field name="partner_id" ref="member_ben_meyer"/>
+            <field name="year" eval="int(time.strftime('%Y')) - 1"/>
+            <field name="amount">100</field>
+            <field name="state">paid</field>
+            <field name="payment_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-01-15')"/>
+        </record>
+    </data>
+
+    <data>
+        <record id="member_marie_weber" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=6)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_jean_schmit" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_ana_ferreira" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_luca_rossi" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_sophie_muller" model="res.partner">
+            <field name="membership_type">patron</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=8)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_tom_hoffmann" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_claire_wagner" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_paulo_santos" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_lea_kremer" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_max_thill" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=7)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_nadia_haddad" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_jeff_reuter" model="res.partner">
+            <field name="membership_type">patron</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=9)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_ines_costa" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_pierre_klein" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=4)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_sarah_becker" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_yves_schroeder" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=6)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_emma_lux" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_carlos_pereira" model="res.partner">
+            <field name="membership_type">family</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=5)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_julie_faber" model="res.partner">
+            <field name="membership_type">individual</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="member_ben_meyer" model="res.partner">
+            <field name="membership_type">patron</field>
+            <field name="member_since" eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-01')"/>
+        </record>
+        <record id="plot_b01" model="garden.plot">
+            <field name="tenant_id" ref="member_marie_weber"/>
+        </record>
+        <record id="plot_b02" model="garden.plot">
+            <field name="tenant_id" ref="member_jean_schmit"/>
+        </record>
+        <record id="plot_e01" model="garden.plot">
+            <field name="tenant_id" ref="member_ana_ferreira"/>
+        </record>
+        <record id="plot_b03" model="garden.plot">
+            <field name="tenant_id" ref="member_tom_hoffmann"/>
+        </record>
+        <record id="plot_e02" model="garden.plot">
+            <field name="tenant_id" ref="member_paulo_santos"/>
+        </record>
+        <record id="plot_e03" model="garden.plot">
+            <field name="tenant_id" ref="member_max_thill"/>
+        </record>
+        <record id="plot_b04" model="garden.plot">
+            <field name="tenant_id" ref="member_pierre_klein"/>
+        </record>
+        <record id="plot_e04" model="garden.plot">
+            <field name="tenant_id" ref="member_julie_faber"/>
+        </record>
+    </data>
+</odoo>

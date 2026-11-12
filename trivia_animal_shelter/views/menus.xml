@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_shelter_root" name="Refuge Les 4 Pattes" sequence="3"
+              web_icon="trivia_animal_shelter,static/description/icon.png"/>
+
+    <menuitem id="menu_shelter_animal" name="Animals" parent="menu_shelter_root" sequence="10"
+              action="shelter_animal_action"/>
+    <menuitem id="menu_shelter_adoption_request" name="Adoption Requests" parent="menu_shelter_root" sequence="20"
+              action="shelter_adoption_request_action"/>
+</odoo>

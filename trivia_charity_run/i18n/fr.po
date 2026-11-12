@@ -1,0 +1,682 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_charity_run
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 14:27+0000\n"
+"PO-Revision-Date: 2026-10-30 14:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_charity_run
+#: model:ir.module.module,description:base.module_trivia_charity_run
+msgid ""
+"\n"
+"La Course du Cœur\n"
+"=================\n"
+"Challenge of the Trivi'Hackathon (SQL: SQL views, window functions, performance, SQL injection).\n"
+"\n"
+"La Course du Cœur is a charity run of 10 km: sponsors give money for each kilometre covered by the runners.\n"
+"Complete this module to publish the results, speed up the amounts raised, close a security hole and catch a cheater.\n"
+msgstr ""
+"\n"
+"La Course du Cœur\n"
+"=================\n"
+"Challenge du Trivi'Hackathon (SQL : vues SQL, fonctions de fenêtre, performance, injection SQL).\n"
+"\n"
+"La Course du Cœur est une course solidaire de 10 km : des sponsors donnent de l’argent pour chaque kilomètre parcouru par les coureurs.\n"
+"Complétez ce module pour publier les résultats, accélérer les montants récoltés, fermer une faille de sécurité et démasquer un tricheur.\n"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"%(name)s must be ranked %(expected)s in the edition, not %(value)s (runners "
+"with the same time share the same rank: 1, 2, 2, 4)."
+msgstr "%(name)s doit être classée %(expected)s dans l’édition, pas %(value)s (les coureurs qui ont le même temps partagent le même rang : 1, 2, 2, 4)."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "%(name)s must be ranked %(expected)s in their category, not %(value)s."
+msgstr "%(name)s doit être classée %(expected)s dans sa catégorie, pas %(value)s."
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"1 · The results <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">report/run_result_report.py</span>"
+msgstr "1 · Les résultats <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">report/run_result_report.py</span>"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "1. Results: finishers, times and paces"
+msgstr "1. Résultats : arrivants, temps et allures"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "1. Results: ranks in the edition and in the category"
+msgstr "1. Résultats : rangs dans l’édition et dans la catégorie"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"2 · The performance <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">models/run_runner.py</span> <span class=\"badge text-bg-"
+"light fw-normal font-monospace\">models/run_split.py</span>"
+msgstr "2 · La performance <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/run_runner.py</span> <span class=\"badge text-bg-light fw-normal font-monospace\">models/run_split.py</span>"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "2. Amount raised in a few queries"
+msgstr "2. Montant récolté en quelques requêtes"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "2. Index on the split times"
+msgstr "2. Index sur les temps de passage"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"3 · The security <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">models/run_runner.py</span>"
+msgstr "3 · La sécurité <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/run_runner.py</span>"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "3. No SQL injection"
+msgstr "3. Pas d’injection SQL"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "3. Search by bib or name"
+msgstr "3. Recherche par dossard ou par nom"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"4 · The cheater <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">make psql</span>"
+msgstr "4 · Le tricheur <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">make psql</span>"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "4. The cheater is disqualified"
+msgstr "4. Le tricheur est disqualifié"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"<b>Development challenge: SQL.</b> Complete the module "
+"<code>trivia_charity_run</code>: the TODOs of the code are numbered like the"
+" missions below, and give the details. To explore the data, open a "
+"PostgreSQL console: <code>make psql</code>."
+msgstr "<b>Challenge de développement : SQL.</b> Complétez le module <code>trivia_charity_run</code> : les TODO du code sont numérotés comme les missions ci-dessous, et en donnent le détail. Pour explorer les données, ouvrez une console PostgreSQL : <code>make psql</code>."
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"<code>search_by_bib_or_name()</code> is open to SQL injection, and it cannot"
+" even find Seán O'Brien. Fix it."
+msgstr "<code>search_by_bib_or_name()</code> est vulnérable à l’injection SQL, et ne trouve même pas Seán O'Brien. Corrigez-la."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "A disqualified runner is still in the results."
+msgstr "Un coureur disqualifié est encore dans les résultats."
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid "A pivot view and a graph view of the results."
+msgstr "Des vues pivot et graphique des résultats."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "A runner who gave up (no split at km 10) must not be in the results."
+msgstr "Un coureur qui a abandonné (pas de passage au km 10) ne doit pas être dans les résultats."
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"After a change of Python code, update the modules (<code>make "
+"update</code>): the SQL view is created again. Then click <i>Check</i>: the "
+"tab <i>Checker Report</i> lists what is still missing."
+msgstr "Après une modification du code Python, mettez à jour les modules (<code>make update</code>) : la vue SQL est recréée. Cliquez ensuite sur <i>Vérifier</i> : l’onglet <i>Rapport du checker</i> liste ce qui manque encore."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__amount_raised
+msgid "Amount Raised"
+msgstr "Montant récolté"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,help:trivia_charity_run.field_run_runner__amount_raised
+msgid ""
+"Amount given by the sponsors: their pledges per km × the distance covered by"
+" the runner."
+msgstr "Montant donné par les sponsors : leurs promesses par km × la distance parcourue par le coureur."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__amount_per_km
+msgid "Amount per km"
+msgstr "Montant par km"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__bib
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__bib
+msgid "Bib"
+msgstr "Dossard"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__category
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__category
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_result_report_view_search
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_search
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__checkpoint_km
+msgid "Checkpoint (km)"
+msgstr "Point de passage (km)"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"Compute the amount raised without running one query per runner, and add the "
+"missing index on the split times of the runners."
+msgstr "Calculez le montant récolté sans lancer une requête par coureur, et ajoutez l’index qui manque sur les temps de passage des coureurs."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"Computing the amount raised of 50 runners runs %(count)s queries: compute "
+"all the runners at once (e.g. with _read_group)."
+msgstr "Le calcul du montant récolté de 50 coureurs lance %(count)s requêtes : calculez tous les coureurs en une fois (par exemple avec _read_group)."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__create_uid
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__create_uid
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__create_uid
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__create_date
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__create_date
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__create_date
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__date
+msgid "Date"
+msgstr "Date"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__display_name
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__display_name
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__display_name
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__display_name
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__display_name
+#: model:ir.model.fields,field_description:trivia_charity_run.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr "Nom d’affichage"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__disqualified
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_form
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_search
+msgid "Disqualified"
+msgstr "Disqualifié"
+
+#. module: trivia_charity_run
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_form
+msgid "Disqualify"
+msgstr "Disqualifier"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__distance_km
+msgid "Distance (km)"
+msgstr "Distance (km)"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,help:trivia_charity_run.field_run_runner__distance_km
+msgid "Distance covered by the runner."
+msgstr "Distance parcourue par le coureur."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__edition_id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__edition_id
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_result_report_view_search
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_search
+msgid "Edition"
+msgstr "Édition"
+
+#. module: trivia_charity_run
+#: model:ir.actions.act_window,name:trivia_charity_run.run_edition_action
+#: model:ir.ui.menu,name:trivia_charity_run.menu_run_edition
+msgid "Editions"
+msgstr "Éditions"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__gender
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__gender
+msgid "Gender"
+msgstr "Genre"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_trivia_challenge__id
+msgid "ID"
+msgstr "ID"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"In the last edition, a runner took a shortcut: between km 5 and km 10, their"
+" time beats the world record of the 5 km (12 min 35 s). Find them with SQL, "
+"then disqualify them, and only them."
+msgstr "Dans la dernière édition, un coureur a pris un raccourci : entre le km 5 et le km 10, son temps bat le record du monde du 5 km (12 min 35 s). Trouvez-le en SQL, puis disqualifiez-le, et lui seul."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_result_report__category__junior
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_runner__category__junior
+msgid "Junior (under 20)"
+msgstr "Junior (moins de 20 ans)"
+
+#. module: trivia_charity_run
+#: model:ir.module.module,shortdesc:base.module_trivia_charity_run
+#: model:ir.ui.menu,name:trivia_charity_run.menu_run_root
+msgid "La Course du Cœur"
+msgstr "La Course du Cœur"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"La Course du Cœur is a 10 km charity run: for each kilometre covered by a "
+"runner, their sponsors give money to the association. Three editions, 1 800 "
+"runners, thousands of split times: the module has all the data, but the "
+"results are missing, the list of the runners is slow, the results kiosk has "
+"a security hole… and someone cheated."
+msgstr "La Course du Cœur est une course solidaire de 10 km : pour chaque kilomètre parcouru par un coureur, ses sponsors donnent de l’argent à l’association. Trois éditions, 1 800 coureurs, des milliers de temps de passage : le module a toutes les données, mais les résultats manquent, la liste des coureurs est lente, la borne des résultats a une faille de sécurité… et quelqu’un a triché."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__write_uid
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__write_uid
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__write_uid
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__write_date
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__write_date
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__write_date
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_result_report__category__master
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_runner__category__master
+msgid "Master (40-59)"
+msgstr "Master (40-59 ans)"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_result_report__gender__male
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_runner__gender__male
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_result_report_view_search
+msgid "Men"
+msgstr "Hommes"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__name
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "Nobody is disqualified in the last edition yet (mission 4)."
+msgstr "Personne n’est encore disqualifié dans la dernière édition (mission 4)."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__runner_count
+msgid "Number of Runners"
+msgstr "Nombre de coureurs"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__pace
+msgid "Pace (min/km)"
+msgstr "Allure (min/km)"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "Pivot and graph views of the results"
+msgstr "Vues pivot et graphique des résultats"
+
+#. module: trivia_charity_run
+#: model:ir.model,name:trivia_charity_run.model_run_pledge
+msgid "Pledge"
+msgstr "Promesse de don"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__pledge_ids
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_form
+msgid "Pledges"
+msgstr "Promesses de dons"
+
+#. module: trivia_charity_run
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_result_report_view_search
+msgid "Podium"
+msgstr "Podium"
+
+#. module: trivia_charity_run
+#: model:trivia.challenge,summary:trivia_charity_run.challenge_charity_run
+msgid ""
+"Publish the results of the charity run with SQL, speed up the amounts "
+"raised, close a security hole and catch a cheater."
+msgstr "Publiez les résultats de la course solidaire en SQL, accélérez les montants récoltés, fermez une faille de sécurité et démasquez un tricheur."
+
+#. module: trivia_charity_run
+#: model:ir.model,name:trivia_charity_run.model_run_edition
+msgid "Race Edition"
+msgstr "Édition de la course"
+
+#. module: trivia_charity_run
+#: model:ir.model,name:trivia_charity_run.model_run_result_report
+msgid "Race Results"
+msgstr "Résultats de la course"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__rank
+msgid "Rank"
+msgstr "Rang"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__category_rank
+msgid "Rank in Category"
+msgstr "Rang dans la catégorie"
+
+#. module: trivia_charity_run
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_form
+msgid "Requalify"
+msgstr "Requalifier"
+
+#. module: trivia_charity_run
+#: model:ir.actions.act_window,name:trivia_charity_run.run_result_report_action
+#: model:ir.ui.menu,name:trivia_charity_run.menu_run_result
+msgid "Results"
+msgstr "Résultats"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "Results without the disqualified runners"
+msgstr "Résultats sans les coureurs disqualifiés"
+
+#. module: trivia_charity_run
+#: model:ir.model,name:trivia_charity_run.model_run_runner
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__runner_id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__runner_id
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__runner_id
+msgid "Runner"
+msgstr "Coureur"
+
+#. module: trivia_charity_run
+#: model:ir.actions.act_window,name:trivia_charity_run.run_runner_action
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__runner_ids
+#: model:ir.ui.menu,name:trivia_charity_run.menu_run_runner
+msgid "Runners"
+msgstr "Coureurs"
+
+#. module: trivia_charity_run
+#: model:trivia.challenge,topic:trivia_charity_run.challenge_charity_run
+msgid "SQL: views, window functions, performance, injection"
+msgstr "SQL : vues, fonctions de fenêtre, performance, injection"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_result_report__category__senior
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_runner__category__senior
+msgid "Senior (20-39)"
+msgstr "Senior (20-39 ans)"
+
+#. module: trivia_charity_run
+#: model:ir.model,name:trivia_charity_run.model_run_split
+msgid "Split Time"
+msgstr "Temps de passage"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_runner__split_ids
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_form
+msgid "Split Times"
+msgstr "Temps de passage"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_pledge__sponsor
+msgid "Sponsor"
+msgstr "Sponsor"
+
+#. module: trivia_charity_run
+#: model:trivia.challenge,name:trivia_charity_run.challenge_charity_run
+msgid "The Charity Run"
+msgstr "La course solidaire"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "The action of the results does not open the %(view_type)s view."
+msgstr "L’action des résultats n’ouvre pas la vue %(view_type)s."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "The amount raised by %(name)s is %(value)s instead of %(expected)s."
+msgstr "Le montant récolté par %(name)s vaut %(value)s au lieu de %(expected)s."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"The amount raised ignores a pledge modified just before: raw SQL reads the "
+"database, flush the pledges first (flush_model)."
+msgstr "Le montant récolté ignore une promesse modifiée juste avant : le SQL brut lit la base de données, envoyez d’abord les promesses en base (flush_model)."
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"The disqualified runners are not in the results, and the ranks are computed "
+"without them."
+msgstr "Les coureurs disqualifiés ne sont pas dans les résultats, et les classements sont calculés sans eux."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"The pace must be the minutes per km: %(expected)s instead of %(value)s."
+msgstr "L’allure doit être en minutes par km : %(expected)s au lieu de %(value)s."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "The ranks must be computed without the disqualified runners."
+msgstr "Les rangs doivent être calculés sans les coureurs disqualifiés."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"The results are still empty: write the SQL view of the results (mission 1)."
+msgstr "Les résultats sont encore vides : écrivez la vue SQL des résultats (mission 1)."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "The results have no %(view_type)s view."
+msgstr "Les résultats n’ont pas de vue %(view_type)s."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "The results must contain one row per runner who reached the finish."
+msgstr "Les résultats doivent contenir une ligne par coureur arrivé au bout."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "The table of the split times has no index on runner_id (mission 2)."
+msgstr "La table des temps de passage n’a pas d’index sur runner_id (mission 2)."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"The time of a runner must be the minutes between their own start and their "
+"finish: %(expected)s instead of %(value)s."
+msgstr "Le temps d’un coureur doit être le nombre de minutes entre son propre départ et son arrivée : %(expected)s au lieu de %(value)s."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"The wrong runners are disqualified in the last edition: only the runner with"
+" an impossible time between km 5 and km 10 must be."
+msgstr "Les mauvais coureurs sont disqualifiés dans la dernière édition : seul le coureur au temps impossible entre le km 5 et le km 10 doit l’être."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_split__time
+msgid "Time"
+msgstr "Heure"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_result_report__finish_time
+msgid "Time (min)"
+msgstr "Temps (min)"
+
+#. module: trivia_charity_run
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_runner_view_list
+msgid "Total"
+msgstr "Total"
+
+#. module: trivia_charity_run
+#: model:ir.module.module,summary:base.module_trivia_charity_run
+msgid "Trivi'Hackathon challenge: the results of a charity run, with SQL"
+msgstr "Challenge du Trivi'Hackathon : les résultats d’une course solidaire, en SQL"
+
+#. module: trivia_charity_run
+#: model:ir.model,name:trivia_charity_run.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr "Challenge Trivia"
+
+#. module: trivia_charity_run
+#: model:ir.model.constraint,message:trivia_charity_run.constraint_run_runner_bib_uniq
+msgid "Two runners of an edition cannot have the same bib."
+msgstr "Deux coureurs d’une même édition ne peuvent pas avoir le même dossard."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_result_report__category__veteran
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_runner__category__veteran
+msgid "Veteran (60 and over)"
+msgstr "Vétéran (60 ans et plus)"
+
+#. module: trivia_charity_run
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_result_report__gender__female
+#: model:ir.model.fields.selection,name:trivia_charity_run.selection__run_runner__gender__female
+#: model_terms:ir.ui.view,arch_db:trivia_charity_run.run_result_report_view_search
+msgid "Women"
+msgstr "Femmes"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"Write the SQL view of the results: the time, the pace and the ranks of each "
+"runner who reached the finish."
+msgstr "Écrivez la vue SQL des résultats : le temps, l’allure et les classements de chaque coureur arrivé."
+
+#. module: trivia_charity_run
+#: model:ir.model.fields,field_description:trivia_charity_run.field_run_edition__year
+msgid "Year"
+msgstr "Année"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid "Your missions"
+msgstr "Vos missions"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "by bib"
+msgstr "par dossard"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "by name, with an apostrophe"
+msgstr "par nom, avec une apostrophe"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "o'brien"
+msgstr "o'brien"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "search_by_bib_or_name(%(term)s) crashed: %(error)s"
+msgstr "search_by_bib_or_name(%(term)s) a planté : %(error)s"
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid ""
+"search_by_bib_or_name(%(term)s) returns %(count)s runners: the query is open"
+" to SQL injection."
+msgstr "search_by_bib_or_name(%(term)s) renvoie %(count)s coureurs : la requête est vulnérable à l’injection SQL."
+
+#. module: trivia_charity_run
+#. odoo-python
+#: code:addons/trivia_charity_run/models/trivia_challenge.py:0
+msgid "search_by_bib_or_name() does not find the right runner %(situation)s."
+msgstr "search_by_bib_or_name() ne trouve pas le bon coureur %(situation)s."
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"⭐ Bonus <small class=\"text-muted fw-normal\">optional, one star "
+"each</small>"
+msgstr "⭐ Bonus <small class=\"text-muted fw-normal\">facultatif, une étoile chacun</small>"
+
+#. module: trivia_charity_run
+#: model_terms:trivia.challenge,description:trivia_charity_run.challenge_charity_run
+msgid ""
+"💡 Before a query in raw SQL, the changes still in the cache of the ORM must "
+"be sent to the database (<code>flush_model()</code>)."
+msgstr "💡 Avant une requête en SQL brut, les modifications encore dans le cache de l’ORM doivent être envoyées en base (<code>flush_model()</code>)."

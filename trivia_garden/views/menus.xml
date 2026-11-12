@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_garden_root" name="Gaart fir Jiddereen" sequence="2"
+              web_icon="trivia_garden,static/description/icon.png"/>
+
+    <menuitem id="menu_garden_site" name="Sites" parent="menu_garden_root" sequence="10"
+              action="garden_site_action"/>
+    <menuitem id="menu_garden_plot" name="Plots" parent="menu_garden_root" sequence="20"
+              action="garden_plot_action"/>
+
+    <!-- TODO 3: a menu "Membership Fees" opening the fees -->
+</odoo>

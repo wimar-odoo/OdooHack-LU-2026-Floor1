@@ -1,0 +1,432 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_hackathon
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-10 14:11+0000\n"
+"PO-Revision-Date: 2026-11-10 14:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_hackathon
+#: model:ir.module.module,description:base.module_trivia_hackathon
+msgid ""
+"\n"
+"Trivi'Hackathon\n"
+"===============\n"
+"Game engine of the Trivi'Hackathon 2026, a Trivial Pursuit of the non-profit organisations:\n"
+"\n"
+"* the game board: one card per challenge, with a short instruction and the full statement;\n"
+"* the *Check* button, which runs the automatic checker of a challenge and reports what is still missing;\n"
+"* the flags, to get the wedges of the solved challenges back on a new database;\n"
+"* the wedges announced in the Trivi'Hackathon Discuss channel.\n"
+"\n"
+"Each challenge is brought by its own module (trivia_*), which only depends on this one.\n"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "%(failed)s requirement(s) not met yet: see the tab Checker Report."
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid ""
+"%(user)s won the %(wedge)s wedge of “%(challenge)s” (%(organization)s)!"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "All requirements are met, you won the %(wedge)s wedge!"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__attempt_count
+msgid "Attempts"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__wedge_color__blue
+msgid "Blue"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__board
+msgid "Board"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__star_total
+msgid "Bonus Objectives"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__star_count
+msgid "Bonus Objectives Reached"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "Bonus: %(label)s"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_flag_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__category
+msgid "Category"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__challenge_id
+msgid "Challenge"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_form
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_kanban
+msgid "Check"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__checker_report
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_form
+msgid "Checker Report"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__code
+msgid "Code"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/wizard/trivia_flag_wizard.py:0
+msgid "Correct flag! You won the %(wedge)s wedge."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__create_uid
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__create_date
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__category__dev
+msgid "Dev"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__difficulty
+msgid "Difficulty"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__difficulty_rank
+msgid "Difficulty Rank"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__display_name
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__difficulty__easy
+msgid "Easy"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__flag
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__flag
+msgid "Flag"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__category__functional
+msgid "Functional"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,help:trivia_hackathon.field_trivia_challenge__category
+msgid ""
+"Functional: no code, everything is done in the interface of Odoo. Dev: you "
+"write code."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.actions.act_window,name:trivia_hackathon.trivia_challenge_action
+#: model:ir.ui.menu,name:trivia_hackathon.menu_trivia_board
+msgid "Game Board"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__wedge_color__green
+msgid "Green"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.module.module,summary:base.module_trivia_hackathon
+msgid ""
+"Hackathon game: help the non-profit organisations and collect the 6 wedges"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__difficulty__hard
+msgid "Hard"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__id
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model_terms:ir.actions.act_window,help:trivia_hackathon.trivia_challenge_action
+msgid ""
+"Install the modules of the non-profit organisations (trivia_*) to bring "
+"their challenges."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__summary
+msgid "Instruction"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,help:trivia_hackathon.field_trivia_challenge__flag
+msgid "Keep it: submit it again to get the wedge back on a new database."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__write_uid
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__write_date
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_flag_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__difficulty__medium
+msgid "Medium"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__name
+msgid "Name"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model_terms:ir.actions.act_window,help:trivia_hackathon.trivia_challenge_action
+msgid "No challenge on the board yet"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__wedge_color__orange
+msgid "Orange"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__organization
+msgid "Organisation"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__is_perfect
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_form
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_kanban
+msgid "Perfect"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__progress
+msgid "Progress"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__wedge_color__purple
+msgid "Purple"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__wedge_color__red
+msgid "Red"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__requirement_total
+msgid "Requirements"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__requirement_count
+msgid "Requirements Met"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,help:trivia_hackathon.field_trivia_challenge__summary
+msgid "Short instruction displayed on the game board."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__state__solved
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_form
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_kanban
+msgid "Solved"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__solved_by_id
+msgid "Solved By"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__solved_date
+msgid "Solved Date"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__state
+msgid "State"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__description
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_form
+msgid "Statement"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_flag_wizard_view_form
+msgid "Submit"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model,name:trivia_hackathon.model_trivia_flag_wizard
+msgid "Submit a Trivia Flag"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+#: model:ir.actions.server,name:trivia_hackathon.trivia_challenge_action_submit_flag
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_challenge_view_kanban
+msgid "Submit a flag"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model_terms:ir.ui.view,arch_db:trivia_hackathon.trivia_flag_wizard_view_form
+msgid "TRIVIA{...}"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,help:trivia_hackathon.field_trivia_challenge__code
+msgid "Technical identifier, the checker method is _check_<code>."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.constraint,message:trivia_hackathon.constraint_trivia_challenge_code_uniq
+msgid "The code of a challenge must be unique."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,help:trivia_hackathon.field_trivia_challenge__organization
+msgid "The non-profit organisation that needs your help."
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "This challenge has no automatic checker."
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "This challenge is already solved: its wedge is already on the board."
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__state__todo
+msgid "To do"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__topic
+msgid "Topic"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.module.module,shortdesc:base.module_trivia_hackathon
+#: model:ir.ui.menu,name:trivia_hackathon.menu_trivia_root
+msgid "Trivi'Hackathon"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model,name:trivia_hackathon.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__wedge
+msgid "Wedge"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields,field_description:trivia_hackathon.field_trivia_challenge__wedge_color
+msgid "Wedge Color"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/wizard/trivia_flag_wizard.py:0
+msgid "Wrong flag, keep digging!"
+msgstr ""
+
+#. module: trivia_hackathon
+#: model:ir.model.fields.selection,name:trivia_hackathon.selection__trivia_challenge__wedge_color__yellow
+msgid "Yellow"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "Your code raised %(error)s"
+msgstr ""
+
+#. module: trivia_hackathon
+#. odoo-python
+#: code:addons/trivia_hackathon/models/trivia_challenge.py:0
+msgid "🧀 The six wedges are on the board, congratulations!"
+msgstr ""

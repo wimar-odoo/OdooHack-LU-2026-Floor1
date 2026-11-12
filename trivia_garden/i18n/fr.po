@@ -1,0 +1,696 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_garden
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 13:38+0000\n"
+"PO-Revision-Date: 2026-10-30 13:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_garden
+#: model:ir.module.module,description:base.module_trivia_garden
+msgid ""
+"\n"
+"Gaart fir Jiddereen\n"
+"===================\n"
+"Challenge of the Trivi'Hackathon (Python: models, inheritance, computed fields, constraints, views, access rights).\n"
+"\n"
+"Gaart fir Jiddereen runs shared gardens in Luxembourg City and in Esch-sur-Alzette. Complete this module so that\n"
+"the treasurer can follow the membership fees, and so that only the members up to date can rent a plot.\n"
+msgstr ""
+"\n"
+"Gaart fir Jiddereen\n"
+"===================\n"
+"Challenge du Trivi'Hackathon (Python : modèles, héritage, champs calculés, contraintes, vues, droits d’accès).\n"
+"\n"
+"Gaart fir Jiddereen gère des jardins partagés à Luxembourg-Ville et à Esch-sur-Alzette. Complétez ce module pour que\n"
+"la trésorière puisse suivre les cotisations, et pour que seuls les membres à jour puissent louer une parcelle.\n"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"1 · The fees <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">models/garden_membership_fee.py</span>"
+msgstr "1 · Les cotisations <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/garden_membership_fee.py</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "1. Mark a fee as paid"
+msgstr "1. Marquer une cotisation payée"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "1. One fee per member and per year"
+msgstr "1. Une cotisation par membre et par an"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "1. The membership fees"
+msgstr "1. Les cotisations"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"2 · The access rights <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">security/ir.access.csv</span>"
+msgstr "2 · Les droits d’accès <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">security/ir.access.csv</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "2. Access rights to the fees"
+msgstr "2. Droits d’accès aux cotisations"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"3 · The views of the fees <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">views/garden_membership_fee_views.xml</span> <span "
+"class=\"badge text-bg-light fw-normal font-"
+"monospace\">views/menus.xml</span>"
+msgstr "3 · Les vues des cotisations <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">views/garden_membership_fee_views.xml</span> <span class=\"badge text-bg-light fw-normal font-monospace\">views/menus.xml</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "3. Views and menu of the fees"
+msgstr "3. Vues et menu des cotisations"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"4 · The members <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">models/res_partner.py</span>"
+msgstr "4 · Les membres <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/res_partner.py</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "4. Last paid year of the members"
+msgstr "4. Dernière année payée des membres"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"5 · The contact form <span class=\"badge text-bg-light fw-normal font-"
+"monospace ms-1\">views/res_partner_views.xml</span>"
+msgstr "5 · La fiche contact <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">views/res_partner_views.xml</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "5. Filter of the members not up to date"
+msgstr "5. Filtre des membres pas à jour"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "5. Membership page of the contact form"
+msgstr "5. Onglet adhésion de la fiche contact"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"6 · The plots <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">models/garden_plot.py</span>"
+msgstr "6 · Les parcelles <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">models/garden_plot.py</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "6. Rules of the plots"
+msgstr "6. Règles des parcelles"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"7 · The data <span class=\"badge text-bg-light fw-normal font-monospace "
+"ms-1\">__manifest__.py</span>"
+msgstr "7 · Les données <span class=\"badge text-bg-light fw-normal font-monospace ms-1\">__manifest__.py</span>"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "7. Fees of the members"
+msgstr "7. Cotisations des membres"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"<b>Development challenge: Python and XML.</b> Complete the module "
+"<code>trivia_garden</code> so that Odoo does the job: the TODOs of the code "
+"are numbered like the missions below, and give the details."
+msgstr "<b>Challenge de développement : Python et XML.</b> Complétez le module <code>trivia_garden</code> pour qu’Odoo fasse le travail : les TODO du code sont numérotés comme les missions ci-dessous, et en donnent le détail."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"A <i>Fees</i> smart button on the contact form, with the number of fees of "
+"the member."
+msgstr "Un bouton intelligent <i>Fees</i> sur la fiche contact, avec le nombre de cotisations du membre."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"A <i>Membership</i> page on the contact form, and a <i>Not up to date</i> "
+"filter for the members who did not pay the current year, without writing the"
+" year in the code."
+msgstr "Un onglet <i>Membership</i> sur la fiche contact, et un filtre <i>Not up to date</i> pour les membres qui n’ont pas payé l’année en cours, sans écrire l’année dans le code."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid "A kanban view of the plots, grouped by site."
+msgstr "Une vue kanban des parcelles, regroupée par site."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"A list view, a form view with the status in its header and a <i>Mark as "
+"paid</i> button only visible on the draft fees, an action and a menu."
+msgstr "Une vue liste, une vue formulaire avec le statut dans son en-tête et un bouton <i>Mark as paid</i> visible seulement sur les cotisations en brouillon, une action et un menu."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"A member can have a draft fee and a paid fee for the same year: the "
+"constraint must be on the member and the year only (mission 1)."
+msgstr "Un membre peut avoir une cotisation en brouillon et une cotisation payée pour la même année : la contrainte doit porter seulement sur le membre et l’année (mission 1)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"A member can pay two fees for the same year: add a constraint (mission 1)."
+msgstr "Un membre peut payer deux cotisations pour la même année : ajoutez une contrainte (mission 1)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "A member can rent two plots (mission 6)."
+msgstr "Un membre peut louer deux parcelles (mission 6)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "A member must be able to pay the fees of different years."
+msgstr "Un membre doit pouvoir payer les cotisations de plusieurs années."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"A member who did not pay the fee of this year can rent a plot (mission 6)."
+msgstr "Un membre qui n’a pas payé la cotisation de cette année peut louer une parcelle (mission 6)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "A member who paid the fee of this year must be able to rent a plot."
+msgstr "Un membre qui a payé la cotisation de cette année doit pouvoir louer une parcelle."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "A new fee must be in draft."
+msgstr "Une nouvelle cotisation doit être en brouillon."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"A plot can be created for a member who did not pay the fee of this year "
+"(mission 6)."
+msgstr "Une parcelle peut être créée pour un membre qui n’a pas payé la cotisation de cette année (mission 6)."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"After a change of Python code, or a new file, field or record, update the "
+"modules (<code>make update</code>), then click <i>Check</i>: the tab "
+"<i>Checker Report</i> lists what is still missing."
+msgstr "Après une modification du code Python, ou un nouveau fichier, champ ou enregistrement, mettez à jour les modules (<code>make update</code>), puis cliquez sur <i>Vérifier</i> : l’onglet <i>Rapport du checker</i> liste ce qui manque encore."
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__area
+msgid "Area (m²)"
+msgstr "Surface (m²)"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__city
+msgid "City"
+msgstr "Ville"
+
+#. module: trivia_garden
+#: model:ir.model,name:trivia_garden.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__create_uid
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__create_date
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__display_name
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__display_name
+#: model:ir.model.fields,field_description:trivia_garden.field_res_partner__display_name
+#: model:ir.model.fields,field_description:trivia_garden.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr "Nom d’affichage"
+
+#. module: trivia_garden
+#: model:trivia.challenge,summary:trivia_garden.challenge_garden
+msgid ""
+"Follow the membership fees of the shared gardens, and only rent the plots to"
+" the members who paid this year."
+msgstr "Suivez les cotisations des jardins partagés, et ne louez les parcelles qu’aux membres qui ont payé cette année."
+
+#. module: trivia_garden
+#: model_terms:ir.ui.view,arch_db:trivia_garden.garden_plot_view_search
+msgid "Free"
+msgstr "Libre"
+
+#. module: trivia_garden
+#: model:ir.module.module,shortdesc:base.module_trivia_garden
+#: model:ir.ui.menu,name:trivia_garden.menu_garden_root
+#: model:res.partner.category,name:trivia_garden.category_member
+msgid "Gaart fir Jiddereen"
+msgstr "Gaart fir Jiddereen"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"Gaart fir Jiddereen (“a garden for everyone”) runs shared gardens in "
+"Bonnevoie (Luxembourg) and in the Brill district (Esch-sur-Alzette): 20 "
+"members, 12 plots to rent. The treasurer follows the membership fees in a "
+"spreadsheet, and some plots are rented by members who did not pay this year."
+msgstr "Gaart fir Jiddereen (« un jardin pour tout le monde ») gère des jardins partagés à Bonnevoie (Luxembourg) et dans le quartier du Brill (Esch-sur-Alzette) : 20 membres, 12 parcelles à louer. Le trésorier suit les cotisations dans un tableur, et certaines parcelles sont louées par des membres qui n’ont pas payé cette année."
+
+#. module: trivia_garden
+#: model:ir.model,name:trivia_garden.model_garden_plot
+msgid "Garden Plot"
+msgstr "Parcelle"
+
+#. module: trivia_garden
+#: model:ir.model,name:trivia_garden.model_garden_site
+msgid "Garden Site"
+msgstr "Site"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__id
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__id
+#: model:ir.model.fields,field_description:trivia_garden.field_res_partner__id
+#: model:ir.model.fields,field_description:trivia_garden.field_trivia_challenge__id
+msgid "ID"
+msgstr "ID"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "Kanban view of the plots, grouped by site"
+msgstr "Vue kanban des parcelles, groupée par site"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__write_uid
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__write_date
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"Load the fees of the members: "
+"<code>data/garden_membership_fee_data.xml</code>."
+msgstr "Chargez les cotisations des membres : <code>data/garden_membership_fee_data.xml</code>."
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__name
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "No action opens the fees (mission 3)."
+msgstr "Aucune action n’ouvre les cotisations (mission 3)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "No menu opens the fees (mission 3)."
+msgstr "Aucun menu n’ouvre les cotisations (mission 3)."
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__plot_count
+msgid "Number of Plots"
+msgstr "Nombre de parcelles"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"Only a member who paid the fee of the current year can rent a plot, and a "
+"member rents one plot at most."
+msgstr "Seul un membre qui a payé la cotisation de l’année en cours peut louer une parcelle, et un membre loue au plus une parcelle."
+
+#. module: trivia_garden
+#: model:ir.actions.act_window,name:trivia_garden.garden_plot_action
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_site__plot_ids
+#: model:ir.ui.menu,name:trivia_garden.menu_garden_plot
+#: model_terms:ir.ui.view,arch_db:trivia_garden.garden_site_view_form
+msgid "Plots"
+msgstr "Parcelles"
+
+#. module: trivia_garden
+#: model:trivia.challenge,topic:trivia_garden.challenge_garden
+msgid "Python: models, computed fields, constraints, views"
+msgstr "Python : modèles, champs calculés, contraintes, vues"
+
+#. module: trivia_garden
+#: model_terms:ir.ui.view,arch_db:trivia_garden.garden_plot_view_search
+msgid "Rented"
+msgstr "Louée"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__site_id
+#: model_terms:ir.ui.view,arch_db:trivia_garden.garden_plot_view_search
+msgid "Site"
+msgstr "Site"
+
+#. module: trivia_garden
+#: model:ir.actions.act_window,name:trivia_garden.garden_site_action
+#: model:ir.ui.menu,name:trivia_garden.menu_garden_site
+msgid "Sites"
+msgstr "Sites"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "Smart button of the fees on the contact form"
+msgstr "Bouton intelligent des cotisations sur la fiche contact"
+
+#. module: trivia_garden
+#: model:ir.model.fields,field_description:trivia_garden.field_garden_plot__tenant_id
+msgid "Tenant"
+msgstr "Locataire"
+
+#. module: trivia_garden
+#: model:trivia.challenge,name:trivia_garden.challenge_garden
+msgid "The Garden Fees"
+msgstr "Les cotisations du jardin"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The action of the plots does not open the kanban view."
+msgstr "L’action des parcelles n’ouvre pas la vue kanban."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The button box of the contact form has no smart button about the fees."
+msgstr "La zone des boutons de la fiche contact n’a pas de bouton intelligent pour les cotisations."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The button calling action_mark_paid() must only be visible on draft fees."
+msgstr "Le bouton qui appelle action_mark_paid() doit être visible uniquement sur les cotisations en brouillon."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The contacts have no filter on last_paid_year in their search view "
+"(base.view_res_partner_filter): inherit this view (mission 5)."
+msgstr "Les contacts n’ont pas de filtre sur last_paid_year dans leur vue de recherche (base.view_res_partner_filter) : héritez de cette vue (mission 5)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The fees have no %(view_type)s view (mission 3)."
+msgstr "Les cotisations n’ont pas de vue %(view_type)s (mission 3)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The fees of the members are not loaded: declare "
+"data/garden_membership_fee_data.xml in the manifest (mission 7)."
+msgstr "Les cotisations des membres ne sont pas chargées : déclarez data/garden_membership_fee_data.xml dans le manifeste (mission 7)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The field %(field)s is not displayed in a page of the contact form (mission "
+"5)."
+msgstr "Le champ %(field)s n’est pas affiché dans un onglet de la fiche contact (mission 5)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The field %(field)s of %(model)s is missing (mission %(mission)s)."
+msgstr "Le champ %(field)s de %(model)s n’existe pas (mission %(mission)s)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The field %(field)s of %(model)s must be a %(types)s field, not a %(type)s "
+"field."
+msgstr "Le champ %(field)s de %(model)s doit être de type %(types)s, pas %(type)s."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"The fields of the members on the contacts, among which "
+"<code>last_paid_year</code>, the last year paid: stored, and always up to "
+"date."
+msgstr "Les champs des membres sur les contacts, dont <code>last_paid_year</code>, la dernière année payée : stocké, et toujours à jour."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The filter on last_paid_year must only keep the members who did not pay the "
+"current year."
+msgstr "Le filtre sur last_paid_year doit garder uniquement les membres qui n’ont pas payé l’année en cours."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The form of the fees must display the state as a statusbar, in its header."
+msgstr "Le formulaire des cotisations doit afficher le statut sous forme de statusbar, dans son en-tête."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The form of the fees must have a button calling action_mark_paid(), in its "
+"header."
+msgstr "Le formulaire des cotisations doit avoir un bouton qui appelle action_mark_paid(), dans son en-tête."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"The internal users are not allowed to %(operation)s the fees: see "
+"security/ir.access.csv (mission 2)."
+msgstr "Les utilisateurs internes n’ont pas le droit « %(operation)s » sur les cotisations : voir security/ir.access.csv (mission 2)."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid "The internal users can read, create, modify and delete the fees."
+msgstr "Les utilisateurs internes peuvent lire, créer, modifier et supprimer les cotisations."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The kanban view of the plots is not grouped by site."
+msgstr "La vue kanban des parcelles n’est pas groupée par site."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The method action_mark_paid() is missing (mission 1)."
+msgstr "La méthode action_mark_paid() n’existe pas (mission 1)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The model %(model)s does not exist yet (mission 1)."
+msgstr "Le modèle %(model)s n’existe pas encore (mission 1)."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"The model <code>garden.membership.fee</code> and its fields: a member pays "
+"at most one fee per year, and the method <code>action_mark_paid()</code> "
+"marks fees as paid."
+msgstr "Le modèle <code>garden.membership.fee</code> et ses champs : un membre paie au plus une cotisation par an, et la méthode <code>action_mark_paid()</code> marque des cotisations comme payées."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The plots have no kanban view."
+msgstr "Les parcelles n’ont pas de vue kanban."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The state of a fee must have exactly two values: draft and paid."
+msgstr "Le statut d’une cotisation doit avoir exactement deux valeurs : draft et paid."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "The year of a fee must be required."
+msgstr "L’année d’une cotisation doit être obligatoire."
+
+#. module: trivia_garden
+#: model:ir.module.module,summary:base.module_trivia_garden
+msgid ""
+"Trivi'Hackathon challenge: the membership fees and the plots of the shared "
+"gardens"
+msgstr "Challenge du Trivi'Hackathon : les cotisations et les parcelles des jardins partagés"
+
+#. module: trivia_garden
+#: model:ir.model,name:trivia_garden.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr "Challenge Trivia"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid "Your missions"
+msgstr "Vos missions"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid ""
+"action_mark_paid() must mark the fees as paid, also when called on several "
+"fees."
+msgstr "action_mark_paid() doit marquer les cotisations comme payées, y compris quand elle est appelée sur plusieurs cotisations."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "action_mark_paid() must set the payment date to today."
+msgstr "action_mark_paid() doit mettre la date de paiement à aujourd’hui."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "after changing the year of a paid fee"
+msgstr "après avoir changé l’année d’une cotisation payée"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "after deleting a fee"
+msgstr "après avoir supprimé une cotisation"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "after paying the fee of this year"
+msgstr "après avoir payé la cotisation de cette année"
+
+#. module: trivia_garden
+#: model_terms:ir.ui.view,arch_db:trivia_garden.garden_plot_view_form
+msgid "e.g. B-07"
+msgstr "ex. B-07"
+
+#. module: trivia_garden
+#: model_terms:ir.ui.view,arch_db:trivia_garden.garden_site_view_form
+msgid "e.g. Bonnevoie"
+msgstr "ex. Bonnevoie"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "last_paid_year is %(value)s instead of %(expected)s %(situation)s."
+msgstr "last_paid_year vaut %(value)s au lieu de %(expected)s %(situation)s."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "last_paid_year must be a stored computed field (mission 4)."
+msgstr "last_paid_year doit être un champ calculé stocké (mission 4)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "partner_id must be a required link to a contact (res.partner)."
+msgstr "partner_id doit être un lien obligatoire vers un contact (res.partner)."
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "when no fee is paid"
+msgstr "quand aucune cotisation n’est payée"
+
+#. module: trivia_garden
+#. odoo-python
+#: code:addons/trivia_garden/models/trivia_challenge.py:0
+msgid "with a fee paid two years ago and a draft fee this year"
+msgstr "avec une cotisation payée il y a deux ans et une cotisation en brouillon cette année"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"⭐ Bonus <small class=\"text-muted fw-normal\">optional, one star "
+"each</small>"
+msgstr "⭐ Bonus <small class=\"text-muted fw-normal\">facultatif, une étoile chacun</small>"
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"💡 In Odoo 20, a list view is a <code>&lt;list&gt;</code> (no longer a "
+"<code>&lt;tree&gt;</code>), and <code>attrs</code> is replaced by "
+"<code>invisible=\"…\"</code>."
+msgstr "💡 En Odoo 20, une vue liste est une <code>&lt;list&gt;</code> (et non plus une <code>&lt;tree&gt;</code>), et <code>attrs</code> est remplacé par <code>invisible=\"…\"</code>."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"💡 In Odoo 20, an SQL constraint is declared with "
+"<code>models.Constraint</code>: <code>_sql_constraints</code> no longer "
+"exists."
+msgstr "💡 En Odoo 20, une contrainte SQL se déclare avec <code>models.Constraint</code> : <code>_sql_constraints</code> n’existe plus."
+
+#. module: trivia_garden
+#: model_terms:trivia.challenge,description:trivia_garden.challenge_garden
+msgid ""
+"💡 Odoo 20 replaces <code>ir.model.access.csv</code> by "
+"<code>ir.access.csv</code>, with other columns: look at the lines already "
+"there."
+msgstr "💡 Odoo 20 remplace <code>ir.model.access.csv</code> par <code>ir.access.csv</code>, avec d’autres colonnes : inspirez-vous des lignes déjà présentes."

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="run_runner_view_list" model="ir.ui.view">
+        <field name="name">run.runner.list</field>
+        <field name="model">run.runner</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="disqualified">
+                <field name="edition_id"/>
+                <field name="bib" options="{'enable_formatting': false}"/>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="gender"/>
+                <field name="distance_km"/>
+                <field name="amount_raised" sum="Total"/>
+                <field name="disqualified"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="run_runner_view_form" model="ir.ui.view">
+        <field name="name">run.runner.form</field>
+        <field name="model">run.runner</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_disqualify" type="object" string="Disqualify" invisible="disqualified"/>
+                    <button name="action_requalify" type="object" string="Requalify" invisible="not disqualified"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Disqualified" bg_color="text-bg-danger" invisible="not disqualified"/>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="edition_id"/>
+                            <field name="bib" options="{'enable_formatting': false}"/>
+                            <field name="category"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="distance_km"/>
+                            <field name="amount_raised"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Split Times" name="splits">
+                            <field name="split_ids">
+                                <list editable="bottom">
+                                    <field name="checkpoint_km"/>
+                                    <field name="time"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Pledges" name="pledges">
+                            <field name="pledge_ids">
+                                <list editable="bottom">
+                                    <field name="sponsor"/>
+                                    <field name="amount_per_km"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="run_runner_view_search" model="ir.ui.view">
+        <field name="name">run.runner.search</field>
+        <field name="model">run.runner</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="bib"/>
+                <field name="edition_id"/>
+                <filter name="disqualified" string="Disqualified" domain="[('disqualified', '=', True)]"/>
+                <filter name="group_by_edition" string="Edition" context="{'group_by': 'edition_id'}"/>
+                <filter name="group_by_category" string="Category" context="{'group_by': 'category'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="run_runner_action" model="ir.actions.act_window">
+        <field name="name">Runners</field>
+        <field name="res_model">run.runner</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

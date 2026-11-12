@@ -1,0 +1,6 @@
+id,name,model_id,group_id/id,operation,domain
+access_run_edition_user,run.edition user,run.edition,base.group_user,crud,
+access_run_runner_user,run.runner user,run.runner,base.group_user,crud,
+access_run_split_user,run.split user,run.split,base.group_user,crud,
+access_run_pledge_user,run.pledge user,run.pledge,base.group_user,crud,
+access_run_result_report_user,run.result.report user,run.result.report,base.group_user,r,

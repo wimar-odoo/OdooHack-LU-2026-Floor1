@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- the festival takes place today, whatever the date of the hackathon -->
+    <record id="event_festival" model="event.event">
+        <field name="name">Festival Solidaire</field>
+        <field name="date_begin" eval="DateTime.today().strftime('%Y-%m-%d 08:00:00')"/>
+        <field name="date_end" eval="DateTime.today().strftime('%Y-%m-%d 22:00:00')"/>
+        <field name="date_tz">Europe/Luxembourg</field>
+        <field name="seats_limited" eval="True"/>
+        <field name="seats_max">150</field>
+        <!-- the festival does not send emails to the attendees -->
+        <field name="event_mail_ids" eval="[Command.clear()]"/>
+        <field name="description" type="html">
+            <p>A day of music, food and solidarity: all the proceeds go to the projects of the association.</p>
+        </field>
+    </record>
+
+    <record id="ticket_solidaire" model="event.event.ticket">
+        <field name="name">Solidarity</field>
+        <field name="event_id" ref="event_festival"/>
+    </record>
+    <record id="ticket_soutien" model="event.event.ticket">
+        <field name="name">Supporter</field>
+        <field name="event_id" ref="event_festival"/>
+    </record>
+</odoo>

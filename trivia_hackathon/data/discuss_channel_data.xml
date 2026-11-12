@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="channel_trivia" model="discuss.channel">
+        <field name="name">Trivi'Hackathon</field>
+        <field name="description">🧀 Collect the 6 wedges! · Collectionnez les 6 parts !</field>
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
+    </record>
+</odoo>

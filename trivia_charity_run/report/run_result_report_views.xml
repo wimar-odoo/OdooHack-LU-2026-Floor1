@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="run_result_report_view_list" model="ir.ui.view">
+        <field name="name">run.result.report.list</field>
+        <field name="model">run.result.report</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="rank"/>
+                <field name="bib" options="{'enable_formatting': false}"/>
+                <field name="runner_id"/>
+                <field name="category"/>
+                <field name="category_rank"/>
+                <field name="gender"/>
+                <field name="finish_time"/>
+                <field name="pace"/>
+                <field name="edition_id" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="run_result_report_view_search" model="ir.ui.view">
+        <field name="name">run.result.report.search</field>
+        <field name="model">run.result.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="runner_id"/>
+                <field name="bib"/>
+                <field name="edition_id"/>
+                <filter name="women" string="Women" domain="[('gender', '=', 'female')]"/>
+                <filter name="men" string="Men" domain="[('gender', '=', 'male')]"/>
+                <filter name="podium" string="Podium" domain="[('rank', '&lt;=', 3)]"/>
+                <filter name="group_by_edition" string="Edition" context="{'group_by': 'edition_id'}"/>
+                <filter name="group_by_category" string="Category" context="{'group_by': 'category'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ⭐ BONUS: a pivot view and a graph view of the results -->
+
+    <record id="run_result_report_action" model="ir.actions.act_window">
+        <field name="name">Results</field>
+        <field name="res_model">run.result.report</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_group_by_edition': 1}</field>
+    </record>
+</odoo>
