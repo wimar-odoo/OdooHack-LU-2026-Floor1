@@ -14,6 +14,11 @@
         <field name="domain" eval="[('event_id', '=', ref('event_festival'))]"/>
     </record>
 
+    <record id="festival_kiosk_action" model="ir.actions.client">
+        <field name="name">Welcome Desk</field>
+        <field name="tag">festival_kiosk</field>
+    </record>
+
     <menuitem id="menu_festival_root" name="Festival Solidaire" sequence="5"
               web_icon="trivia_festival,static/description/icon.png"/>
 
@@ -26,4 +31,6 @@
     TODO 2: a client action (model ir.actions.client) opening your component festival_kiosk (its tag),
     and a menu "Welcome Desk" opening this action.
     -->
+    <menuitem id="menu_festival_kiosk" name="Welcome Desk" parent="menu_festival_root" sequence="30"
+              action="festival_kiosk_action" groups="event.group_event_registration_desk"/>
 </odoo>

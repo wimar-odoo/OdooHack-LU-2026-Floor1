@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="trivia_festival.AttendeeCounter">
+        <span t-if="this.state.attendees !== null" title="Festival attendees checked in">
+            <i class="fa fa-users" aria-hidden="true"/>
+            <t t-out="this.state.attendees"/>
+        </span>
+    </t>
+
+</templates>

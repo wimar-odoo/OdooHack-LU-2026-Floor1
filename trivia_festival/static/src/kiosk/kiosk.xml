@@ -7,6 +7,10 @@
                 <h1>🎪 <t t-out="this.state.event.name"/></h1>
                 <p class="lead"><t t-out="this.state.event.attendees"/> attendees have already arrived.</p>
                 <!-- ⭐ BONUS: a search box to filter the registrations by name -->
+                <label>
+                    Search attendees
+                    <input type="search" t-model="this.search"/>
+                </label>
                 <table class="table table-hover align-middle">
                     <thead>
                         <tr>
@@ -16,12 +20,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr t-foreach="this.state.registrations" t-as="registration" t-key="registration.id">
+                        <tr t-foreach="this.filteredRegistrations" t-as="registration" t-key="registration.id">
                             <td t-out="registration.name"/>
                             <td t-out="registration.ticket"/>
                             <td class="text-end">
                                 <!-- TODO 2: a badge "Present" for the people who already arrived (registration.attended),
                                      else a "Check in" button which calls this.checkIn(registration) -->
+                                <span t-if="registration.attended" class="badge text-bg-success">Present</span>
+                                <button t-else="" type="button"
+                                        t-att-disabled="this.state.checkingIn"
+                                        t-on-click="() => this.checkIn(registration)">Check in</button>
                             </td>
                         </tr>
                     </tbody>

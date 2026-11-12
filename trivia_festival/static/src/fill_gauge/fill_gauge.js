@@ -34,10 +34,56 @@ export class FillGauge extends Component {
     props = useProps(standardFieldProps);
 
     get value() {
-        return this.props.record.data[this.props.name] || 0;
+        const value = this.props.record.data[this.props.name];
+        if (value) {
+            return value;
+        } else {
+            return 0;
+        }
+    }
+    // TODO 1: the maximum, the percentage and the color (a Bootstrap class: bg-success, bg-warning or bg-danger)
+    get max() {
+        const max = this.props.record.data.seats_max;
+        if (max) {
+            return max;
+        } else {
+            return 0;
+        }
     }
 
-    // TODO 1: the maximum, the percentage and the color (a Bootstrap class: bg-success, bg-warning or bg-danger)
+    get percentage() {
+        if (this.max > 0) {
+            return (this.value / this.max) * 100;
+        } else {
+            return 0;
+        }
+    }
+
+    get width() {
+        const percentage = this.percentage;
+        if (percentage < 0) {
+            return 0;
+        } else if (percentage > 100) {
+            return 100;
+        } else {
+            return percentage;
+        }
+    }
+
+    get color() {
+        const percentage = this.percentage;
+        if (percentage >= 90) {
+            return "bg-danger";
+        } else if (percentage >= 70) {
+            return "bg-warning";
+        } else {
+            return "bg-success";
+        }
+    }
 }
 
 // TODO 1: add the widget to the registry of the fields
+registry.category("fields").add("festival_fill_gauge", {
+    component: FillGauge,
+    supportedTypes: ["integer"],
+});

@@ -3,8 +3,14 @@
 
     <t t-name="trivia_festival.FillGauge">
         <!-- TODO 1: a Bootstrap progress bar (div.progress, then div.progress-bar with the color and the width),
-             and the text "taken / max (percentage %)" -->
-        <span t-out="this.value"/>
+        and the text "taken / max (percentage %)" -->
+        <t t-if="this.max > 0">
+            <div class="progress">
+                <div class="progress-bar" t-att-class="this.color" t-attf-style="width: {{ this.width }}%;"/>
+            </div>
+            <span><t t-out="this.value"/> / <t t-out="this.max"/> (<t t-out="Math.round(this.percentage)"/> %)</span>
+        </t>
+        <span t-else=""><t t-out="this.value"/> taken (no capacity set)</span>
     </t>
 
 </templates>
