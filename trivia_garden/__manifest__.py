@@ -9,7 +9,7 @@ Challenge of the Trivi'Hackathon (Python: models, inheritance, computed fields, 
 Gaart fir Jiddereen runs shared gardens in Luxembourg City and in Esch-sur-Alzette. Complete this module so that
 the treasurer can follow the membership fees, and so that only the members up to date can rent a plot.
 """,
-    "version": "20.0.1.0.0",
+    "version": "20.0.1.0.1",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
@@ -23,7 +23,8 @@ the treasurer can follow the membership fees, and so that only the members up to
         "views/garden_membership_fee_views.xml",
         "views/res_partner_views.xml",
         "views/menus.xml",
-        # TODO 7: load the membership data (data/garden_membership_fee_data.xml), once your models and fields exist
+        # needs the fee model and the member fields: loaded after everything else
+        "data/garden_membership_fee_data.xml",
     ],
     "application": True,
 }

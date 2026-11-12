@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class GardenPlot(models.Model):
@@ -11,10 +12,19 @@ class GardenPlot(models.Model):
     area = fields.Float(string="Area (m²)")
     tenant_id = fields.Many2one("res.partner", string="Tenant", index=True)
 
-    # ----------------------------------------------------------------------------
-    # TODO 6 - The rules of the plots
-    #
-    # A plot can only be rented (tenant_id) by a member who paid the fee of the
-    # current year (see last_paid_year, TODO 4), and a member rents one plot at most.
-    # Refuse the other cases with a clear message.
-    # ----------------------------------------------------------------------------
+    # NULL values are distinct for UNIQUE: any number of plots can stay free
+    _unique_tenant = models.Constraint(
+        "UNIQUE(tenant_id)",
+        "A member rents one plot at most.",
+    )
+
+    @api.constrains("tenant_id")
+    def _check_tenant_paid_current_year(self):
+        current_year = fields.Date.context_today(self).year
+        late_plots = self.filtered(lambda plot: plot.tenant_id and plot.tenant_id.last_paid_year < current_year)
+        if late_plots:
+            raise ValidationError(self.env._(
+                "Only a member who paid the fee of %(year)s can rent a plot: %(members)s did not.",
+                year=current_year,
+                members=", ".join(late_plots.tenant_id.mapped("display_name")),
+            ))
