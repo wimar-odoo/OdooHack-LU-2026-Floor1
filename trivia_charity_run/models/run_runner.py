@@ -39,9 +39,15 @@ class RunRunner(models.Model):
 
     @api.depends("pledge_ids.amount_per_km", "distance_km")
     def _compute_amount_raised(self):
+        groups = self.env["run.pledge"]._read_group(
+            [("runner_id", "in", self.ids)],
+            groupby=["runner_id"],
+            aggregates=["amount_per_km:sum"],
+        )
+        per_km = {runner.id: total for runner, total in groups}
         for runner in self:
-            pledges = self.env["run.pledge"].search([("runner_id", "=", runner.id)])
-            runner.amount_raised = sum(pledges.mapped("amount_per_km")) * runner.distance_km
+            runner.amount_raised = per_km.get(runner.id, 0) * runner.distance_km
+        
 
     def action_disqualify(self):
         self.disqualified = True
@@ -61,11 +67,11 @@ class RunRunner(models.Model):
         anything... This query is vulnerable to SQL injection: try ' OR 1=1 --
         """
         self.flush_model(["bib", "name"])  # raw SQL reads the database, not the cache of the ORM
-        self.env.cr.execute(f"""
+        self.env.cr.execute("""
             SELECT id
               FROM run_runner
-             WHERE bib::text = '{term}'
-                OR name ILIKE '%{term}%'
+             WHERE bib::text = %s
+                OR name ILIKE %s
           ORDER BY edition_id DESC, bib
-        """)
+        """, [term, f"%{term}%"])
         return self.browse([row[0] for row in self.env.cr.fetchall()])
