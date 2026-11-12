@@ -8,5 +8,6 @@
     <menuitem id="menu_garden_plot" name="Plots" parent="menu_garden_root" sequence="20"
               action="garden_plot_action"/>
 
-    <!-- TODO 3: a menu "Membership Fees" opening the fees -->
+    <menuitem id="menu_garden_membership_fee" name="Membership Fees" parent="menu_garden_root" sequence="30"
+              action="garden_membership_fee_action"/>
 </odoo>

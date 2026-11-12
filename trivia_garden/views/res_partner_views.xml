@@ -1,13 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--
-    TODO 5 - The members on the contacts
+    <record id="view_partner_form_inherit_garden" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.garden</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_fees" type="object" class="oe_stat_button" icon="fa-leaf"
+                        invisible="not fee_count">
+                    <field name="fee_count" widget="statinfo" string="Fees"/>
+                </button>
+            </div>
+            <notebook position="inside">
+                <page string="Membership" name="garden_membership">
+                    <group>
+                        <group>
+                            <field name="membership_type"/>
+                            <field name="member_since"/>
+                        </group>
+                        <group>
+                            <field name="last_paid_year" options="{'format': false}"/>
+                        </group>
+                    </group>
+                    <field name="fee_ids" context="{'default_partner_id': id}">
+                        <list editable="bottom">
+                            <field name="year" options="{'format': false}"/>
+                            <field name="amount"/>
+                            <field name="state"/>
+                            <field name="payment_date"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
 
-    * the contact form (base.view_partner_form) gets a "Membership" page, with the fields
-      membership_type, member_since, last_paid_year and the list of the fees (fee_ids);
-    * the contacts get a filter "Not up to date": the members whose last paid year is before
-      the current year.
-
-    ⭐ BONUS: a "Fees" smart button on the contact form, showing the number of fees of the member.
-    -->
+    <record id="view_res_partner_filter_inherit_garden" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit.garden</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <filter name="garden_not_up_to_date" string="Not up to date"
+                        domain="[('membership_type', '!=', False), ('last_paid_year', '&lt;', context_today().year)]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
 </odoo>
