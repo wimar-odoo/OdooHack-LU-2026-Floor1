@@ -25,5 +25,10 @@ that visitors can see the animals waiting for a family and send an adoption requ
         "report/adoption_certificate_report.xml",
     ],
     # TODO 5: add static/src/scss/shelter.scss to the assets of the website (bundle web.assets_frontend)
+        "assets": {
+        "web.assets_frontend": [
+            "trivia_animal_shelter/static/src/scss/shelter.scss",
+        ],
+    },
     "application": True,
 }
