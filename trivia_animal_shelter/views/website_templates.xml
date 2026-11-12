@@ -22,14 +22,10 @@
                                t-out="sp[1]"/>
                         </t>
                     </div>
-
-                    <!-- Grid: 1 per row on phone, 2 on tablet, 3 on computer -->
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                        <t t-foreach="animals" t-as="animal">
-                            <div class="col">
-                                <t t-call="trivia_animal_shelter.animal_card"/>
-                            </div>
-                        </t>
+                        <div class="col" t-foreach="animals" t-as="animal" t-key="animal.id">
+                            <t t-call="trivia_animal_shelter.animal_card"/>
+                        </div>
                     </div>
                     <p t-if="not animals" class="text-muted">No animals to adopt right now.</p>
                 </div>
