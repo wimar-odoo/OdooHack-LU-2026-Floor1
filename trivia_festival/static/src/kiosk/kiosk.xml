@@ -5,8 +5,16 @@
         <div class="o_festival_kiosk h-100 overflow-auto bg-view">
             <div class="container py-4">
                 <h1>🎪 <t t-out="this.state.event.name"/></h1>
-                <p class="lead"><t t-out="this.state.event.attendees"/> attendees have already arrived.</p>
-                <!-- ⭐ BONUS: a search box to filter the registrations by name -->
+                <p class="lead">
+                    <t t-out="this.state.event.attendees"/> attendees have already arrived
+                    (<t t-out="this.state.event.seats_max"/> seats).
+                </p>
+                <!-- ⭐ BONUS: the search box -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fa fa-search"/></span>
+                    <input type="text" class="form-control" placeholder="Search an attendee by name..."
+                           t-model="this.search" autofocus="autofocus"/>
+                </div>
                 <table class="table table-hover align-middle">
                     <thead>
                         <tr>
@@ -16,13 +24,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr t-foreach="this.state.registrations" t-as="registration" t-key="registration.id">
+                        <tr t-foreach="this.filteredRegistrations" t-as="registration" t-key="registration.id">
                             <td t-out="registration.name"/>
                             <td t-out="registration.ticket"/>
                             <td class="text-end">
-                                <!-- TODO 2: a badge "Present" for the people who already arrived (registration.attended),
-                                     else a "Check in" button which calls this.checkIn(registration) -->
+                                <span t-if="registration.attended" class="badge text-bg-success">Present</span>
+                                <button t-else="" class="btn btn-primary btn-sm"
+                                        t-att-disabled="this.state.loading"
+                                        t-on-click="() => this.checkIn(registration)">
+                                    Check in
+                                </button>
                             </td>
+                        </tr>
+                        <tr t-if="!this.filteredRegistrations.length">
+                            <td colspan="3" class="text-muted text-center">No registration found.</td>
                         </tr>
                     </tbody>
                 </table>

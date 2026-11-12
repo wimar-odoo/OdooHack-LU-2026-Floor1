@@ -1,54 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- ======================================================================
-         TODO 2 - The page /adopt
-         Variables given by the controller:
-           * animals: the animals to display
-           * species: the species of the filter (e.g. 'cat'), or False
-         ====================================================================== -->
+    <!-- The page /adopt (variables: animals, species, species_list) -->
     <template id="animal_list" name="Adopt: Animals">
         <t t-call="website.layout">
             <div id="wrap" class="o_shelter">
                 <div class="container py-5">
                     <h1>Adopt a friend</h1>
                     <p class="lead">These animals of the Refuge Les 4 Pattes are waiting for a family.</p>
-                    <!--
-                    TODO 2: a responsive grid of the animals, with Bootstrap: one card per row on a phone, two on
-                    a tablet, three on a computer. Each animal is displayed by calling the template
-                    trivia_animal_shelter.animal_card.
 
-                    ⭐ BONUS: above the grid, one button per species to filter the animals (/adopt?species=cat),
-                    the buttons of the species are given by request.env['shelter.animal']._get_species().
-                    -->
+                    <!-- ⭐ BONUS: one button per species -->
+                    <div class="o_shelter_filters mb-4 d-flex flex-wrap gap-2">
+                        <a href="/adopt" t-attf-class="btn #{'btn-primary' if not species else 'btn-outline-primary'}">All</a>
+                        <t t-foreach="species_list or request.env['shelter.animal']._get_species()" t-as="item">
+                            <a t-attf-href="/adopt?species=#{item[0]}"
+                               t-attf-class="btn #{'btn-primary' if species == item[0] else 'btn-outline-primary'}"
+                               t-out="item[1]"/>
+                        </t>
+                    </div>
+
+                    <div t-if="not animals" class="alert alert-info">
+                        No animal is waiting for a family at the moment. Come back soon!
+                    </div>
+                    <div class="row g-4">
+                        <div t-foreach="animals" t-as="animal" class="col-12 col-md-6 col-lg-4">
+                            <t t-call="trivia_animal_shelter.animal_card"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </t>
     </template>
 
-    <!-- ======================================================================
-         TODO 2 - The card of an animal (variable: animal)
-         The root element must be EXACTLY:
-             <div class="card h-100 o_shelter_card" t-att-data-animal-id="animal.id"> ... </div>
-         It shows the emoji of the species (animal.species_emoji), the name, the breed, the age,
-         and a link to the page of the animal (animal.website_url).
-         ====================================================================== -->
+    <!-- The card of an animal (variable: animal) -->
     <template id="animal_card" name="Adopt: Animal Card">
-        <t/>
+        <div class="card h-100 o_shelter_card" t-att-data-animal-id="animal.id">
+            <div class="card-body text-center">
+                <div class="display-3 o_shelter_emoji" t-out="animal.species_emoji"/>
+                <h3 class="card-title mb-1" t-out="animal.name"/>
+                <p class="card-text text-muted mb-1">
+                    <span t-out="animal.breed"/>
+                    <t t-if="animal.breed and animal.age"> · </t>
+                    <span t-out="animal.age"/>
+                </p>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center pb-3">
+                <a t-att-href="animal.website_url" class="btn btn-primary stretched-link">Meet <t t-out="animal.name"/></a>
+            </div>
+        </div>
     </template>
 
-    <!-- ======================================================================
-         TODO 3 - The page of an animal (variable: animal)
-         It shows the emoji of the species, the name, the breed, the age, the sex and the description.
-
-         TODO 4 - The adoption form, on the same page: the fields name, email, phone and message,
-         posted (method POST) to the URL of the animal followed by /request.
-         Don't forget the CSRF token of the form!
-         ====================================================================== -->
+    <!-- The page of an animal, with the adoption form (variable: animal) -->
     <template id="animal_detail" name="Adopt: Animal">
         <t t-call="website.layout">
             <div id="wrap" class="o_shelter">
                 <div class="container py-5">
                     <a href="/adopt">← All the animals</a>
+                    <div class="row mt-4 g-5">
+                        <div class="col-12 col-lg-6">
+                            <div class="display-1" t-out="animal.species_emoji"/>
+                            <h1 t-out="animal.name"/>
+                            <ul class="list-unstyled text-muted">
+                                <li t-if="animal.breed"><b>Breed:</b> <span t-out="animal.breed"/></li>
+                                <li t-if="animal.age"><b>Age:</b> <span t-out="animal.age"/></li>
+                                <li t-if="animal.sex"><b>Sex:</b> <span t-field="animal.sex"/></li>
+                            </ul>
+                            <p class="lead" t-out="animal.description"/>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="card o_shelter_form">
+                                <div class="card-body">
+                                    <h2 class="card-title">Adopt <t t-out="animal.name"/></h2>
+                                    <form method="post" t-attf-action="#{animal.website_url}/request">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="shelter_name">Your name</label>
+                                            <input type="text" class="form-control" id="shelter_name" name="name" required="required"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="shelter_email">Email</label>
+                                            <input type="email" class="form-control" id="shelter_email" name="email" required="required"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="shelter_phone">Phone</label>
+                                            <input type="tel" class="form-control" id="shelter_phone" name="phone"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="shelter_message">Tell us about you</label>
+                                            <textarea class="form-control" id="shelter_message" name="message" rows="4"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Send my request</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </t>
@@ -71,7 +116,40 @@
         </t>
     </template>
 
-    <!-- TODO 5: a menu "Adopt" in the main menu of the website, opening /adopt (model website.menu) -->
+    <!-- The "Adopt" menu of the website -->
+    <record id="menu_adopt" model="website.menu">
+        <field name="name">Adopt</field>
+        <field name="url">/adopt</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">45</field>
+    </record>
 
-    <!-- ⭐ BONUS: a building block (snippet) "Animal of the week", available in the website editor -->
+    <!-- ⭐ BONUS: the building block "Animal of the week" -->
+    <template id="s_animal_of_the_week" name="Animal of the week">
+        <section class="s_animal_of_the_week o_shelter pt48 pb48">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center">
+                        <span class="display-1">🐾</span>
+                    </div>
+                    <div class="col-lg-8">
+                        <h2>Animal of the week</h2>
+                        <p class="lead">
+                            Every week, we present one of our residents who is waiting for a family.
+                            Come and meet them at the shelter!
+                        </p>
+                        <a href="/adopt" class="btn btn-primary">See the animals</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="snippets" inherit_id="website.snippets" name="Shelter Snippets">
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="trivia_animal_shelter.s_animal_of_the_week" string="Animal of the week" group="content">
+                <keywords>animal, shelter, adoption, week</keywords>
+            </t>
+        </xpath>
+    </template>
 </odoo>

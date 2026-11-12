@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="trivia_festival.AttendeeCounter">
+        <div t-if="this.state.loaded" class="o_festival_attendee_counter">
+            <button class="o_nav_entry btn btn-link text-reset px-2"
+                    title="Attendees of the festival: open the welcome desk"
+                    t-on-click="() => this.openKiosk()">
+                🎪 <span class="badge rounded-pill text-bg-primary">
+                    <t t-out="this.state.attendees"/> / <t t-out="this.state.seatsMax"/>
+                </span>
+            </button>
+        </div>
+    </t>
+
+</templates>

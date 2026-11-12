@@ -35,12 +35,34 @@
         </field>
     </record>
 
-    <!-- ⭐ BONUS: a pivot view and a graph view of the results -->
+    <record id="run_result_report_view_pivot" model="ir.ui.view">
+        <field name="name">run.result.report.pivot</field>
+        <field name="model">run.result.report</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="edition_id" type="row"/>
+                <field name="category" type="col"/>
+                <field name="finish_time" type="measure"/>
+                <field name="pace" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="run_result_report_view_graph" model="ir.ui.view">
+        <field name="name">run.result.report.graph</field>
+        <field name="model">run.result.report</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="category"/>
+                <field name="finish_time" type="measure"/>
+            </graph>
+        </field>
+    </record>
 
     <record id="run_result_report_action" model="ir.actions.act_window">
         <field name="name">Results</field>
         <field name="res_model">run.result.report</field>
-        <field name="view_mode">list</field>
+        <field name="view_mode">list,pivot,graph</field>
         <field name="context">{'search_default_group_by_edition': 1}</field>
     </record>
 </odoo>

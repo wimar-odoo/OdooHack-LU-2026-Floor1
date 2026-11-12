@@ -1,4 +1,6 @@
 from odoo import api, fields, models
+from odoo.tools import SQL
+from odoo.tools.sql import escape_psql
 
 CATEGORIES = [
     ("junior", "Junior (under 20)"),
@@ -39,9 +41,18 @@ class RunRunner(models.Model):
 
     @api.depends("pledge_ids.amount_per_km", "distance_km")
     def _compute_amount_raised(self):
+        Pledge = self.env["run.pledge"]
+        Pledge.flush_model(["runner_id", "amount_per_km"])  # the pledges still in the cache of the ORM
+        totals = {
+            runner.id: total
+            for runner, total in Pledge._read_group(
+                [("runner_id", "in", self.ids)],
+                groupby=["runner_id"],
+                aggregates=["amount_per_km:sum"],
+            )
+        }
         for runner in self:
-            pledges = self.env["run.pledge"].search([("runner_id", "=", runner.id)])
-            runner.amount_raised = sum(pledges.mapped("amount_per_km")) * runner.distance_km
+            runner.amount_raised = totals.get(runner.id, 0.0) * runner.distance_km
 
     def action_disqualify(self):
         self.disqualified = True
@@ -61,11 +72,19 @@ class RunRunner(models.Model):
         anything... This query is vulnerable to SQL injection: try ' OR 1=1 --
         """
         self.flush_model(["bib", "name"])  # raw SQL reads the database, not the cache of the ORM
-        self.env.cr.execute(f"""
+        term = (term or "").strip()
+        if not term:
+            return self.browse()
+        # the parameters are sent apart from the query: never formatted into it (SQL injection)
+        self.env.cr.execute(SQL(
+            """
             SELECT id
               FROM run_runner
-             WHERE bib::text = '{term}'
-                OR name ILIKE '%{term}%'
+             WHERE bib::text = %s
+                OR name ILIKE %s
           ORDER BY edition_id DESC, bib
-        """)
+            """,
+            term,
+            f"%{escape_psql(term)}%",
+        ))
         return self.browse([row[0] for row in self.env.cr.fetchall()])

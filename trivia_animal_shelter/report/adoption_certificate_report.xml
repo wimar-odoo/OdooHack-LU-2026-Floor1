@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--
-    TODO 6 - The adoption certificate
+    <template id="report_adoption_certificate">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page text-center">
+                        <h1 class="mt-5">Adoption Certificate</h1>
+                        <h3 class="text-muted">Refuge Les 4 Pattes</h3>
+                        <div style="font-size: 72px;" t-out="doc.animal_id.species_emoji"/>
+                        <p class="lead mt-4">
+                            The Refuge Les 4 Pattes certifies that
+                            <b t-out="doc.name"/>
+                            welcomes into their family
+                        </p>
+                        <h2 t-out="doc.animal_id.name"/>
+                        <p>
+                            <span t-field="doc.animal_id.species"/>
+                            <t t-if="doc.animal_id.breed"> · <span t-out="doc.animal_id.breed"/></t>
+                        </p>
+                        <p class="mt-5">
+                            Luxembourg, <span t-out="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
 
-    A PDF report "Adoption Certificate" on the adoption requests (model shelter.adoption.request),
-    printable from the form of a request (Print menu). It shows the name of the shelter, the name of
-    the applicant, the animal (name, species, breed) and the date of the day.
-    Tip: use the layout of the company documents, web.external_layout.
-    -->
+    <record id="action_report_adoption_certificate" model="ir.actions.report">
+        <field name="name">Adoption Certificate</field>
+        <field name="model">shelter.adoption.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">trivia_animal_shelter.report_adoption_certificate</field>
+        <field name="print_report_name">'Adoption Certificate - %s' % (object.animal_id.name)</field>
+        <field name="binding_model_id" ref="model_shelter_adoption_request"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>

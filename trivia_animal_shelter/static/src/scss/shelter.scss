@@ -1,7 +1,24 @@
-// ----------------------------------------------------------------------------
-// TODO 5 - The style of the adoption pages
-//
-// Declare this file in the assets of the website (manifest, bundle web.assets_frontend),
-// then give a style to the cards of the animals (.o_shelter_card): for example a shadow
-// and a small zoom when the mouse goes over a card.
-// ----------------------------------------------------------------------------
+// The style of the adoption pages of the Refuge Les 4 Pattes
+
+.o_shelter {
+    .o_shelter_card {
+        border: 0;
+        border-radius: 1rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.16);
+        }
+
+        .o_shelter_emoji {
+            line-height: 1.2;
+        }
+    }
+
+    .o_shelter_form {
+        border-radius: 1rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+    }
+}
