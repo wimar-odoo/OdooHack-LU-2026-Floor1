@@ -22,37 +22,34 @@ class RunResultReport(models.Model):
     category_rank = fields.Integer(string="Rank in Category", readonly=True, aggregator="min")
 
     def init(self):
-        """ Create the SQL view of the results (called when the module is installed or updated).
-
-        TODO 1 - Replace this empty placeholder by the real results: one row per runner who
-        reached the finish (a split at km 10), with the columns:
-
-        * id: the id of the runner (each row of a model needs a unique id)
-        * runner_id, edition_id, bib, category, gender: from the runner
-        * finish_time: the minutes between the start (split at km 0) and the finish (split at km 10)
-        * pace: the minutes per km (the race is 10 km long)
-        * rank: the rank in the edition, the fastest first; runners with the same time share
-          the same rank (1, 2, 2, 4)
-        * category_rank: the same, within the category of the runner
-
-        Tips: EXTRACT(EPOCH FROM <interval>) gives seconds, and the window functions
-        RANK() OVER (PARTITION BY ... ORDER BY ...) compute ranks.
-        """
         tools.drop_view_if_exists(self.env.cr, self._table)
         self.env.cr.execute(SQL(
             """
             CREATE OR REPLACE VIEW %s AS (
-                SELECT NULL::integer AS id,
-                       NULL::integer AS runner_id,
-                       NULL::integer AS edition_id,
-                       NULL::integer AS bib,
-                       NULL::varchar AS category,
-                       NULL::varchar AS gender,
-                       NULL::numeric AS finish_time,
-                       NULL::numeric AS pace,
-                       NULL::bigint AS rank,
-                       NULL::bigint AS category_rank
-                 WHERE FALSE
+                SELECT t.id,
+                       t.runner_id,
+                       t.edition_id,
+                       t.bib,
+                       t.category,
+                       t.gender,
+                       t.finish_time,
+                       t.finish_time / 10.0 AS pace,
+                       RANK() OVER (PARTITION BY t.edition_id
+                                    ORDER BY t.finish_time) AS rank,
+                       RANK() OVER (PARTITION BY t.edition_id, t.category
+                                    ORDER BY t.finish_time) AS category_rank
+                  FROM (
+                        SELECT r.id AS id,
+                               r.id AS runner_id,
+                               r.edition_id,
+                               r.bib,
+                               r.category,
+                               r.gender,
+                               EXTRACT(EPOCH FROM (fin.time - st.time)) / 60.0 AS finish_time
+                          FROM run_runner r
+                          JOIN run_split st  ON st.runner_id = r.id AND st.checkpoint_km = 0
+                          JOIN run_split fin ON fin.runner_id = r.id AND fin.checkpoint_km = 10
+                       ) t
             )
             """,
             SQL.identifier(self._table),
