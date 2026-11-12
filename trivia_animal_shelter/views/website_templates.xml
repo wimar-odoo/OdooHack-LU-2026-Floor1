@@ -126,6 +126,12 @@
     </template>
 
     <!-- TODO 5: a menu "Adopt" in the main menu of the website, opening /adopt (model website.menu) -->
+    <record id="menu_adopt" model="website.menu">
+        <field name="name">Adopt</field>
+        <field name="url">/adopt</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" eval="50"/>
+    </record>
 
     <!-- ⭐ BONUS: a building block (snippet) "Animal of the week", available in the website editor -->
 </odoo>
