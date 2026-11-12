@@ -7,6 +7,14 @@
                 <h1>🎪 <t t-out="this.state.event.name"/></h1>
                 <p class="lead"><t t-out="this.state.event.attendees"/> attendees have already arrived.</p>
                 <!-- ⭐ BONUS: a search box to filter the registrations by name -->
+                <div class="mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search attendee..."
+                        t-model="this.search"
+                    />
+                </div>
                 <table class="table table-hover align-middle">
                     <thead>
                         <tr>
@@ -16,12 +24,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr t-foreach="this.state.registrations" t-as="registration" t-key="registration.id">
+                        <tr t-foreach="this.filteredRegistrations" t-as="registration" t-key="registration.id">
                             <td t-out="registration.name"/>
                             <td t-out="registration.ticket"/>
                             <td class="text-end">
                                 <!-- TODO 2: a badge "Present" for the people who already arrived (registration.attended),
                                      else a "Check in" button which calls this.checkIn(registration) -->
+                                <t t-if="registration.attended">
+                                    <span class="badge text-bg-success">Present</span>
+                                </t>
+                                <t t-else="">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary btn-sm"
+                                        t-on-click="() => this.checkIn(registration)"
+                                    >
+                                        Check in
+                                    </button>
+                                </t>
                             </td>
                         </tr>
                     </tbody>

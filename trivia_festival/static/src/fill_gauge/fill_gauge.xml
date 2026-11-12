@@ -4,7 +4,23 @@
     <t t-name="trivia_festival.FillGauge">
         <!-- TODO 1: a Bootstrap progress bar (div.progress, then div.progress-bar with the color and the width),
              and the text "taken / max (percentage %)" -->
-        <span t-out="this.value"/>
-    </t>
+<div>
+            <div class="progress">
+                <div
+                    t-attf-class="progress-bar {{ this.color }}"
+                    t-att-style="'width: ' + this.percentage + '%'"
+                    role="progressbar"
+                    t-att-aria-valuenow="this.percentage"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                />
+            </div>
 
+            <span>
+                <t t-out="this.value"/> /
+                <t t-out="this.max"/> (
+                <t t-out="this.percentage"/> %)
+            </span>
+        </div>
+    </t>
 </templates>

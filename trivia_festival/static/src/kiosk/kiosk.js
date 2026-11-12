@@ -13,7 +13,7 @@
  * Then add the component to the registry of the actions, under the name festival_kiosk, and
  * create its client action and its menu in views/menus.xml.
  */
-import { Component, onWillStart, proxy } from "@odoo/owl";
+import { Component, onWillStart, proxy , signal} from "@odoo/owl";
 import { registry } from "@web/core/registry";  // eslint-disable-line no-unused-vars
 import { useService } from "@web/core/utils/hooks";
 
@@ -21,20 +21,50 @@ export class FestivalKiosk extends Component {
     static template = "trivia_festival.Kiosk";
 
     setup() {
+        this.search = signal("");
         this.orm = useService("orm");
         this.notification = useService("notification");
         this.state = proxy({ event: {}, registrations: [] });
         onWillStart(() => this.loadData());
     }
 
+    get filteredRegistrations() {
+        const search = this.search().toLowerCase();
+        
+        return this.state.registrations.filter((registration) =>
+            registration.name.toLowerCase().includes(search)
+        );
+    }
+
     async loadData() {
         // TODO 2: get the data of the welcome desk from the server, and put it in this.state
-    }
+        const data = await this.orm.call(
+            "event.registration",
+            "get_kiosk_data",
+            []
+    );
+
+    this.state.event = data.event;
+    this.state.registrations = data.registrations;
+}
 
     async checkIn(registration) {
         // TODO 2: check the registration in on the server, welcome the attendee
         // (this.notification.add(message, { type: "success" })), then load the data again
-    }
+        await this.orm.call(
+            "event.registration",
+            "action_kiosk_checkin",
+            [[registration.id]]
+        );
+
+        this.notification.add(
+            `Welcome ${registration.name}!`,
+            { type: "success" }
+        );
+
+        await this.loadData();
+    }   
 }
 
 // TODO 2: add the component to the registry of the actions
+registry.category("actions").add("festival_kiosk", FestivalKiosk);
