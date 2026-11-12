@@ -15,9 +15,10 @@
  * Then add the component to the registry of the actions, under the name festival_kiosk, and
  * create its client action and its menu in views/menus.xml.
  */
-import { Component, onWillStart, proxy, signal } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal, usePlugin } from "@odoo/owl";
 import { registry } from "@web/core/registry";  // eslint-disable-line no-unused-vars
 import { useService } from "@web/core/utils/hooks";
+import { FestivalAttendeesPlugin } from "@trivia_festival/festival_attendees_plugin";
 
 export class FestivalKiosk extends Component {
     static template = "trivia_festival.Kiosk";
@@ -25,6 +26,7 @@ export class FestivalKiosk extends Component {
     setup() {
         this.orm = useService("orm");
         this.notification = useService("notification");
+        this.attendees = usePlugin(FestivalAttendeesPlugin);
         this.state = proxy({ event: {}, registrations: [] });
         this.search = signal("");
         onWillStart(() => this.loadData());
@@ -39,6 +41,8 @@ export class FestivalKiosk extends Component {
         const data = await this.orm.call("event.registration", "get_kiosk_data", []);
         this.state.event = data.event;
         this.state.registrations = data.registrations;
+        // keeps the systray counter in step with the desk, without another server call
+        this.attendees.count.set(data.event.attendees);
     }
 
     async checkIn(registration) {

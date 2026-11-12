@@ -2,10 +2,11 @@
 <templates xml:space="preserve">
 
     <t t-name="trivia_festival.AttendeeCounter">
-        <div class="o_festival_attendee_counter d-flex align-items-center px-2"
-             title="Attendees already arrived at the festival">
-            <i class="fa fa-users me-1"/>
-            <span t-out="this.state.attendees"/>
+        <div t-if="this.attendees.count() !== null"
+             class="o_nav_entry o_festival_attendee_counter"
+             data-tooltip="Attendees already arrived at the festival">
+            <i class="oi oi-filled me-1" data-icon="group"/>
+            <t t-out="this.attendees.count()"/>
         </div>
     </t>
 

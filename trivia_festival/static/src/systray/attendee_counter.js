@@ -2,24 +2,20 @@
  * Systray counter of the attendees of the festival.
  *
  * A small OWL component added to the systray (the icons at the top right of Odoo). It shows how
- * many attendees have already arrived, read from the same server method as the welcome desk.
+ * many attendees have already arrived, from the plugin shared with the welcome desk, so that a
+ * check-in at the desk updates it at once.
  */
-import { Component, onWillStart, proxy } from "@odoo/owl";
+import { Component, usePlugin } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-import { useService } from "@web/core/utils/hooks";
+import { FestivalAttendeesPlugin } from "@trivia_festival/festival_attendees_plugin";
 
 export class FestivalAttendeeCounter extends Component {
     static template = "trivia_festival.AttendeeCounter";
 
     setup() {
-        this.orm = useService("orm");
-        this.state = proxy({ attendees: 0 });
-        onWillStart(() => this.loadCount());
-    }
-
-    async loadCount() {
-        const data = await this.orm.call("event.registration", "get_kiosk_data", []);
-        this.state.attendees = data.event.attendees;
+        this.attendees = usePlugin(FestivalAttendeesPlugin);
+        // not awaited: the navbar must not wait for the server to be drawn
+        this.attendees.load();
     }
 }
 

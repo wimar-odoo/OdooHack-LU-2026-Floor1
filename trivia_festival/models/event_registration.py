@@ -39,6 +39,12 @@ class EventRegistration(models.Model):
             } for registration in registrations],
         }
 
+    @api.model
+    def get_festival_attendees(self) -> int | None:
+        """ The number of attendees already arrived, or None if the user cannot read the festival. """
+        event = self.env.ref("trivia_festival.event_festival")
+        return event.seats_used if event.has_access("read") else None
+
     def action_kiosk_checkin(self):
         """ Check the attendees in at the welcome desk. """
         self.action_set_done()
