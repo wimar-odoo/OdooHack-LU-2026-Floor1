@@ -22,6 +22,12 @@ class RunResultReport(models.Model):
     category_rank = fields.Integer(string="Rank in Category", readonly=True, aggregator="min")
 
     def init(self):
+        """ Create the SQL view of the results (called when the module is installed or updated).
+
+        One row per runner who reached the finish (a split at km 10) and who is not
+        disqualified. The ranks are computed in the outer query, so they only take the
+        remaining runners into account.
+        """
         tools.drop_view_if_exists(self.env.cr, self._table)
         self.env.cr.execute(SQL(
             """
@@ -49,6 +55,7 @@ class RunResultReport(models.Model):
                           FROM run_runner r
                           JOIN run_split st  ON st.runner_id = r.id AND st.checkpoint_km = 0
                           JOIN run_split fin ON fin.runner_id = r.id AND fin.checkpoint_km = 10
+                         WHERE NOT r.disqualified
                        ) t
             )
             """,
