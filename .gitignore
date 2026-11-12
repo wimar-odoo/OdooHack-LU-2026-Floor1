@@ -4,3 +4,4 @@ __pycache__/
 # files of the file managers of macOS and Windows
 .DS_Store
 Thumbs.db
+CLAUDE.md
