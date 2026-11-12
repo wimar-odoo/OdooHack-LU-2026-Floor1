@@ -9,7 +9,7 @@ Challenge of the Trivi'Hackathon (website: controllers, QWeb templates, Bootstra
 The animal shelter Les 4 Pattes wants its animals to find a family thanks to its website. Complete this module so
 that visitors can see the animals waiting for a family and send an adoption request.
 """,
-    "version": "20.0.1.0.0",
+    "version": "20.0.1.0.1",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
