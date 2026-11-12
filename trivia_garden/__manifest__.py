@@ -9,7 +9,7 @@ Challenge of the Trivi'Hackathon (Python: models, inheritance, computed fields, 
 Gaart fir Jiddereen runs shared gardens in Luxembourg City and in Esch-sur-Alzette. Complete this module so that
 the treasurer can follow the membership fees, and so that only the members up to date can rent a plot.
 """,
-    "version": "20.0.1.0.1",
+    "version": "20.0.1.0.2",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
