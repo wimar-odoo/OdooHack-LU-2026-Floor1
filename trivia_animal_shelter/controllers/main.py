@@ -12,7 +12,7 @@ class ShelterController(http.Controller):
 
     Keep the controllers thin: the business logic belongs to the models (TODO 1 and TODO 4).
     """
-        @http.route("/adopt", type="http", auth="public", website=True)
+    @http.route("/adopt", type="http", auth="public", website=True)
     def adopt(self, species=None, **kwargs):
         Animal = request.env["shelter.animal"]
         if species not in dict(Animal._get_species()):
