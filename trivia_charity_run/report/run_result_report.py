@@ -24,7 +24,7 @@ class RunResultReport(models.Model):
     def init(self):
         """ Create the SQL view of the results (called when the module is installed or updated).
 
-        TODO 1 - Replace this empty placeholder by the real results: one row per runner who
+        Create the results view: one row per runner who
         reached the finish (a split at km 10), with the columns:
 
         * id: the id of the runner (each row of a model needs a unique id)
@@ -42,17 +42,34 @@ class RunResultReport(models.Model):
         self.env.cr.execute(SQL(
             """
             CREATE OR REPLACE VIEW %s AS (
-                SELECT NULL::integer AS id,
-                       NULL::integer AS runner_id,
-                       NULL::integer AS edition_id,
-                       NULL::integer AS bib,
-                       NULL::varchar AS category,
-                       NULL::varchar AS gender,
-                       NULL::numeric AS finish_time,
-                       NULL::numeric AS pace,
-                       NULL::bigint AS rank,
-                       NULL::bigint AS category_rank
-                 WHERE FALSE
+                WITH finishers AS (
+                    SELECT runner.id AS id,
+                           runner.id AS runner_id,
+                           runner.edition_id,
+                           runner.bib,
+                           runner.category,
+                           runner.gender,
+                           EXTRACT(EPOCH FROM (finish.time - start.time)) / 60.0 AS finish_time
+                      FROM run_runner AS runner
+                      JOIN run_split AS start
+                        ON start.runner_id = runner.id
+                       AND start.checkpoint_km = 0
+                      JOIN run_split AS finish
+                        ON finish.runner_id = runner.id
+                       AND finish.checkpoint_km = 10
+                     WHERE NOT runner.disqualified
+                )
+                SELECT id,
+                       runner_id,
+                       edition_id,
+                       bib,
+                       category,
+                       gender,
+                       finish_time,
+                       finish_time / 10.0 AS pace,
+                       RANK() OVER (PARTITION BY edition_id ORDER BY finish_time) AS rank,
+                       RANK() OVER (PARTITION BY edition_id, category ORDER BY finish_time) AS category_rank
+                  FROM finishers
             )
             """,
             SQL.identifier(self._table),

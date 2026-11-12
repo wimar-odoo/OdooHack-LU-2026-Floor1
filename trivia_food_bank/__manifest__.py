@@ -9,7 +9,7 @@ done in the interface of Odoo.
 
 Les Restos du Quartier is a food aid association which wants to manage its donors, patrons and donations in Odoo.
 """,
-    "version": "20.0.1.0.0",
+    "version": "20.0.1.1.0",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
