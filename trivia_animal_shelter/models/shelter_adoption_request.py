@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class ShelterAdoptionRequest(models.Model):
@@ -39,4 +40,7 @@ class ShelterAdoptionRequest(models.Model):
 
         :return: the new request
         """
-        raise NotImplementedError("TODO 4")
+        if animal not in self.sudo().env["shelter.animal"]._get_adoptable_animals():
+            raise UserError(self.env._("This animal cannot be adopted."))
+        vals = {key: values.get(key) for key in ("name", "email", "phone", "message")}
+        return self.sudo().create(dict(vals, animal_id=animal.id))
