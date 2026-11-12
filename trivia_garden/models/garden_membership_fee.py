@@ -17,7 +17,7 @@ class GardenMembershipFee(models.Model):
     )
     payment_date = fields.Date(string="Payment Date")
 
-    # a member pays at most one fee per year, whatever its status
+    # a member pays at most one fee per year, whatever its status 
     _partner_year_unique = models.Constraint(
         "unique(partner_id, year)",
         "A member pays at most one fee per year.",
