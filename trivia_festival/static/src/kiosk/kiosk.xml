@@ -6,7 +6,8 @@
             <div class="container py-4">
                 <h1>🎪 <t t-out="this.state.event.name"/></h1>
                 <p class="lead"><t t-out="this.state.event.attendees"/> attendees have already arrived.</p>
-                <!-- ⭐ BONUS: a search box to filter the registrations by name -->
+                <input type="search" class="form-control mb-3" placeholder="Search by name"
+                       t-model="this.search"/>
                 <table class="table table-hover align-middle">
                     <thead>
                         <tr>
@@ -16,14 +17,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr t-foreach="this.state.registrations" t-as="registration" t-key="registration.id">
+                        <tr t-foreach="this.filteredRegistrations" t-as="registration" t-key="registration.id">
                             <td t-out="registration.name"/>
                             <td t-out="registration.ticket"/>
                             <td class="text-end">
-    <span t-if="registration.attended" class="badge text-bg-success">Present</span>
+                                <span t-if="registration.attended" class="badge text-bg-success">Present</span>
                                 <button t-else="" class="btn btn-primary"
                                         t-on-click="() => this.checkIn(registration)">Check in</button>
-</td>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

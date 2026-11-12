@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="trivia_festival.AttendeesCounter">
+        <div class="o_festival_attendees_counter d-flex align-items-center px-2" title="Attendees arrived">
+            🎪 <t t-out="this.state.attendees"/>
+        </div>
+    </t>
+
+</templates>
