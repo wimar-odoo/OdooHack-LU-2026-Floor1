@@ -9,7 +9,7 @@ Challenge of the Trivi'Hackathon (JavaScript: OWL components, field widget, clie
 The Festival Solidaire opens its doors today. Complete this module to show how full the festival is, and to give
 the volunteers of the welcome desk a simple screen to check the attendees in.
 """,
-    "version": "20.0.1.0.0",
+    "version": "20.0.2.0.0",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
