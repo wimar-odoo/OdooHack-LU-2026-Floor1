@@ -9,7 +9,7 @@ Challenge of the Trivi'Hackathon (website: controllers, QWeb templates, Bootstra
 The animal shelter Les 4 Pattes wants its animals to find a family thanks to its website. Complete this module so
 that visitors can see the animals waiting for a family and send an adoption request.
 """,
-    "version": "20.0.1.0.4",
+    "version": "20.0.1.0.6",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
@@ -24,6 +24,10 @@ that visitors can see the animals waiting for a family and send an adoption requ
         "views/website_templates.xml",
         "report/adoption_certificate_report.xml",
     ],
-    # TODO 5: add static/src/scss/shelter.scss to the assets of the website (bundle web.assets_frontend)
+    "assets": {
+        "web.assets_frontend": [
+            "trivia_animal_shelter/static/src/scss/shelter.scss",
+        ],
+    },
     "application": True,
 }

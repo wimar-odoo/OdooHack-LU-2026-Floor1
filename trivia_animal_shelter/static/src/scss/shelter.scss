@@ -1,7 +1,25 @@
 // ----------------------------------------------------------------------------
 // TODO 5 - The style of the adoption pages
 //
-// Declare this file in the assets of the website (manifest, bundle web.assets_frontend),
-// then give a style to the cards of the animals (.o_shelter_card): for example a shadow
-// and a small zoom when the mouse goes over a card.
+// Declared in the assets of the website (manifest, bundle web.assets_frontend).
 // ----------------------------------------------------------------------------
+
+.o_shelter {
+  .o_shelter_card {
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    // A shadow and a small zoom when the mouse goes over a card
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+    }
+
+    .display-1 {
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
