@@ -20,8 +20,11 @@
                             <td t-out="registration.name"/>
                             <td t-out="registration.ticket"/>
                             <td class="text-end">
-                                <!-- TODO 2: a badge "Present" for the people who already arrived (registration.attended),
-                                     else a "Check in" button which calls this.checkIn(registration) -->
+                                <span t-if="registration.attended" class="badge text-bg-success">Present</span>
+                                <button t-else="" class="btn btn-primary btn-sm"
+                                        t-on-click="() => this.checkIn(registration)">
+                                    Check in
+                                </button>
                             </td>
                         </tr>
                     </tbody>
