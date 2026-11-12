@@ -134,4 +134,34 @@
     </record>
 
     <!-- ⭐ BONUS: a building block (snippet) "Animal of the week", available in the website editor -->
+    <template id="s_animal_of_the_week" name="Animal of the week">
+        <section class="s_animal_of_the_week o_shelter pt48 pb48">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="card h-100 o_shelter_card text-center">
+                            <div class="card-body">
+                                <p class="text-muted text-uppercase small mb-2">Animal of the week</p>
+                                <div class="display-1">🐾</div>
+                                <h3 class="card-title">Meet our star of the week</h3>
+                                <p class="card-text text-muted">
+                                    Tell visitors about the animal you want to put forward this week.
+                                </p>
+                                <a href="/adopt" class="btn btn-primary">See all the animals</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="snippets" inherit_id="website.snippets" name="Shelter Snippets">
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="trivia_animal_shelter.s_animal_of_the_week"
+               string="Animal of the week"
+               group="content"/>
+        </xpath>
+    </template>
+
 </odoo>
