@@ -81,7 +81,15 @@ class ShelterAnimal(models.Model):
     @api.model
     def _get_adoptable_animals(self, species=None):
         """ Return the animals that can be adopted: published on the website and not
-        adopted yet, ordered by name. When ``species`` is given (e.g. 'cat'), only the
+        adopted yet, ordered by name. When species is given (e.g. 'cat'), only the
         animals of this species.
         """
-        return self.browse()
+
+        domain = [
+            ("is_published", "=", True),
+            ("adopted", "=", False),
+        ]
+
+        if species:
+            domain.append(("species", "=", species))
+        return self.search(domain, order="name")

@@ -5,3 +5,46 @@
 // then give a style to the cards of the animals (.o_shelter_card): for example a shadow
 // and a small zoom when the mouse goes over a card.
 // ----------------------------------------------------------------------------
+
+.o_shelter {
+    .o_shelter_card {
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+// Avoid animations for visitors who prefer less motion.
+@media (prefers-reduced-motion: reduce) {
+    .o_shelter .o_shelter_card {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+
+/* BONUS: Animal of the week */
+.o_animal_week {
+    .o_animal_week_card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        margin-top: 20px;
+
+        h3 {
+            margin-top: 15px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+    }
+}

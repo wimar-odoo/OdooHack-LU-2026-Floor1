@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class ShelterAdoptionRequest(models.Model):
@@ -29,14 +30,30 @@ class ShelterAdoptionRequest(models.Model):
 
     @api.model
     def _create_from_website(self, animal, values):
-        """ Create the adoption request sent by a visitor of the website for ``animal``,
-        from the ``values`` posted by the form (name, email, phone, message).
+        """Create a request only if the animal is available for adoption."""
+        animal = animal.sudo().exists()
+        if not animal:
+            raise ValidationError("This animal is not available for adoption.")
 
-        * the visitors (public user) have no access rights on the requests;
-        * only the fields of the form can be set: a visitor must not be able to choose
-          the animal or the status of the request;
-        * only an adoptable animal (TODO 1) can be requested.
+        animals = self.env["shelter.animal"].sudo()._get_adoptable_animals()
+        if animal.id not in animals.ids:
+            raise ValidationError("This animal is not available for adoption.")
 
-        :return: the new request
-        """
-        raise NotImplementedError("TODO 4")
+        name = (values.get("name") or "").strip()
+        email = (values.get("email") or "").strip()
+        phone = (values.get("phone") or "").strip()
+        message = (values.get("message") or "").strip()
+
+        if not name or not email or "@" not in email:
+            raise ValidationError("Please enter your name and a valid email address.")
+        if len(name) > 120 or len(email) > 254 or len(phone) > 40 or len(message) > 5000:
+            raise ValidationError("One of the form fields is too long.")
+
+        # Only these fields are saved. Visitors cannot set animal_id or state.
+        return self.sudo().create({
+            "animal_id": animal.id,
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "message": message,
+        })

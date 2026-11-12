@@ -12,18 +12,33 @@
                 <div class="container py-5">
                     <h1>Adopt a friend</h1>
                     <p class="lead">These animals of the Refuge Les 4 Pattes are waiting for a family.</p>
-                    <!--
-                    TODO 2: a responsive grid of the animals, with Bootstrap: one card per row on a phone, two on
-                    a tablet, three on a computer. Each animal is displayed by calling the template
-                    trivia_animal_shelter.animal_card.
 
-                    ⭐ BONUS: above the grid, one button per species to filter the animals (/adopt?species=cat),
-                    the buttons of the species are given by request.env['shelter.animal']._get_species().
-                    -->
+                    <!-- Optional filter by species. -->
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <a href="/adopt"
+                           t-att-class="'btn btn-primary' if not species else 'btn btn-outline-primary'">All animals</a>
+                        <t t-foreach="species_options" t-as="option">
+                            <a t-att-href="'/adopt?species=%s' % option[0]"
+                               t-att-class="'btn btn-primary' if species == option[0] else 'btn btn-outline-primary'">
+                                <t t-out="option[1]"/>
+                            </a>
+                        </t>
+                    </div>
+
+                    <!-- One card on phones, two on tablets, three on computers. -->
+                    <div class="row g-4">
+                        <t t-foreach="animals" t-as="animal">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <t t-call="trivia_animal_shelter.animal_card"/>
+                            </div>
+                        </t>
+                    </div>
+                    <p t-if="not animals" class="text-muted mt-4">No adoptable animals found.</p>
                 </div>
             </div>
         </t>
     </template>
+
 
     <!-- ======================================================================
          TODO 2 - The card of an animal (variable: animal)
@@ -33,7 +48,15 @@
          and a link to the page of the animal (animal.website_url).
          ====================================================================== -->
     <template id="animal_card" name="Adopt: Animal Card">
-        <t/>
+        <div class="card h-100 o_shelter_card" t-att-data-animal-id="animal.id">
+            <div class="card-body d-flex flex-column">
+                <div class="display-4 mb-3" t-out="animal.species_emoji"/>
+                <h2 class="h5 card-title" t-out="animal.name"/>
+                <p class="card-text"><strong>Breed:</strong> <t t-out="animal.breed or 'Unknown'"/></p>
+                <p class="card-text"><strong>Age:</strong> <t t-out="animal.age or 'Unknown'"/></p>
+                <a class="btn btn-primary mt-auto" t-att-href="animal.website_url">Meet this animal</a>
+            </div>
+        </div>
     </template>
 
     <!-- ======================================================================
@@ -49,12 +72,53 @@
             <div id="wrap" class="o_shelter">
                 <div class="container py-5">
                     <a href="/adopt">← All the animals</a>
+                    <div class="row g-5 mt-1">
+                        <div class="col-12 col-lg-6">
+                            <div class="display-1 mb-3" t-out="animal.species_emoji"/>
+                            <h1 t-out="animal.name"/>
+                            <p><strong>Breed:</strong> <t t-out="animal.breed or 'Unknown'"/></p>
+                            <p><strong>Age:</strong> <t t-out="animal.age or 'Unknown'"/></p>
+                            <p><strong>Sex:</strong> <t t-out="animal.sex or 'Unknown'"/></p>
+                            <p class="mt-4" t-out="animal.description or ''"/>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <h2 class="h3">Request to adopt <t t-out="animal.name"/></h2>
+                            <p>Fill in this form and the shelter will contact you.</p>
+                            <div t-if="error" class="alert alert-danger" role="alert" t-out="error"/>
+
+                            <form method="post" t-att-action="animal.website_url + '/request'">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                <div class="mb-3">
+                                    <label for="adopt_name" class="form-label">Name</label>
+                                    <input id="adopt_name" type="text" name="name" class="form-control"
+                                           required="required" maxlength="120" t-att-value="values.get('name', '')"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adopt_email" class="form-label">Email</label>
+                                    <input id="adopt_email" type="email" name="email" class="form-control"
+                                           required="required" maxlength="254" t-att-value="values.get('email', '')"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adopt_phone" class="form-label">Phone</label>
+                                    <input id="adopt_phone" type="tel" name="phone" class="form-control"
+                                           maxlength="40" t-att-value="values.get('phone', '')"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adopt_message" class="form-label">Message</label>
+                                    <textarea id="adopt_message" name="message" class="form-control"
+                                              rows="4" maxlength="5000"><t t-out="values.get('message', '')"/></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send adoption request</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </t>
     </template>
 
-    <!-- The page displayed after an adoption request (variables: animal, adoption_request) -->
+    <!-- Existing confirmation page. -->
     <template id="adoption_thanks" name="Adopt: Thank You">
         <t t-call="website.layout">
             <div id="wrap" class="o_shelter">
@@ -72,6 +136,43 @@
     </template>
 
     <!-- TODO 5: a menu "Adopt" in the main menu of the website, opening /adopt (model website.menu) -->
-
+    <record id="website_menu_adopt" model="website.menu">
+        <field name="name">Adopt</field>
+        <field name="url">/adopt</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" eval="30"/>
+    </record>
     <!-- ⭐ BONUS: a building block (snippet) "Animal of the week", available in the website editor -->
+
+<!-- BONUS: Animal of the week -->
+<template id="animal_of_week" name="Animal of the week">
+    <section class="o_animal_week pt64 pb64"
+             data-name="Animal of the week"
+             data-snippet="animal_of_week">
+        <div class="container text-center">
+            <h2>Animal of the week</h2>
+            <div class="o_animal_week_card">
+                <div class="display-1">🐾</div>
+                <h3>Meet our featured animal!</h3>
+                <p>A lovely animal is waiting for a family.</p>
+                <a href="/adopt" class="btn btn-primary">
+                    Meet this animal
+                </a>
+            </div>
+        </div>
+    </section>
+</template>
+
+<!-- Register in the website editor -->
+<template id="animal_week_snippet"
+          inherit_id="website.snippets"
+          name="Animal of the week snippet">
+    <xpath expr="//snippets[@id='snippet_structure']/*[1]"
+           position="before">
+        <t t-snippet="trivia_animal_shelter.animal_of_week"
+           string="Animal of the week">
+            <keywords>animal adoption shelter</keywords>
+        </t>
+    </xpath>
+</template>
 </odoo>
