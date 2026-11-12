@@ -9,7 +9,7 @@ Challenge of the Trivi'Hackathon (SQL: SQL views, window functions, performance,
 La Course du Cœur is a charity run of 10 km: sponsors give money for each kilometre covered by the runners.
 Complete this module to publish the results, speed up the amounts raised, close a security hole and catch a cheater.
 """,
-    "version": "20.0.1.0.0",
+    "version": "20.0.69.0.0",
     "category": "Hidden",
     "author": "Odoo PS",
     "license": "LGPL-3",
