@@ -1,11 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--
-    TODO 6 - The adoption certificate
+    <!-- TODO 6 - The adoption certificate -->
+    <record id="action_report_adoption_certificate" model="ir.actions.report">
+        <field name="name">Adoption Certificate</field>
+        <field name="model">shelter.adoption.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">trivia_animal_shelter.report_adoption_certificate</field>
+        <field name="print_report_name">'Adoption Certificate - %s' % (object.name or '')</field>
+        <field name="binding_model_id" ref="model_shelter_adoption_request"/>
+        <field name="binding_type">report</field>
+    </record>
 
-    A PDF report "Adoption Certificate" on the adoption requests (model shelter.adoption.request),
-    printable from the form of a request (Print menu). It shows the name of the shelter, the name of
-    the applicant, the animal (name, species, breed) and the date of the day.
-    Tip: use the layout of the company documents, web.external_layout.
-    -->
+    <template id="report_adoption_certificate">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <t t-set="company" t-value="env.company"/>
+                    <div class="page">
+                        <div class="text-center">
+                            <h1 class="mt-4">Adoption Certificate</h1>
+                            <h3 class="text-muted">Refuge Les 4 Pattes</h3>
+                        </div>
+
+                        <p class="lead text-center mt-5">
+                            The Refuge Les 4 Pattes certifies that
+                            <b t-field="o.name"/>
+                            has asked to adopt
+                            <b t-field="o.animal_id.name"/>.
+                        </p>
+
+                        <table class="table table-sm mt-5">
+                            <tbody>
+                                <tr>
+                                    <th>Applicant</th>
+                                    <td><span t-field="o.name"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Animal</th>
+                                    <td><span t-field="o.animal_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Species</th>
+                                    <td><span t-field="o.animal_id.species"/></td>
+                                </tr>
+                                <tr t-if="o.animal_id.breed">
+                                    <th>Breed</th>
+                                    <td><span t-field="o.animal_id.breed"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td><span t-out="datetime.date.today()" t-options='{"widget": "date"}'/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
 </odoo>
