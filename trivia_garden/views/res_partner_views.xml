@@ -1,13 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--
-    TODO 5 - The members on the contacts
+    <record id="view_partner_form_inherit_garden" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.garden</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Bonus Smart Button -->
+            <div name="button_box" position="inside">
+                <button name="%(action_garden_membership_fee)d" type="action" class="oe_stat_button" icon="fa-money">
+                    <field name="fee_count" widget="statinfo" string="Fees"/>
+                </button>
+            </div>
 
-    * the contact form (base.view_partner_form) gets a "Membership" page, with the fields
-      membership_type, member_since, last_paid_year and the list of the fees (fee_ids);
-    * the contacts get a filter "Not up to date": the members whose last paid year is before
-      the current year.
+            <!-- Membership Tab -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Membership">
+                    <group>
+                        <group>
+                            <field name="membership_type"/>
+                            <field name="member_since"/>
+                            <field name="last_paid_year"/>
+                        </group>
+                    </group>
+                    <field name="fee_ids">
+                        <list editable="bottom">
+                            <field name="year"/>
+                            <field name="amount"/>
+                            <field name="payment_date"/>
+                            <field name="state" widget="badge"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
 
-    ⭐ BONUS: a "Fees" smart button on the contact form, showing the number of fees of the member.
-    -->
+    <!-- Not Up To Date Search Filter -->
+    <record id="view_res_partner_filter_inherit_garden" model="ir.ui.view">
+        <field name="name">res.partner.select.inherit.garden</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator/>
+                <filter string="Not up to date" name="not_up_to_date" domain="[('last_paid_year', '!=', context_today().year)]"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>
