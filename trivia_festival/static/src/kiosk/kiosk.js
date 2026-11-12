@@ -15,7 +15,7 @@
  * Then add the component to the registry of the actions, under the name festival_kiosk, and
  * create its client action and its menu in views/menus.xml.
  */
-import { Component, onWillStart, proxy } from "@odoo/owl";
+import { Component, onWillStart, proxy, signal } from "@odoo/owl";
 import { registry } from "@web/core/registry";  // eslint-disable-line no-unused-vars
 import { useService } from "@web/core/utils/hooks";
 
@@ -26,7 +26,13 @@ export class FestivalKiosk extends Component {
         this.orm = useService("orm");
         this.notification = useService("notification");
         this.state = proxy({ event: {}, registrations: [] });
+        this.search = signal("");
         onWillStart(() => this.loadData());
+    }
+
+    get filteredRegistrations() {
+        const query = this.search().toLowerCase();
+        return this.state.registrations.filter((r) => r.name.toLowerCase().includes(query));
     }
 
     async loadData() {
