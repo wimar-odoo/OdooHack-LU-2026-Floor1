@@ -1,4 +1,3 @@
 id,name,model_id,group_id/id,operation,domain
 access_garden_site_user,garden.site user,garden.site,base.group_user,crud,
 access_garden_plot_user,garden.plot user,garden.plot,base.group_user,crud,
-access_garden_membership_fee_user,garden.membership.fee user,garden.membership.fee,base.group_user,crud,

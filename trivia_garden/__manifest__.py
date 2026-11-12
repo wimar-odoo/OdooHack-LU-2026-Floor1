@@ -23,7 +23,7 @@ the treasurer can follow the membership fees, and so that only the members up to
         "views/garden_membership_fee_views.xml",
         "views/res_partner_views.xml",
         "views/menus.xml",
-        "data/garden_membership_fee_data.xml",
+        # TODO 7: load the membership data (data/garden_membership_fee_data.xml), once your models and fields exist
     ],
     "application": True,
 }
