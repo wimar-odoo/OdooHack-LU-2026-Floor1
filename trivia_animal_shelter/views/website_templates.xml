@@ -12,14 +12,26 @@
                 <div class="container py-5">
                     <h1>Adopt a friend</h1>
                     <p class="lead">These animals of the Refuge Les 4 Pattes are waiting for a family.</p>
-                    <!--
-                    TODO 2: a responsive grid of the animals, with Bootstrap: one card per row on a phone, two on
-                    a tablet, three on a computer. Each animal is displayed by calling the template
-                    trivia_animal_shelter.animal_card.
+                    <!-- BONUS: species filter buttons -->
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <a href="/adopt"
+                           t-attf-class="btn #{'btn-primary' if not species else 'btn-outline-primary'}">All</a>
+                        <t t-foreach="request.env['shelter.animal']._get_species()" t-as="sp">
+                            <a t-att-href="'/adopt?species=%s' % sp[0]"
+                               t-attf-class="btn #{'btn-primary' if species == sp[0] else 'btn-outline-primary'}"
+                               t-out="sp[1]"/>
+                        </t>
+                    </div>
 
-                    ⭐ BONUS: above the grid, one button per species to filter the animals (/adopt?species=cat),
-                    the buttons of the species are given by request.env['shelter.animal']._get_species().
-                    -->
+                    <!-- Grid: 1 per row on phone, 2 on tablet, 3 on computer -->
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <t t-foreach="animals" t-as="animal">
+                            <div class="col">
+                                <t t-call="trivia_animal_shelter.animal_card"/>
+                            </div>
+                        </t>
+                    </div>
+                    <p t-if="not animals" class="text-muted">No animals to adopt right now.</p>
                 </div>
             </div>
         </t>
@@ -33,7 +45,15 @@
          and a link to the page of the animal (animal.website_url).
          ====================================================================== -->
     <template id="animal_card" name="Adopt: Animal Card">
-        <t/>
+        <div class="card h-100 o_shelter_card" t-att-data-animal-id="animal.id">
+            <div class="card-body text-center">
+                <div class="display-1" t-out="animal.species_emoji"/>
+                <h5 class="card-title" t-out="animal.name"/>
+                <p class="card-text text-muted mb-1" t-if="animal.breed" t-out="animal.breed"/>
+                <p class="card-text text-muted" t-if="animal.age" t-out="animal.age"/>
+                <a t-att-href="animal.website_url" class="btn btn-primary stretched-link">Meet <t t-out="animal.name"/></a>
+            </div>
+        </div>
     </template>
 
     <!-- ======================================================================

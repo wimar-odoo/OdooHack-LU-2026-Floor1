@@ -8,6 +8,14 @@ class ShelterController(http.Controller):
     Keep the controllers thin: the business logic belongs to the models (TODO 1 and TODO 4).
     """
 
+    @http.route("/adopt", type="http", auth="public", website=True)
+    def adopt(self, species=None, **kwargs):
+        animals = request.env["shelter.animal"]._get_adoptable_animals(species or None)
+        return request.render("trivia_animal_shelter.animal_list", {
+            "animals": animals,
+            "species": species or False,
+        })
+
     # ----------------------------------------------------------------------------
     # TODO 2 - The page /adopt
     #
