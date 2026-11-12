@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class ShelterAdoptionRequest(models.Model):
@@ -39,4 +40,17 @@ class ShelterAdoptionRequest(models.Model):
 
         :return: the new request
         """
-        raise NotImplementedError("TODO 4")
+        animal.ensure_one()
+        if not animal.exists() or not animal.is_published or animal.adopted:
+            raise ValidationError("This animal is not available for adoption.")
+
+        form_values = {
+            field: (values.get(field) or "").strip()
+            for field in ("name", "email", "phone", "message")
+        }
+        if not form_values["name"] or not form_values["email"]:
+            raise ValidationError("Please provide your name and email address.")
+
+        form_values["animal_id"] = animal.id
+        form_values["state"] = "new"
+        return self.sudo().create(form_values)
