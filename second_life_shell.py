@@ -9,6 +9,8 @@ It is safe to run several times: everything is searched before being created.
 #   curl -sL <raw url> | odoo-bin shell
 from odoo.service.model import call_kw
 
+# the shell runs as the system user (uid 1), who cannot open a POS session: act as the administrator (uid 2)
+env = env(user=2)
 print("db:", env.cr.dbname, "uid:", env.uid)
 UID = env.uid
 
