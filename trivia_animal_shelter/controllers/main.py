@@ -1,5 +1,5 @@
 from odoo import http
-from odoo.http import request  # noqa: F401
+from odoo.http import request
 
 
 class ShelterController(http.Controller):
@@ -31,3 +31,16 @@ class ShelterController(http.Controller):
     # shelter.adoption.request._create_from_website(), then render the template
     # trivia_animal_shelter.adoption_thanks.
     # ----------------------------------------------------------------------------
+
+    @http.route("/adopt", type="http", auth="public", website=True)
+    def adopt(self, species=None, **kwargs):
+
+        species_options = request.env["shelter.animal"]._get_species()
+        allowed_species = [key for key, label in species_options]
+        if species and species not in allowed_species:
+            return request.not_found()
+
+        return request.render("trivia_animal_shelter.animal_list", {
+            "animals": [],
+            "species": species}
+        )
