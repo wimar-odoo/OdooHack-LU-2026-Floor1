@@ -7,6 +7,6 @@ class RunSplit(models.Model):
     _description = "Split Time"
     _order = "runner_id, checkpoint_km"
 
-    runner_id = fields.Many2one("run.runner", string="Runner", required=True, ondelete="cascade")
+    runner_id = fields.Many2one("run.runner", string="Runner", required=True, ondelete="cascade", index=True)
     checkpoint_km = fields.Integer(string="Checkpoint (km)", required=True)
     time = fields.Datetime(required=True)

@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.tools import SQL  # add to the imports at the top of the file
 
 CATEGORIES = [
     ("junior", "Junior (under 20)"),
@@ -39,9 +40,16 @@ class RunRunner(models.Model):
 
     @api.depends("pledge_ids.amount_per_km", "distance_km")
     def _compute_amount_raised(self):
+        Pledge = self.env["run.pledge"]
+        Pledge.flush_model(["runner_id", "amount_per_km"])  # send pending changes to the database
+        groups = Pledge._read_group(
+            [("runner_id", "in", self.ids)],
+            groupby=["runner_id"],
+            aggregates=["amount_per_km:sum"],
+        )
+        totals = {runner.id: total for runner, total in groups}
         for runner in self:
-            pledges = self.env["run.pledge"].search([("runner_id", "=", runner.id)])
-            runner.amount_raised = sum(pledges.mapped("amount_per_km")) * runner.distance_km
+            runner.amount_raised = totals.get(runner.id, 0.0) * runner.distance_km
 
     def action_disqualify(self):
         self.disqualified = True
@@ -55,17 +63,20 @@ class RunRunner(models.Model):
 
     @api.model
     def search_by_bib_or_name(self, term):
-        """ Return the runners whose bib number is ``term``, or whose name contains ``term``.
-
-        It is used by the results kiosk of the race village, where anybody can type
-        anything... This query is vulnerable to SQL injection: try ' OR 1=1 --
-        """
+        """ Return the runners whose bib number is ``term``, or whose name contains ``term``. """
         self.flush_model(["bib", "name"])  # raw SQL reads the database, not the cache of the ORM
-        self.env.cr.execute(f"""
+        term = str(term or "").strip()
+        # escape the LIKE wildcards, so that "50%" or "_" are searched literally
+        escaped = term.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+        self.env.cr.execute(SQL(
+            """
             SELECT id
               FROM run_runner
-             WHERE bib::text = '{term}'
-                OR name ILIKE '%{term}%'
+             WHERE bib::text = %s
+                OR name ILIKE %s
           ORDER BY edition_id DESC, bib
-        """)
+            """,
+            term,
+            f"%{escaped}%",
+        ))
         return self.browse([row[0] for row in self.env.cr.fetchall()])
