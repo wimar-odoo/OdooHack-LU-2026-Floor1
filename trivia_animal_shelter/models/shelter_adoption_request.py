@@ -1,4 +1,7 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
+
+FORM_FIELDS = ("name", "email", "phone", "message")
 
 
 class ShelterAdoptionRequest(models.Model):
@@ -39,4 +42,14 @@ class ShelterAdoptionRequest(models.Model):
 
         :return: the new request
         """
-        raise NotImplementedError("TODO 4")
+        animal = animal.sudo()
+        if not animal.exists() or animal not in self.env["shelter.animal"].sudo()._get_adoptable_animals():
+            raise ValidationError(self.env._("This animal cannot be adopted."))
+
+        # Whitelist: only the fields of the form are taken, never animal_id or state
+        vals = {key: (values.get(key) or "").strip() for key in FORM_FIELDS}
+        if not vals["name"] or not vals["email"]:
+            raise ValidationError(self.env._("Your name and your email are required."))
+
+        vals["animal_id"] = animal.id
+        return self.sudo().create(vals)

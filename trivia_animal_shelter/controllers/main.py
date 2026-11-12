@@ -31,6 +31,12 @@ class ShelterController(http.Controller):
     # trivia_animal_shelter.animal_detail.
     # ----------------------------------------------------------------------------
 
+    @http.route('/adopt/<model("shelter.animal"):animal>', type="http", auth="public", website=True)
+    def adopt_animal(self, animal, **kwargs):
+        if not animal.exists() or not (animal.is_published or request.env.user.has_group("website.group_website_publisher")):
+            raise request.not_found()
+        return request.render("trivia_animal_shelter.animal_detail", {"animal": animal})
+
     # ----------------------------------------------------------------------------
     # TODO 4 - The adoption request
     #
